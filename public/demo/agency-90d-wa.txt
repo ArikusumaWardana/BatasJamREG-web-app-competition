@@ -1,0 +1,1292 @@
+25/08/26, 08.55 - Pesan dan panggilan terenkripsi secara end-to-end. Tidak seorang pun di luar chat ini, termasuk WhatsApp, yang dapat membaca atau mendengarkannya.
+25/08/26, 09.41 - Nadia Putri: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+25/08/26, 10.14 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+25/08/26, 10.39 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+25/08/26, 10.49 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+25/08/26, 11.33 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+25/08/26, 12.16 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+25/08/26, 12.39 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+25/08/26, 12.58 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+25/08/26, 13.52 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+25/08/26, 14.34 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+25/08/26, 15.39 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+25/08/26, 20.07 - Sinta Wijaya: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+25/08/26, 20.36 - Raka Pratama: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+25/08/26, 20.42 - Bima Santoso: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+25/08/26, 21.14 - Nadia Putri: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+25/08/26, 21.28 - Sinta Wijaya: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+25/08/26, 21.53 - Pak Hendra (Klien): Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+25/08/26, 22.48 - Bima Santoso: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+26/08/26, 09.52 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+26/08/26, 10.58 - Bima Santoso: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+26/08/26, 11.05 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+26/08/26, 11.46 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+26/08/26, 12.24 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+26/08/26, 12.59 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+26/08/26, 13.54 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+26/08/26, 14.30 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+26/08/26, 14.30 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+26/08/26, 15.56 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+26/08/26, 16.48 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+26/08/26, 20.23 - Dina Kartika: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+26/08/26, 23.31 - Raka Pratama: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+27/08/26, 11.12 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+27/08/26, 11.23 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+27/08/26, 11.44 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+27/08/26, 11.53 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+27/08/26, 12.25 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+27/08/26, 12.36 - Sinta Wijaya: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+27/08/26, 12.36 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+27/08/26, 13.15 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+27/08/26, 13.21 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+27/08/26, 14.10 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+27/08/26, 14.26 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+27/08/26, 16.41 - Bima Santoso: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+27/08/26, 16.57 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+27/08/26, 23.23 - Nadia Putri: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+27/08/26, 23.44 - Bima Santoso: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+28/08/26, 09.35 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+28/08/26, 09.44 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+28/08/26, 09.45 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+28/08/26, 09.52 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+28/08/26, 10.20 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+28/08/26, 11.46 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+28/08/26, 12.41 - Sinta Wijaya: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+28/08/26, 13.32 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+28/08/26, 14.01 - Fajar Hidayat: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+28/08/26, 15.12 - Raka Pratama: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+28/08/26, 15.37 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+28/08/26, 15.38 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+28/08/26, 20.29 - Dina Kartika: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+28/08/26, 21.37 - Fajar Hidayat: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+28/08/26, 21.55 - Pak Hendra (Klien): ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+29/08/26, 11.50 - Pak Hendra (Klien): Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+29/08/26, 14.58 - Dina Kartika: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+30/08/26, 12.03 - Fajar Hidayat: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+30/08/26, 12.33 - Nadia Putri: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+30/08/26, 13.11 - Nadia Putri: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+31/08/26, 09.32 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+31/08/26, 09.34 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+31/08/26, 10.45 - Nadia Putri: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+31/08/26, 11.07 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+31/08/26, 11.19 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+31/08/26, 12.04 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+31/08/26, 12.35 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+31/08/26, 13.43 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+31/08/26, 14.10 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+31/08/26, 15.11 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+31/08/26, 16.04 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+31/08/26, 16.06 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+31/08/26, 16.17 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+31/08/26, 20.44 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+31/08/26, 22.06 - Dina Kartika: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+01/09/26, 10.06 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+01/09/26, 10.33 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+01/09/26, 10.42 - Raka Pratama: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+01/09/26, 10.49 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+01/09/26, 12.39 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+01/09/26, 13.49 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+01/09/26, 13.58 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+01/09/26, 14.26 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+01/09/26, 14.31 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+01/09/26, 15.51 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+01/09/26, 16.20 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+01/09/26, 16.42 - Sinta Wijaya: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+01/09/26, 16.53 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+01/09/26, 20.04 - Dina Kartika: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+01/09/26, 20.20 - Nadia Putri: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+01/09/26, 20.41 - Nadia Putri: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+01/09/26, 21.36 - Sinta Wijaya: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+01/09/26, 21.43 - Dina Kartika: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+01/09/26, 21.47 - Bima Santoso: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+02/09/26, 09.10 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+02/09/26, 10.20 - Dina Kartika: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+02/09/26, 11.42 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+02/09/26, 12.07 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+02/09/26, 12.09 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+02/09/26, 12.12 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+02/09/26, 12.42 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+02/09/26, 12.48 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+02/09/26, 13.57 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+02/09/26, 15.19 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+02/09/26, 15.48 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+02/09/26, 16.35 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+02/09/26, 16.43 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+02/09/26, 21.02 - Pak Hendra (Klien): Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+02/09/26, 22.08 - Sinta Wijaya: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+02/09/26, 22.09 - Raka Pratama: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+02/09/26, 22.57 - Bima Santoso: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+03/09/26, 11.35 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+03/09/26, 12.46 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+03/09/26, 13.04 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+03/09/26, 13.54 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+03/09/26, 14.21 - Fajar Hidayat: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+03/09/26, 14.22 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+03/09/26, 15.05 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+03/09/26, 15.23 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+03/09/26, 15.24 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+03/09/26, 16.16 - Nadia Putri: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+03/09/26, 16.16 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+03/09/26, 16.28 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+03/09/26, 16.57 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+03/09/26, 22.23 - Dina Kartika: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+03/09/26, 22.30 - Raka Pratama: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+04/09/26, 12.12 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+04/09/26, 12.23 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+04/09/26, 13.07 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+04/09/26, 13.11 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+04/09/26, 13.44 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+04/09/26, 13.58 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+04/09/26, 15.06 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+04/09/26, 15.18 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+04/09/26, 15.41 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+04/09/26, 15.49 - Sinta Wijaya: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+04/09/26, 15.51 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+04/09/26, 16.12 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+04/09/26, 21.21 - Pak Hendra (Klien): Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+04/09/26, 21.32 - Fajar Hidayat: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+04/09/26, 22.21 - Raka Pratama: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+04/09/26, 22.40 - Fajar Hidayat: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+05/09/26, 10.11 - Bima Santoso: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+05/09/26, 13.18 - Bima Santoso: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+05/09/26, 21.21 - Dina Kartika: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+06/09/26, 12.53 - Fajar Hidayat: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+06/09/26, 14.54 - Sinta Wijaya: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+06/09/26, 20.55 - Pak Hendra (Klien): Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+07/09/26, 09.14 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+07/09/26, 09.14 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+07/09/26, 09.29 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+07/09/26, 09.42 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+07/09/26, 10.28 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+07/09/26, 10.34 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+07/09/26, 10.35 - Raka Pratama: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+07/09/26, 13.28 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+07/09/26, 13.48 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+07/09/26, 14.37 - Fajar Hidayat: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+07/09/26, 16.44 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+07/09/26, 20.10 - Pak Hendra (Klien): Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+07/09/26, 21.19 - Raka Pratama: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+08/09/26, 09.06 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+08/09/26, 09.49 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+08/09/26, 10.05 - Nadia Putri: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+08/09/26, 10.12 - Nadia Putri: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+08/09/26, 11.43 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+08/09/26, 12.20 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+08/09/26, 12.55 - Dina Kartika: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+08/09/26, 14.18 - Bima Santoso: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+08/09/26, 14.43 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+08/09/26, 15.18 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+08/09/26, 15.22 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+08/09/26, 18.56 - Bima Santoso: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+08/09/26, 19.04 - Nadia Putri: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+08/09/26, 20.26 - Bima Santoso: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+08/09/26, 21.02 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+08/09/26, 21.18 - Nadia Putri: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+08/09/26, 21.38 - Nadia Putri: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+09/09/26, 09.05 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+09/09/26, 10.05 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+09/09/26, 10.37 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+09/09/26, 11.18 - Fajar Hidayat: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+09/09/26, 11.34 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+09/09/26, 12.57 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+09/09/26, 13.27 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+09/09/26, 13.39 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+09/09/26, 13.41 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+09/09/26, 14.51 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+09/09/26, 15.11 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+09/09/26, 16.27 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+09/09/26, 16.54 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+09/09/26, 20.23 - Dina Kartika: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+09/09/26, 23.19 - Pak Hendra (Klien): ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+09/09/26, 23.25 - Bima Santoso: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+10/09/26, 09.57 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+10/09/26, 10.50 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+10/09/26, 11.04 - Raka Pratama: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+10/09/26, 11.09 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+10/09/26, 11.18 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+10/09/26, 12.31 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+10/09/26, 12.35 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+10/09/26, 15.39 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+10/09/26, 15.59 - Sinta Wijaya: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+10/09/26, 16.24 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+10/09/26, 16.26 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+10/09/26, 20.58 - Raka Pratama: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+10/09/26, 22.44 - Raka Pratama: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+10/09/26, 23.12 - Nadia Putri: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+11/09/26, 09.17 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+11/09/26, 09.52 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+11/09/26, 11.17 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+11/09/26, 11.29 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+11/09/26, 12.27 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+11/09/26, 13.26 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+11/09/26, 13.29 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+11/09/26, 14.37 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+11/09/26, 14.52 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+11/09/26, 15.08 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+11/09/26, 15.11 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+11/09/26, 22.52 - Sinta Wijaya: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+11/09/26, 23.14 - Sinta Wijaya: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+12/09/26, 10.18 - Pak Hendra (Klien): Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+12/09/26, 11.38 - Pak Hendra (Klien): Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+12/09/26, 19.56 - Sinta Wijaya: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+13/09/26, 10.43 - Fajar Hidayat: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+13/09/26, 13.05 - Nadia Putri: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+14/09/26, 09.16 - Raka Pratama: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+14/09/26, 09.17 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+14/09/26, 10.39 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+14/09/26, 10.47 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+14/09/26, 11.20 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+14/09/26, 11.51 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+14/09/26, 11.58 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+14/09/26, 13.49 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+14/09/26, 13.52 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+14/09/26, 15.34 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+14/09/26, 16.04 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+14/09/26, 16.50 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+14/09/26, 16.59 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+14/09/26, 19.28 - Raka Pratama: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+14/09/26, 19.58 - Pak Hendra (Klien): ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+14/09/26, 21.03 - Dina Kartika: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+14/09/26, 23.25 - Sinta Wijaya: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+15/09/26, 09.58 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+15/09/26, 10.39 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+15/09/26, 11.25 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+15/09/26, 11.35 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+15/09/26, 12.32 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+15/09/26, 13.20 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+15/09/26, 14.04 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+15/09/26, 14.35 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+15/09/26, 16.03 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+15/09/26, 16.08 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+15/09/26, 16.34 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+15/09/26, 16.48 - Bima Santoso: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+15/09/26, 20.04 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+15/09/26, 20.26 - Sinta Wijaya: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+15/09/26, 21.25 - Raka Pratama: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+15/09/26, 21.32 - Raka Pratama: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+15/09/26, 21.33 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+15/09/26, 21.37 - Pak Hendra (Klien): Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+15/09/26, 23.19 - Sinta Wijaya: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+16/09/26, 09.11 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+16/09/26, 09.18 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+16/09/26, 09.34 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+16/09/26, 10.35 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+16/09/26, 10.52 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+16/09/26, 11.00 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+16/09/26, 11.30 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+16/09/26, 13.04 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+16/09/26, 13.33 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+16/09/26, 13.43 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+16/09/26, 15.15 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+16/09/26, 15.46 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+16/09/26, 20.31 - Sinta Wijaya: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+16/09/26, 21.41 - Pak Hendra (Klien): Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+17/09/26, 09.06 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+17/09/26, 10.11 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+17/09/26, 10.21 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+17/09/26, 12.05 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+17/09/26, 13.19 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+17/09/26, 13.46 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+17/09/26, 13.50 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+17/09/26, 14.32 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+17/09/26, 15.01 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+17/09/26, 15.19 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+17/09/26, 15.24 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+17/09/26, 16.03 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+17/09/26, 18.33 - Fajar Hidayat: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+17/09/26, 19.38 - Sinta Wijaya: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+17/09/26, 19.39 - Pak Hendra (Klien): Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+17/09/26, 21.41 - Bima Santoso: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+18/09/26, 09.14 - Bima Santoso: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+18/09/26, 10.14 - Raka Pratama: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+18/09/26, 10.29 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+18/09/26, 10.48 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+18/09/26, 10.56 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+18/09/26, 11.06 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+18/09/26, 11.32 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+18/09/26, 11.52 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+18/09/26, 12.38 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+18/09/26, 12.47 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+18/09/26, 14.49 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+18/09/26, 20.19 - Bima Santoso: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+18/09/26, 21.04 - Fajar Hidayat: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+19/09/26, 12.52 - Fajar Hidayat: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+19/09/26, 14.07 - Raka Pratama: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+20/09/26, 11.45 - Pak Hendra (Klien): Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+20/09/26, 13.30 - Fajar Hidayat: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+20/09/26, 20.19 - Raka Pratama: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+21/09/26, 09.00 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+21/09/26, 10.12 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+21/09/26, 11.07 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+21/09/26, 12.15 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+21/09/26, 12.21 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+21/09/26, 13.21 - Raka Pratama: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+21/09/26, 13.45 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+21/09/26, 14.02 - Dina Kartika: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+21/09/26, 15.36 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+21/09/26, 15.38 - Sinta Wijaya: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+21/09/26, 16.00 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+21/09/26, 16.07 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+21/09/26, 16.59 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+21/09/26, 18.50 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+21/09/26, 18.58 - Nadia Putri: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+21/09/26, 20.22 - Nadia Putri: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+22/09/26, 09.23 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+22/09/26, 09.41 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+22/09/26, 10.16 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+22/09/26, 11.25 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+22/09/26, 11.52 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+22/09/26, 12.23 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+22/09/26, 12.46 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+22/09/26, 13.38 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+22/09/26, 13.52 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+22/09/26, 14.27 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+22/09/26, 14.30 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+22/09/26, 15.05 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+22/09/26, 19.23 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+22/09/26, 20.01 - Nadia Putri: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+22/09/26, 21.37 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+22/09/26, 21.39 - Raka Pratama: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+22/09/26, 21.43 - Dina Kartika: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+22/09/26, 23.31 - Nadia Putri: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+23/09/26, 12.29 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+23/09/26, 12.34 - Raka Pratama: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+23/09/26, 13.13 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+23/09/26, 13.13 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+23/09/26, 13.34 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+23/09/26, 14.25 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+23/09/26, 15.12 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+23/09/26, 15.36 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+23/09/26, 15.43 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+23/09/26, 16.08 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+23/09/26, 16.11 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+23/09/26, 21.17 - Raka Pratama: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+23/09/26, 21.46 - Fajar Hidayat: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+24/09/26, 09.04 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+24/09/26, 09.18 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+24/09/26, 09.35 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+24/09/26, 12.35 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+24/09/26, 12.42 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+24/09/26, 13.32 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+24/09/26, 13.57 - Raka Pratama: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+24/09/26, 14.22 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+24/09/26, 15.21 - Bima Santoso: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+24/09/26, 15.55 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+24/09/26, 16.47 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+24/09/26, 20.49 - Raka Pratama: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+24/09/26, 21.10 - Nadia Putri: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+25/09/26, 09.22 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+25/09/26, 09.31 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+25/09/26, 09.48 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+25/09/26, 11.04 - Raka Pratama: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+25/09/26, 11.07 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+25/09/26, 11.38 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+25/09/26, 13.57 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+25/09/26, 14.32 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+25/09/26, 14.50 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+25/09/26, 14.53 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+25/09/26, 14.58 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+25/09/26, 15.35 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+25/09/26, 15.53 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+25/09/26, 20.26 - Sinta Wijaya: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+25/09/26, 20.39 - Dina Kartika: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+25/09/26, 22.22 - Nadia Putri: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+26/09/26, 11.08 - Pak Hendra (Klien): Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+26/09/26, 13.56 - Nadia Putri: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+26/09/26, 21.06 - Bima Santoso: Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+27/09/26, 19.41 - Sinta Wijaya: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+27/09/26, 19.46 - Pak Hendra (Klien): Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+27/09/26, 21.03 - Pak Hendra (Klien): Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+28/09/26, 09.08 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+28/09/26, 09.23 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+28/09/26, 09.36 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+28/09/26, 09.54 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+28/09/26, 11.18 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+28/09/26, 11.44 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+28/09/26, 14.10 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+28/09/26, 14.26 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+28/09/26, 14.57 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+28/09/26, 15.22 - Bima Santoso: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+28/09/26, 16.35 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+28/09/26, 18.03 - Dina Kartika: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+28/09/26, 20.33 - Sinta Wijaya: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+29/09/26, 09.24 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+29/09/26, 10.07 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+29/09/26, 10.46 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+29/09/26, 11.12 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+29/09/26, 11.56 - Dina Kartika: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+29/09/26, 12.51 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+29/09/26, 13.45 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+29/09/26, 13.51 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+29/09/26, 15.02 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+29/09/26, 15.18 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+29/09/26, 15.44 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+29/09/26, 20.55 - Raka Pratama: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+29/09/26, 21.10 - Raka Pratama: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+29/09/26, 21.16 - Sinta Wijaya: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+29/09/26, 21.38 - Raka Pratama: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+29/09/26, 21.51 - Bima Santoso: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+29/09/26, 21.57 - Nadia Putri: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+29/09/26, 22.20 - Bima Santoso: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+30/09/26, 09.09 - Raka Pratama: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+30/09/26, 09.56 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+30/09/26, 10.47 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+30/09/26, 12.24 - Raka Pratama: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+30/09/26, 12.31 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+30/09/26, 13.02 - Fajar Hidayat: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+30/09/26, 13.16 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+30/09/26, 14.24 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+30/09/26, 15.46 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+30/09/26, 16.10 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+30/09/26, 16.53 - Bima Santoso: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+30/09/26, 18.47 - Dina Kartika: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+30/09/26, 20.15 - Sinta Wijaya: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+01/10/26, 09.46 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+01/10/26, 09.55 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+01/10/26, 10.27 - Raka Pratama: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+01/10/26, 12.41 - Bima Santoso: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+01/10/26, 13.32 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+01/10/26, 13.48 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+01/10/26, 14.11 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+01/10/26, 14.29 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+01/10/26, 14.49 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+01/10/26, 15.06 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+01/10/26, 15.39 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+01/10/26, 18.33 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+01/10/26, 18.34 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+02/10/26, 09.43 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+02/10/26, 10.25 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+02/10/26, 11.31 - Fajar Hidayat: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+02/10/26, 12.47 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+02/10/26, 12.53 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+02/10/26, 13.31 - Bima Santoso: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+02/10/26, 14.00 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+02/10/26, 14.07 - Sinta Wijaya: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+02/10/26, 14.22 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+02/10/26, 15.35 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+02/10/26, 15.38 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+02/10/26, 16.21 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+02/10/26, 18.12 - Pak Hendra (Klien): Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+02/10/26, 19.36 - Nadia Putri: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+02/10/26, 22.11 - Sinta Wijaya: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+02/10/26, 22.28 - Nadia Putri: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+03/10/26, 13.27 - Pak Hendra (Klien): Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+03/10/26, 13.32 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+03/10/26, 14.37 - Fajar Hidayat: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+04/10/26, 10.13 - Raka Pratama: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+04/10/26, 20.21 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+05/10/26, 09.10 - Nadia Putri: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+05/10/26, 09.36 - Dina Kartika: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+05/10/26, 10.05 - Sinta Wijaya: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+05/10/26, 11.22 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+05/10/26, 11.41 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+05/10/26, 11.47 - Raka Pratama: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+05/10/26, 12.33 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+05/10/26, 12.36 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+05/10/26, 12.49 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+05/10/26, 15.27 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+05/10/26, 15.50 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+05/10/26, 16.59 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+05/10/26, 20.52 - Sinta Wijaya: Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+05/10/26, 21.03 - Nadia Putri: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+05/10/26, 21.29 - Pak Hendra (Klien): Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+05/10/26, 22.49 - Fajar Hidayat: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+06/10/26, 09.12 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+06/10/26, 09.27 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+06/10/26, 09.38 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+06/10/26, 09.39 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+06/10/26, 11.19 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+06/10/26, 11.24 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+06/10/26, 13.23 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+06/10/26, 13.39 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+06/10/26, 14.24 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+06/10/26, 14.40 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+06/10/26, 14.49 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+06/10/26, 15.40 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+06/10/26, 15.51 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+06/10/26, 20.20 - Pak Hendra (Klien): Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+06/10/26, 20.25 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+06/10/26, 20.33 - Nadia Putri: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+06/10/26, 20.43 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+06/10/26, 21.06 - Sinta Wijaya: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+06/10/26, 21.35 - Pak Hendra (Klien): Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+06/10/26, 21.56 - Sinta Wijaya: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+07/10/26, 09.02 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+07/10/26, 09.16 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+07/10/26, 09.36 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+07/10/26, 10.42 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+07/10/26, 11.10 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+07/10/26, 12.51 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+07/10/26, 12.54 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+07/10/26, 13.17 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+07/10/26, 13.33 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+07/10/26, 13.53 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+07/10/26, 13.54 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+07/10/26, 16.33 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+07/10/26, 21.07 - Bima Santoso: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+07/10/26, 21.09 - Nadia Putri: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+07/10/26, 22.41 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+08/10/26, 09.14 - Nadia Putri: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+08/10/26, 11.17 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+08/10/26, 11.20 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+08/10/26, 11.44 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+08/10/26, 14.19 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+08/10/26, 15.26 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+08/10/26, 15.28 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+08/10/26, 15.35 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+08/10/26, 15.36 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+08/10/26, 16.07 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+08/10/26, 16.25 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+08/10/26, 16.41 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+08/10/26, 18.53 - Fajar Hidayat: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+08/10/26, 21.26 - Sinta Wijaya: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+08/10/26, 22.11 - Sinta Wijaya: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+08/10/26, 22.28 - Dina Kartika: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+09/10/26, 09.41 - Dina Kartika: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+09/10/26, 09.46 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+09/10/26, 12.48 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+09/10/26, 12.59 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+09/10/26, 14.29 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+09/10/26, 14.43 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+09/10/26, 15.32 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+09/10/26, 15.39 - Nadia Putri: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+09/10/26, 15.40 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+09/10/26, 15.45 - Fajar Hidayat: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+09/10/26, 16.14 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+09/10/26, 18.21 - Fajar Hidayat: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+09/10/26, 22.48 - Sinta Wijaya: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+10/10/26, 19.48 - Pak Hendra (Klien): Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+10/10/26, 20.30 - Nadia Putri: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+11/10/26, 10.03 - Fajar Hidayat: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+11/10/26, 13.44 - Nadia Putri: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+11/10/26, 20.05 - Bima Santoso: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+12/10/26, 09.13 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+12/10/26, 09.49 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+12/10/26, 10.14 - Nadia Putri: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+12/10/26, 11.42 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+12/10/26, 12.16 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+12/10/26, 14.11 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+12/10/26, 14.13 - Nadia Putri: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+12/10/26, 15.02 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+12/10/26, 15.44 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+12/10/26, 16.12 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+12/10/26, 16.27 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+12/10/26, 16.53 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+12/10/26, 18.36 - Dina Kartika: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+12/10/26, 22.30 - Pak Hendra (Klien): Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+13/10/26, 09.00 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+13/10/26, 09.06 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+13/10/26, 09.39 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+13/10/26, 09.49 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+13/10/26, 10.14 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+13/10/26, 10.47 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+13/10/26, 11.00 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+13/10/26, 12.39 - Sinta Wijaya: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+13/10/26, 14.10 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+13/10/26, 14.16 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+13/10/26, 15.18 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+13/10/26, 15.24 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+13/10/26, 15.44 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+13/10/26, 20.21 - Sinta Wijaya: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+13/10/26, 21.10 - Raka Pratama: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+13/10/26, 21.28 - Pak Hendra (Klien): Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+13/10/26, 21.41 - Pak Hendra (Klien): Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+13/10/26, 21.53 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+13/10/26, 22.41 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+13/10/26, 23.16 - Sinta Wijaya: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+14/10/26, 09.20 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+14/10/26, 09.41 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+14/10/26, 10.52 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+14/10/26, 10.57 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+14/10/26, 11.49 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+14/10/26, 11.52 - Sinta Wijaya: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+14/10/26, 11.56 - Bima Santoso: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+14/10/26, 14.34 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+14/10/26, 15.12 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+14/10/26, 16.06 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+14/10/26, 16.25 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+14/10/26, 18.47 - Nadia Putri: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+14/10/26, 19.57 - Pak Hendra (Klien): ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+14/10/26, 21.20 - Fajar Hidayat: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+15/10/26, 09.09 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+15/10/26, 09.10 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+15/10/26, 09.12 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+15/10/26, 10.03 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+15/10/26, 10.08 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+15/10/26, 10.28 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+15/10/26, 14.29 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+15/10/26, 15.09 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+15/10/26, 15.15 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+15/10/26, 15.27 - Sinta Wijaya: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+15/10/26, 16.22 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+15/10/26, 16.25 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+15/10/26, 18.28 - Fajar Hidayat: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+15/10/26, 23.15 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+16/10/26, 10.22 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+16/10/26, 10.24 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+16/10/26, 11.20 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+16/10/26, 11.21 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+16/10/26, 12.04 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+16/10/26, 12.05 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+16/10/26, 13.01 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+16/10/26, 13.16 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+16/10/26, 13.57 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+16/10/26, 14.03 - Nadia Putri: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+16/10/26, 15.39 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+16/10/26, 16.20 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+16/10/26, 16.29 - Dina Kartika: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+16/10/26, 18.47 - Nadia Putri: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+16/10/26, 22.52 - Dina Kartika: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+17/10/26, 12.22 - Pak Hendra (Klien): Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+17/10/26, 20.04 - Dina Kartika: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+18/10/26, 19.32 - Nadia Putri: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+18/10/26, 19.51 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+18/10/26, 21.07 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+19/10/26, 09.53 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+19/10/26, 12.03 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+19/10/26, 12.05 - Nadia Putri: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+19/10/26, 12.15 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+19/10/26, 12.41 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+19/10/26, 12.41 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+19/10/26, 13.01 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+19/10/26, 13.13 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+19/10/26, 13.53 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+19/10/26, 15.58 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+19/10/26, 16.34 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+19/10/26, 16.51 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+19/10/26, 21.58 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+19/10/26, 22.32 - Raka Pratama: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+19/10/26, 22.36 - Nadia Putri: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+20/10/26, 09.09 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+20/10/26, 10.00 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+20/10/26, 10.27 - Raka Pratama: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+20/10/26, 10.52 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+20/10/26, 11.11 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+20/10/26, 13.13 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+20/10/26, 13.50 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+20/10/26, 14.26 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+20/10/26, 14.35 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+20/10/26, 15.56 - Bima Santoso: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+20/10/26, 16.51 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+20/10/26, 18.46 - Pak Hendra (Klien): Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+20/10/26, 20.46 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+20/10/26, 21.09 - Fajar Hidayat: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+20/10/26, 21.20 - Fajar Hidayat: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+20/10/26, 21.29 - Sinta Wijaya: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+20/10/26, 22.06 - Nadia Putri: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+20/10/26, 22.24 - Nadia Putri: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+21/10/26, 09.25 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+21/10/26, 09.47 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+21/10/26, 10.01 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+21/10/26, 11.01 - Fajar Hidayat: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+21/10/26, 12.57 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+21/10/26, 13.09 - Bima Santoso: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+21/10/26, 14.14 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+21/10/26, 14.47 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+21/10/26, 15.30 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+21/10/26, 15.45 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+21/10/26, 16.08 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+21/10/26, 16.51 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+21/10/26, 20.21 - Bima Santoso: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+21/10/26, 22.03 - Raka Pratama: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+22/10/26, 09.15 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+22/10/26, 11.38 - Sinta Wijaya: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+22/10/26, 11.44 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+22/10/26, 12.03 - Raka Pratama: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+22/10/26, 12.22 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+22/10/26, 12.45 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+22/10/26, 12.59 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+22/10/26, 13.36 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+22/10/26, 14.42 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+22/10/26, 15.16 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+22/10/26, 15.46 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+22/10/26, 15.54 - Dina Kartika: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+22/10/26, 21.17 - Bima Santoso: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+22/10/26, 21.27 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+23/10/26, 09.32 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+23/10/26, 10.02 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+23/10/26, 11.15 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+23/10/26, 12.07 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+23/10/26, 12.58 - Fajar Hidayat: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+23/10/26, 13.00 - Dina Kartika: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+23/10/26, 13.11 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+23/10/26, 13.35 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+23/10/26, 13.53 - Fajar Hidayat: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+23/10/26, 14.12 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+23/10/26, 16.02 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+23/10/26, 20.33 - Bima Santoso: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+23/10/26, 22.51 - Raka Pratama: Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+24/10/26, 19.40 - Nadia Putri: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+24/10/26, 20.15 - Bima Santoso: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+24/10/26, 20.51 - Dina Kartika: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+25/10/26, 19.38 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+25/10/26, 19.41 - Nadia Putri: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+26/10/26, 09.11 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+26/10/26, 10.12 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+26/10/26, 11.28 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+26/10/26, 13.09 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+26/10/26, 14.16 - Sinta Wijaya: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+26/10/26, 14.20 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+26/10/26, 14.38 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+26/10/26, 14.43 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+26/10/26, 14.45 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+26/10/26, 16.07 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+26/10/26, 16.42 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+26/10/26, 19.02 - Raka Pratama: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+26/10/26, 19.36 - Nadia Putri: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+26/10/26, 20.09 - Fajar Hidayat: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+26/10/26, 23.34 - Raka Pratama: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+27/10/26, 10.37 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+27/10/26, 10.50 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+27/10/26, 10.53 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+27/10/26, 11.39 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+27/10/26, 11.46 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+27/10/26, 12.10 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+27/10/26, 12.33 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+27/10/26, 13.02 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+27/10/26, 14.16 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+27/10/26, 15.13 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+27/10/26, 16.16 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+27/10/26, 16.47 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+27/10/26, 16.51 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+27/10/26, 19.32 - Pak Hendra (Klien): Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+27/10/26, 20.33 - Dina Kartika: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+27/10/26, 21.31 - Pak Hendra (Klien): Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+27/10/26, 21.46 - Pak Hendra (Klien): Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+27/10/26, 21.50 - Sinta Wijaya: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+27/10/26, 22.14 - Raka Pratama: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+28/10/26, 09.15 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+28/10/26, 10.01 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+28/10/26, 10.15 - Bima Santoso: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+28/10/26, 11.33 - Raka Pratama: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+28/10/26, 12.17 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+28/10/26, 13.22 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+28/10/26, 14.03 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+28/10/26, 14.37 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+28/10/26, 15.19 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+28/10/26, 16.39 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+28/10/26, 16.47 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+28/10/26, 21.00 - Fajar Hidayat: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+28/10/26, 22.10 - Dina Kartika: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+29/10/26, 09.31 - Raka Pratama: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+29/10/26, 09.40 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+29/10/26, 09.47 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+29/10/26, 10.51 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+29/10/26, 11.00 - Nadia Putri: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+29/10/26, 11.12 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+29/10/26, 11.12 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+29/10/26, 11.12 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+29/10/26, 11.22 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+29/10/26, 13.30 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+29/10/26, 14.18 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+29/10/26, 16.36 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+29/10/26, 19.03 - Nadia Putri: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+29/10/26, 20.04 - Dina Kartika: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+29/10/26, 21.48 - Raka Pratama: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+29/10/26, 22.37 - Nadia Putri: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+30/10/26, 09.40 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+30/10/26, 10.12 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+30/10/26, 11.13 - Raka Pratama: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+30/10/26, 11.13 - Sinta Wijaya: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+30/10/26, 12.17 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+30/10/26, 13.19 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+30/10/26, 13.45 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+30/10/26, 13.52 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+30/10/26, 13.54 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+30/10/26, 15.12 - Bima Santoso: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+30/10/26, 15.33 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+30/10/26, 16.53 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+30/10/26, 19.42 - Bima Santoso: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+30/10/26, 23.18 - Raka Pratama: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+31/10/26, 19.46 - Sinta Wijaya: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+31/10/26, 20.41 - Dina Kartika: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+01/11/26, 20.11 - Pak Hendra (Klien): Tolong catat untuk hari Senin: revisi besok pagi perlu memasukkan data kuartal terakhir.
+01/11/26, 21.00 - Bima Santoso: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+02/11/26, 09.52 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+02/11/26, 10.08 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+02/11/26, 11.51 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+02/11/26, 12.28 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+02/11/26, 15.00 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+02/11/26, 15.05 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+02/11/26, 15.07 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+02/11/26, 15.29 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+02/11/26, 15.48 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+02/11/26, 16.07 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+02/11/26, 16.37 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+02/11/26, 20.21 - Sinta Wijaya: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+02/11/26, 22.58 - Nadia Putri: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+02/11/26, 23.55 - Bima Santoso: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+03/11/26, 09.12 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+03/11/26, 09.48 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+03/11/26, 10.06 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+03/11/26, 10.22 - Dina Kartika: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+03/11/26, 11.25 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+03/11/26, 13.14 - Nadia Putri: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+03/11/26, 14.05 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+03/11/26, 14.27 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+03/11/26, 14.55 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+03/11/26, 15.25 - Sinta Wijaya: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+03/11/26, 16.03 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+03/11/26, 16.31 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+03/11/26, 20.13 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+03/11/26, 20.37 - Pak Hendra (Klien): Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+03/11/26, 21.08 - Raka Pratama: Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+03/11/26, 21.19 - Dina Kartika: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+03/11/26, 21.30 - Pak Hendra (Klien): Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+03/11/26, 21.43 - Pak Hendra (Klien): Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+03/11/26, 22.36 - Sinta Wijaya: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+04/11/26, 09.59 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+04/11/26, 10.06 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+04/11/26, 10.36 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+04/11/26, 10.52 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+04/11/26, 11.12 - Sinta Wijaya: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+04/11/26, 11.56 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+04/11/26, 13.10 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+04/11/26, 13.18 - Fajar Hidayat: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+04/11/26, 14.12 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+04/11/26, 15.13 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+04/11/26, 16.21 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+04/11/26, 18.20 - Raka Pratama: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+04/11/26, 18.59 - Sinta Wijaya: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+04/11/26, 21.48 - Pak Hendra (Klien): Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+05/11/26, 09.09 - Bima Santoso: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+05/11/26, 09.58 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+05/11/26, 10.31 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+05/11/26, 12.53 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+05/11/26, 13.24 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+05/11/26, 14.41 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+05/11/26, 15.04 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+05/11/26, 15.06 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+05/11/26, 16.17 - Sinta Wijaya: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+05/11/26, 16.26 - Nadia Putri: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+05/11/26, 16.30 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+05/11/26, 20.02 - Fajar Hidayat: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+05/11/26, 20.25 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+05/11/26, 20.56 - Pak Hendra (Klien): Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+05/11/26, 21.21 - Fajar Hidayat: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+06/11/26, 09.51 - Dina Kartika: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+06/11/26, 10.13 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+06/11/26, 10.20 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+06/11/26, 10.21 - Sinta Wijaya: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+06/11/26, 12.23 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+06/11/26, 12.55 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+06/11/26, 12.57 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+06/11/26, 13.39 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+06/11/26, 14.29 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+06/11/26, 16.09 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+06/11/26, 16.18 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+06/11/26, 16.57 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+06/11/26, 19.42 - Pak Hendra (Klien): Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+06/11/26, 21.50 - Pak Hendra (Klien): Maaf mengganggu malam ini ya, besok pagi klien minta pratinjau revisi lebih awal.
+06/11/26, 22.53 - Fajar Hidayat: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+07/11/26, 19.11 - Sinta Wijaya: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+07/11/26, 19.23 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+07/11/26, 19.24 - Bima Santoso: Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+08/11/26, 19.37 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+08/11/26, 21.41 - Nadia Putri: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+09/11/26, 09.20 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+09/11/26, 09.25 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+09/11/26, 09.27 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+09/11/26, 10.30 - Dina Kartika: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+09/11/26, 11.04 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+09/11/26, 12.03 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+09/11/26, 14.31 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+09/11/26, 14.56 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+09/11/26, 15.12 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+09/11/26, 15.35 - Sinta Wijaya: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+09/11/26, 16.23 - Dina Kartika: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+09/11/26, 16.39 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+09/11/26, 16.55 - Bima Santoso: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+09/11/26, 19.35 - Pak Hendra (Klien): Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+09/11/26, 22.41 - Nadia Putri: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+09/11/26, 22.56 - Bima Santoso: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+10/11/26, 09.08 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+10/11/26, 09.38 - Bima Santoso: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+10/11/26, 09.47 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+10/11/26, 10.01 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+10/11/26, 11.51 - Fajar Hidayat: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+10/11/26, 12.02 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+10/11/26, 12.49 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+10/11/26, 13.14 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+10/11/26, 13.22 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+10/11/26, 16.30 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+10/11/26, 16.33 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+10/11/26, 20.47 - Sinta Wijaya: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+10/11/26, 20.49 - Bima Santoso: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+10/11/26, 21.19 - Nadia Putri: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+10/11/26, 21.29 - Raka Pratama: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+10/11/26, 21.58 - Fajar Hidayat: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+10/11/26, 22.00 - Raka Pratama: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+11/11/26, 09.17 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+11/11/26, 09.39 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+11/11/26, 10.09 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+11/11/26, 11.21 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+11/11/26, 11.31 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+11/11/26, 12.29 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+11/11/26, 12.54 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+11/11/26, 12.56 - Raka Pratama: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+11/11/26, 13.30 - Nadia Putri: Catatan QA dari sesi siang:
+- Perbaiki ukuran font tabel di mobile
+- Pastikan kontras tombol utama tetap terbaca
+- Simpan salinan arsip di drive tim
+11/11/26, 14.34 - Sinta Wijaya: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+11/11/26, 15.19 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+11/11/26, 16.13 - Sinta Wijaya: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+11/11/26, 18.38 - Bima Santoso: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+11/11/26, 20.53 - Bima Santoso: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+11/11/26, 23.51 - Sinta Wijaya: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+12/11/26, 09.41 - Sinta Wijaya: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+12/11/26, 10.22 - Raka Pratama: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+12/11/26, 10.28 - Raka Pratama: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+12/11/26, 11.51 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+12/11/26, 11.53 - Fajar Hidayat: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+12/11/26, 12.31 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+12/11/26, 12.36 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+12/11/26, 13.16 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+12/11/26, 15.46 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+12/11/26, 15.58 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+12/11/26, 16.02 - Bima Santoso: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+12/11/26, 16.22 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+12/11/26, 16.26 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+12/11/26, 20.23 - Bima Santoso: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+12/11/26, 21.11 - Pak Hendra (Klien): Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+12/11/26, 23.22 - Raka Pratama: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+12/11/26, 23.34 - Pak Hendra (Klien): Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+13/11/26, 10.34 - Nadia Putri: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+13/11/26, 10.43 - Bima Santoso: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+13/11/26, 11.13 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+13/11/26, 12.06 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+13/11/26, 12.46 - Bima Santoso: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+13/11/26, 13.32 - Bima Santoso: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+13/11/26, 13.40 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+13/11/26, 13.58 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+13/11/26, 14.34 - Dina Kartika: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+13/11/26, 15.03 - Raka Pratama: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+13/11/26, 15.07 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+13/11/26, 15.48 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+13/11/26, 16.16 - Sinta Wijaya: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+13/11/26, 18.06 - Nadia Putri: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+13/11/26, 20.06 - Dina Kartika: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+13/11/26, 20.41 - Dina Kartika: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+13/11/26, 21.40 - Dina Kartika: Bentar aja ya, bisa tolong kirim ulang tautan folder aset yang tadi siang?
+14/11/26, 19.08 - Pak Hendra (Klien): Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+14/11/26, 21.27 - Dina Kartika: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+14/11/26, 21.34 - Raka Pratama: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+15/11/26, 13.16 - Dina Kartika: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+15/11/26, 19.05 - Bima Santoso: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+16/11/26, 09.18 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+16/11/26, 10.44 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+16/11/26, 11.45 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+16/11/26, 12.46 - Raka Pratama: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+16/11/26, 13.09 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+16/11/26, 13.31 - Nadia Putri: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+16/11/26, 13.47 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+16/11/26, 14.05 - Fajar Hidayat: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+16/11/26, 15.31 - Sinta Wijaya: Checklist unggahan hari ini:
+1. Banner desktop dan mobile
+2. Salinan teks utama
+3. Jadwal tayang pukul 16.00 WIB
+16/11/26, 15.33 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+16/11/26, 16.06 - Nadia Putri: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+16/11/26, 16.32 - Bima Santoso: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+16/11/26, 16.38 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+16/11/26, 18.35 - Pak Hendra (Klien): Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+16/11/26, 19.25 - Bima Santoso: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+16/11/26, 22.11 - Raka Pratama: Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+17/11/26, 09.53 - Sinta Wijaya: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+17/11/26, 10.10 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+17/11/26, 10.19 - Nadia Putri: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+17/11/26, 10.58 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+17/11/26, 11.50 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+17/11/26, 13.08 - Sinta Wijaya: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+17/11/26, 13.36 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+17/11/26, 13.41 - Dina Kartika: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+17/11/26, 14.46 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+17/11/26, 16.46 - Fajar Hidayat: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+17/11/26, 16.49 - Raka Pratama: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+17/11/26, 19.24 - Fajar Hidayat: Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+17/11/26, 20.56 - Fajar Hidayat: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+17/11/26, 21.22 - Fajar Hidayat: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+17/11/26, 21.24 - Bima Santoso: Ada urgensi kecil dari tim sales, mohon konfirmasi apakah file banner bisa diganti malam ini.
+17/11/26, 21.29 - Bima Santoso: Tolong cepat dibantu malam ini ya kalau sempat:
+1. Pastikan tautan PDF terbuka
+2. Perbaiki salah ketik di paragraf kedua
+17/11/26, 21.47 - Pak Hendra (Klien): Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+17/11/26, 22.37 - Pak Hendra (Klien): Halo tim, boleh cek sebentar bagian headline di slide 3? Saya baru kepikiran.
+18/11/26, 09.08 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+18/11/26, 09.38 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+18/11/26, 09.59 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+18/11/26, 11.03 - Raka Pratama: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+18/11/26, 11.47 - Dina Kartika: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+18/11/26, 12.12 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+18/11/26, 12.24 - Fajar Hidayat: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+18/11/26, 12.41 - Raka Pratama: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+18/11/26, 13.22 - Bima Santoso: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+18/11/26, 14.52 - Dina Kartika: Saya baru selesai sinkron dengan klien, detail perubahan minor sudah rapi.
+18/11/26, 15.50 - Raka Pratama: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+18/11/26, 16.30 - Fajar Hidayat: Tim operasional sudah konfirmasi jadwal pengiriman materi ke vendor.
+18/11/26, 18.57 - Pak Hendra (Klien): Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+18/11/26, 20.12 - Pak Hendra (Klien): Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+18/11/26, 20.59 - Sinta Wijaya: Pakai versi terbaru saja, revisi besok pagi harus sudah siap di inbox klien pukul 08.30.
+18/11/26, 22.37 - Raka Pratama: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+19/11/26, 10.49 - Nadia Putri: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+19/11/26, 11.36 - Sinta Wijaya: Revisi minor pada layout laporan bulanan sudah selesai diperbarui.
+19/11/26, 11.39 - Nadia Putri: Status kampanye mingguan berjalan sesuai target dan CTR stabil.
+19/11/26, 11.43 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+19/11/26, 12.19 - Nadia Putri: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+19/11/26, 13.12 - Sinta Wijaya: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+19/11/26, 14.01 - Dina Kartika: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+19/11/26, 14.08 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+19/11/26, 14.22 - Bima Santoso: Copy untuk unggahan Instagram besok sudah final dan siap naik.
+19/11/26, 15.53 - Dina Kartika: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+19/11/26, 16.27 - Fajar Hidayat: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+19/11/26, 21.04 - Dina Kartika: ASAP ya tim, tolong segera pastikan copy untuk materi promo sudah sesuai brief.
+19/11/26, 22.02 - Dina Kartika: Malam, saya baru sempat baca dokumen tadi. Tolong cek sebentar komentar di halaman dua.
+19/11/26, 23.04 - Dina Kartika: Segera kabari kalau ekspor videonya sudah selesai malam ini agar bisa saya teruskan.
+20/11/26, 09.23 - Dina Kartika: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+20/11/26, 10.22 - Nadia Putri: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+20/11/26, 11.55 - Nadia Putri: Saya lanjutkan sinkronisasi aset dengan tim video sampai jam makan siang.
+20/11/26, 12.08 - Bima Santoso: Ringkasan hasil rapat pagi:
+- Finalisasi materi visual paling lambat Kamis
+- Uji tautan formulir pendaftaran
+- Kirim laporan mingguan ke manajer
+20/11/26, 12.23 - Bima Santoso: Siang, mohon bantu review tabel anggaran Q4 sebelum pukul 15.00 WIB.
+20/11/26, 12.43 - Sinta Wijaya: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+20/11/26, 12.45 - Fajar Hidayat: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+20/11/26, 13.37 - Raka Pratama: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+20/11/26, 13.41 - Dina Kartika: File master PDF sudah saya ekspor dengan resolusi cetak 300 dpi.
+20/11/26, 13.53 - Fajar Hidayat: Link pratinjau staging sudah diperbarui untuk pengecekan QA sore ini.
+20/11/26, 14.17 - Dina Kartika: Terima kasih, catatan dari rapat pagi sudah saya rangkum di dokumen proyek.
+20/11/26, 14.58 - Fajar Hidayat: Pagi tim, jadwal standup kita mulai pukul 09.15 di ruang rapat ya.
+20/11/26, 16.29 - Bima Santoso: Draft desain halaman promo sudah saya taruh di folder bersama, silakan dicek.
+20/11/26, 22.26 - Dina Kartika: Tolong cepat bantu lihat draf lampiran tadi, ada angka yang sepertinya perlu disesuaikan.
+20/11/26, 22.33 - Dina Kartika: Titip catatan revisi besok pagi ya:
+- Ganti foto utama di slide pertama
+- Perbesar angka ringkasan biaya
+- Cek sebentar sebelum rapat jam 09.00
+20/11/26, 22.59 - Bima Santoso: Maaf kirim di luar jam kerja, ini untuk persiapan presentasi besok pagi.
+21/11/26, 11.52 - Pak Hendra (Klien): Saya baru ingat materi presentasi Senin, kalau sempat tolong segera siapkan foldernya.
+21/11/26, 14.51 - Dina Kartika: Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+21/11/26, 19.06 - Nadia Putri: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
+22/11/26, 11.50 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+22/11/26, 12.20 - Pak Hendra (Klien): Halo tim, ada sedikit perubahan brief dari Pak Hendra untuk dibahas Senin pagi.
+22/11/26, 21.07 - Nadia Putri: Maaf chat hari libur, nanti Senin pagi tolong cek sebentar jadwal tayang iklan ya.
