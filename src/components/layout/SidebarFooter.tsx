@@ -5,6 +5,15 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Loader2, LogOut } from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   DEMO_ACTORS,
   getDemoActorConfig,
@@ -31,6 +40,7 @@ function getInitials(name: string): string {
 export function SidebarFooter({ mode, user, onNavigate }: SidebarFooterProps) {
   const router = useRouter();
   const [selectedActor, setSelectedActor] = useState<DemoActorRole>("OWNER");
+  const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [isEnteringDemo, setIsEnteringDemo] = useState(false);
 
@@ -46,6 +56,7 @@ export function SidebarFooter({ mode, user, onNavigate }: SidebarFooterProps) {
         return;
       }
       clearShellContextCache();
+      setConfirmLogoutOpen(false);
       toast.success("Berhasil keluar dari workspace.");
       onNavigate?.();
       router.push("/auth/login");
@@ -94,34 +105,87 @@ export function SidebarFooter({ mode, user, onNavigate }: SidebarFooterProps) {
 
   if (mode === "authenticated" && user) {
     return (
-      <div className="mt-6 flex items-center justify-between gap-2 border-t border-border-hairline pt-4">
-        <div className="flex min-w-0 items-center gap-2.5">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand-border bg-brand-soft font-mono text-xs font-medium text-brand">
-            {getInitials(user.fullName)}
+      <>
+        <div className="mt-6 flex items-center justify-between gap-2 border-t border-border-hairline pt-4">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand-border bg-brand-soft font-mono text-xs font-medium text-brand">
+              {getInitials(user.fullName)}
+            </div>
+            <div className="min-w-0">
+              <p className="truncate text-xs font-medium text-ink-primary">
+                {user.fullName}
+              </p>
+              <p className="truncate text-[11px] text-ink-secondary">
+                {user.roleTitle}
+              </p>
+            </div>
           </div>
-          <div className="min-w-0">
-            <p className="truncate text-xs font-medium text-ink-primary">
-              {user.fullName}
-            </p>
-            <p className="truncate text-[11px] text-ink-secondary">
-              {user.roleTitle}
-            </p>
-          </div>
+          <button
+            type="button"
+            onClick={() => setConfirmLogoutOpen(true)}
+            disabled={isLoggingOut}
+            aria-label="Keluar dari akun"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-ink-secondary transition-colors hover:bg-surface-muted hover:text-ink-primary disabled:opacity-50"
+          >
+            {isLoggingOut ? (
+              <Loader2 className="h-4 w-4 animate-spin" strokeWidth={1.5} aria-hidden="true" />
+            ) : (
+              <LogOut className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+            )}
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={handleLogout}
-          disabled={isLoggingOut}
-          aria-label="Keluar dari akun"
-          className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-ink-secondary transition-colors hover:bg-surface-muted hover:text-ink-primary disabled:opacity-50"
+
+        <Dialog
+          open={confirmLogoutOpen}
+          onOpenChange={(nextOpen) => {
+            if (!isLoggingOut) {
+              setConfirmLogoutOpen(nextOpen);
+            }
+          }}
         >
-          {isLoggingOut ? (
-            <Loader2 className="h-4 w-4 animate-spin" strokeWidth={1.5} aria-hidden="true" />
-          ) : (
-            <LogOut className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-          )}
-        </button>
-      </div>
+          <DialogContent className="border border-border-hairline bg-surface sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-base font-semibold text-ink-primary">
+                Konfirmasi Keluar Akun
+              </DialogTitle>
+              <DialogDescription className="text-sm text-ink-secondary">
+                Apakah Anda yakin ingin keluar dari akun {user.fullName}? Sesi
+                workspace saat ini akan diakhiri.
+              </DialogDescription>
+            </DialogHeader>
+
+            <DialogFooter className="border-border-hairline bg-canvas">
+              <Button
+                type="button"
+                variant="outline"
+                disabled={isLoggingOut}
+                onClick={() => setConfirmLogoutOpen(false)}
+              >
+                Batal
+              </Button>
+              <Button
+                type="button"
+                variant="destructive"
+                disabled={isLoggingOut}
+                onClick={handleLogout}
+                className="bg-danger text-white hover:bg-danger/90"
+              >
+                {isLoggingOut ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" strokeWidth={1.5} aria-hidden="true" />
+                    <span>Keluar...</span>
+                  </>
+                ) : (
+                  <>
+                    <LogOut className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                    <span>Ya, Logout</span>
+                  </>
+                )}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </>
     );
   }
 
