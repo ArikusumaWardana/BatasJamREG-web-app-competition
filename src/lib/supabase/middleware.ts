@@ -10,9 +10,10 @@ export async function updateSession(
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!url || !anonKey) {
-    throw new Error(
-      "Konfigurasi NEXT_PUBLIC_SUPABASE_URL dan NEXT_PUBLIC_SUPABASE_ANON_KEY wajib diisi."
+    console.error(
+      "[middleware] Konfigurasi NEXT_PUBLIC_SUPABASE_URL atau NEXT_PUBLIC_SUPABASE_ANON_KEY belum diatur."
     );
+    return { supabaseResponse: NextResponse.next({ request }), user: null };
   }
 
   let supabaseResponse = NextResponse.next({ request });
@@ -37,9 +38,14 @@ export async function updateSession(
     },
   });
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-  return { supabaseResponse, user };
+    return { supabaseResponse, user };
+  } catch (error) {
+    console.error("[middleware] Gagal memeriksa sesi Supabase:", error);
+    return { supabaseResponse, user: null };
+  }
 }

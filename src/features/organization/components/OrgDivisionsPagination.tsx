@@ -7,6 +7,7 @@ interface OrgDivisionsPaginationProps {
   totalPages: number;
   totalItems: number;
   pageSize: number;
+  itemLabel?: string;
   onPageChange: (page: number) => void;
 }
 
@@ -15,6 +16,7 @@ export function OrgDivisionsPagination({
   totalPages,
   totalItems,
   pageSize,
+  itemLabel = "divisi",
   onPageChange,
 }: OrgDivisionsPaginationProps) {
   if (totalItems === 0) return null;
@@ -25,11 +27,11 @@ export function OrgDivisionsPagination({
 
   return (
     <nav
-      aria-label="Navigasi halaman daftar divisi"
+      aria-label={`Navigasi halaman daftar ${itemLabel}`}
       className="mt-4 flex flex-col gap-3 border-t border-border-hairline pt-4 sm:flex-row sm:items-center sm:justify-between"
     >
       <p className="font-mono text-xs tabular-nums text-ink-secondary">
-        Menampilkan {startItem}-{endItem} dari {totalItems} divisi
+        Menampilkan {startItem}-{endItem} dari {totalItems} {itemLabel}
       </p>
 
       <div className="flex flex-wrap items-center gap-1.5">

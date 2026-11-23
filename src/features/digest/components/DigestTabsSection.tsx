@@ -18,12 +18,15 @@ interface DigestTabsSectionProps {
   userId: string | null;
   isAdmin: boolean;
   deselectedIds: Set<string>;
+  selectedEmergencyCardId: string | null;
   deletingCardId: string | null;
   reviewingCardId: string | null;
   onTabChange: (tab: DigestTabKey) => void;
   onRetry: () => void;
   onCreateNew: () => void;
   onToggleSelect: (cardId: string, checked: boolean) => void;
+  onSelectEmergencyCard: (cardId: string) => void;
+  onCopyEmergencyCard: (card: DigestCardItem) => void;
   onEdit: (card: DigestCardItem) => void;
   onDelete: (cardId: string) => void;
   onReviewEmergency: (
@@ -42,12 +45,15 @@ export function DigestTabsSection({
   userId,
   isAdmin,
   deselectedIds,
+  selectedEmergencyCardId,
   deletingCardId,
   reviewingCardId,
   onTabChange,
   onRetry,
   onCreateNew,
   onToggleSelect,
+  onSelectEmergencyCard,
+  onCopyEmergencyCard,
   onEdit,
   onDelete,
   onReviewEmergency,
@@ -96,11 +102,14 @@ export function DigestTabsSection({
               userId={userId}
               isAdmin={isAdmin}
               deselectedIds={deselectedIds}
+              selectedEmergencyCardId={selectedEmergencyCardId}
               deletingCardId={deletingCardId}
               reviewingCardId={reviewingCardId}
               onRetry={onRetry}
               onCreateNew={onCreateNew}
               onToggleSelect={onToggleSelect}
+              onSelectEmergencyCard={onSelectEmergencyCard}
+              onCopyEmergencyCard={onCopyEmergencyCard}
               onEdit={onEdit}
               onDelete={onDelete}
               onReviewEmergency={onReviewEmergency}

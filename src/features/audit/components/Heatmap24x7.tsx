@@ -12,6 +12,20 @@ import type { AuditConfig } from "../types";
 interface Heatmap24x7Props {
   matrix: number[][] | null;
   config: AuditConfig;
+  periodStart?: string;
+  periodEnd?: string;
+}
+
+const SHORT_MONTHS_ID = [
+  "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
+  "Jul", "Agu", "Sep", "Okt", "Nov", "Des",
+];
+
+function formatPeriodDateId(ymd: string): string {
+  const [y, m, d] = ymd.split("-");
+  const monthIdx = Number(m) - 1;
+  const monthLabel = SHORT_MONTHS_ID[monthIdx] ?? m;
+  return `${Number(d)} ${monthLabel} ${y}`;
 }
 
 const HOURS = Array.from({ length: 24 }, (_, idx) => idx);
@@ -34,7 +48,12 @@ function getHeatClass(count: number, maxAfterHours: number, isRegular: boolean):
   return "bg-heat-1 text-ink-primary";
 }
 
-export function Heatmap24x7({ matrix, config }: Heatmap24x7Props) {
+export function Heatmap24x7({
+  matrix,
+  config,
+  periodStart,
+  periodEnd,
+}: Heatmap24x7Props) {
   const [hoveredCell, setHoveredCell] = useState<{
     dayIdx: number;
     hour: number;
@@ -79,10 +98,19 @@ export function Heatmap24x7({ matrix, config }: Heatmap24x7Props) {
     >
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
         <div>
-          <h2 className="text-base font-semibold text-ink-primary">
-            Heatmap Interupsi 24x7
-          </h2>
-          <p className="text-xs text-ink-secondary">
+          <div className="flex flex-wrap items-center gap-2">
+            <h2 className="text-base font-semibold text-ink-primary">
+              Heatmap Interupsi 24x7
+            </h2>
+            {periodStart && periodEnd ? (
+              <span className="rounded-full border border-border-hairline bg-canvas px-2.5 py-0.5 font-mono text-[11px] font-medium tabular-nums text-ink-secondary">
+                Periode: {formatPeriodDateId(periodStart)} -{" "}
+                {formatPeriodDateId(periodEnd)}
+              </span>
+            ) : null}
+          </div>
+          <p className="mt-0.5 text-xs text-ink-secondary">
+            Kolom 00-23 menunjukkan jam (00:00-23:59 {tzLabel}) per hari.
             Koridor garis putus-putus menandai jam reguler (
             {formatTimeHHMM(config.work_start_time)}-
             {formatTimeHHMM(config.work_end_time)} {tzLabel}).
@@ -121,7 +149,7 @@ export function Heatmap24x7({ matrix, config }: Heatmap24x7Props) {
         <div className="flex min-w-[760px] flex-col gap-1">
           <div className="grid grid-cols-[68px_repeat(24,minmax(0,1fr))] items-center gap-1 pb-1">
             <span className="font-mono text-[11px] font-medium text-ink-secondary">
-              Hari
+              Hari / Jam
             </span>
             {HOURS.map((hour) => {
               const isStartRange = hour * 60 >= startMin && hour * 60 < endMin;

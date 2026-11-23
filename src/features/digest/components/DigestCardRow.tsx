@@ -1,25 +1,22 @@
 "use client";
 
-import {
-  AlertTriangle,
-  CheckCircle2,
-  Clock,
-  Loader2,
-  Pencil,
-  Trash2,
-} from "lucide-react";
+import { AlertTriangle, Loader2, Pencil, Trash2 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import type { DigestCardItem, EmergencyReviewStatus } from "../types";
+import { DigestEmergencyActions } from "./DigestEmergencyActions";
 
 interface DigestCardRowProps {
   card: DigestCardItem;
   selectable: boolean;
   isSelected: boolean;
+  isPreviewSelected?: boolean;
   canManage: boolean;
   canReviewEmergency: boolean;
   isDeleting: boolean;
   isReviewing: boolean;
   onToggleSelect: (cardId: string, checked: boolean) => void;
+  onSelectPreview?: (cardId: string) => void;
+  onCopyEmergency?: (card: DigestCardItem) => void;
   onEdit: (card: DigestCardItem) => void;
   onDelete: (cardId: string) => void;
   onReviewEmergency: (
@@ -57,11 +54,14 @@ export function DigestCardRow({
   card,
   selectable,
   isSelected,
+  isPreviewSelected = false,
   canManage,
   canReviewEmergency,
   isDeleting,
   isReviewing,
   onToggleSelect,
+  onSelectPreview,
+  onCopyEmergency,
   onEdit,
   onDelete,
   onReviewEmergency,
@@ -70,6 +70,7 @@ export function DigestCardRow({
   const isDispatched = card.status === "DISPATCHED";
   const reviewStatus = card.emergency_review_status ?? "PENDING";
   const reviewMeta = getReviewMeta(reviewStatus);
+  const canPreviewEmergency = Boolean(isEmergency && onSelectPreview);
 
   const badgeStyle = isDispatched
     ? "bg-safe-soft text-safe"
@@ -83,8 +84,22 @@ export function DigestCardRow({
       ? "Darurat Operasional"
       : "Antrean Pagi";
 
+  const borderCls =
+    canPreviewEmergency && isPreviewSelected
+      ? "border-danger ring-1 ring-danger/30"
+      : canPreviewEmergency
+        ? "cursor-pointer border-border-hairline transition-colors hover:border-danger/40"
+        : "border-border-hairline";
+
   return (
-    <article className="flex flex-col gap-2.5 rounded-lg border border-border-hairline bg-surface p-4">
+    <article
+      onClick={
+        canPreviewEmergency && onSelectPreview
+          ? () => onSelectPreview(card.id)
+          : undefined
+      }
+      className={`flex flex-col gap-2.5 rounded-lg border bg-surface p-4 ${borderCls}`}
+    >
       <div className="flex items-start justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
           {selectable ? (
@@ -121,7 +136,10 @@ export function DigestCardRow({
             <button
               type="button"
               disabled={isDeleting}
-              onClick={() => onEdit(card)}
+              onClick={(e) => {
+                e.stopPropagation();
+                onEdit(card);
+              }}
               aria-label={`Ubah instruksi ${card.title}`}
               className="inline-flex h-8 w-8 items-center justify-center rounded text-ink-secondary transition-colors hover:bg-surface-muted hover:text-ink-primary disabled:opacity-50"
             >
@@ -130,7 +148,10 @@ export function DigestCardRow({
             <button
               type="button"
               disabled={isDeleting}
-              onClick={() => onDelete(card.id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(card.id);
+              }}
               aria-label={`Hapus instruksi ${card.title}`}
               className="inline-flex h-8 w-8 items-center justify-center rounded text-ink-secondary transition-colors hover:bg-danger-soft hover:text-danger disabled:opacity-50"
             >
@@ -160,32 +181,16 @@ export function DigestCardRow({
         </div>
       ) : null}
 
-      {isEmergency && canReviewEmergency ? (
-        <div className="flex flex-wrap items-center gap-2 pt-1">
-          <button
-            type="button"
-            disabled={isReviewing || reviewStatus === "VALID_EMERGENCY"}
-            onClick={() => onReviewEmergency(card.id, "VALID_EMERGENCY")}
-            className="inline-flex min-h-[36px] items-center gap-1.5 rounded-md border border-safe/30 bg-safe-soft px-3 py-1.5 text-xs font-medium text-safe transition-colors hover:bg-safe-soft/80 disabled:opacity-50"
-          >
-            {isReviewing ? (
-              <Loader2 className="h-3.5 w-3.5 animate-spin" strokeWidth={1.5} aria-hidden="true" />
-            ) : (
-              <CheckCircle2 className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
-            )}
-            <span>Tandai Darurat Valid</span>
-          </button>
-
-          <button
-            type="button"
-            disabled={isReviewing || reviewStatus === "SHOULD_BE_QUEUED"}
-            onClick={() => onReviewEmergency(card.id, "SHOULD_BE_QUEUED")}
-            className="inline-flex min-h-[36px] items-center gap-1.5 rounded-md border border-border-hairline bg-canvas px-3 py-1.5 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
-          >
-            <Clock className="h-3.5 w-3.5 text-danger" strokeWidth={1.5} aria-hidden="true" />
-            <span>Seharusnya Antrean Pagi</span>
-          </button>
-        </div>
+      {isEmergency && onSelectPreview && onCopyEmergency ? (
+        <DigestEmergencyActions
+          card={card}
+          isPreviewSelected={isPreviewSelected}
+          canReviewEmergency={canReviewEmergency}
+          isReviewing={isReviewing}
+          onSelectPreview={onSelectPreview}
+          onCopyEmergency={onCopyEmergency}
+          onReviewEmergency={onReviewEmergency}
+        />
       ) : null}
 
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border-hairline pt-2 font-mono text-[11px] tabular-nums text-ink-secondary">

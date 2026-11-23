@@ -2,17 +2,21 @@ import { describe, expect, it } from "vitest";
 import type { DigestCardItem } from "../types";
 import {
   filterDigestCardsByTab,
+  formatEmergencyWhatsAppMessage,
   formatMorningDigestWhatsApp,
 } from "./wa-formatter";
 
-const SAMPLE_CARDS: DigestCardItem[] = [
-  {
-    id: "card-1",
+function makeCard(
+  id: string,
+  overrides: Partial<DigestCardItem>
+): DigestCardItem {
+  return {
+    id,
     workspace_id: "ws-1",
     author_id: "user-1",
     author_name: "Raka Pratama",
-    title: "Revisi copywriting landing page",
-    body: "Cek bagian FAQ\ndan sesuaikan subjudul sebelum rapat pukul 11.00 WIB.",
+    title: "Judul instruksi",
+    body: "Isi instruksi.",
     recipient_label: "Tim Konten",
     triage_type: "MORNING_QUEUE",
     emergency_reason: null,
@@ -21,60 +25,41 @@ const SAMPLE_CARDS: DigestCardItem[] = [
     dispatched_at: null,
     created_at: "2026-11-22T21:00:00.000Z",
     updated_at: "2026-11-22T21:00:00.000Z",
-  },
-  {
-    id: "card-2",
-    workspace_id: "ws-1",
+    ...overrides,
+  };
+}
+
+const SAMPLE_CARDS: DigestCardItem[] = [
+  makeCard("card-1", {
+    title: "Revisi copywriting landing page",
+    body: "Cek bagian FAQ\ndan sesuaikan subjudul sebelum rapat pukul 11.00 WIB.",
+    recipient_label: "Tim Konten",
+  }),
+  makeCard("card-2", {
     author_id: "user-2",
     author_name: "Dina Kartika",
     title: "Pembaruan banner promo desktop",
     body: "Gunakan rasio 16:9 pada hero banner terbaru.",
     recipient_label: "Tim Desain",
-    triage_type: "MORNING_QUEUE",
-    emergency_reason: null,
-    status: "QUEUED",
-    scheduled_for: "2026-11-23",
-    dispatched_at: null,
-    created_at: "2026-11-22T21:30:00.000Z",
-    updated_at: "2026-11-22T21:30:00.000Z",
-  },
-  {
-    id: "card-3",
-    workspace_id: "ws-1",
-    author_id: "user-1",
-    author_name: "Raka Pratama",
+  }),
+  makeCard("card-3", {
     title: "Pemulihan callback gateway pembayaran",
     body: "Cek log error 502 server produksi.",
     recipient_label: "Tim Teknis",
     triage_type: "EMERGENCY_OPS",
-    emergency_reason: "Layanan transaksi produksi tertahan sejak pukul 21.15 WIB.",
-    status: "QUEUED",
+    emergency_reason:
+      "Layanan transaksi produksi tertahan sejak pukul 21.15 WIB.",
     scheduled_for: "2026-11-22",
-    dispatched_at: null,
-    created_at: "2026-11-22T21:40:00.000Z",
-    updated_at: "2026-11-22T21:40:00.000Z",
-  },
-  {
-    id: "card-4",
-    workspace_id: "ws-1",
-    author_id: "user-1",
-    author_name: "Raka Pratama",
+  }),
+  makeCard("card-4", {
     title: "Konfirmasi vendor cetak kalender",
     body: "Pilih vendor terbaik saat diskusi pagi.",
     recipient_label: "Tim Operasional",
-    triage_type: "MORNING_QUEUE",
-    emergency_reason: null,
     status: "DISPATCHED",
     scheduled_for: "2026-11-22",
     dispatched_at: "2026-11-22T01:30:00.000Z",
-    created_at: "2026-11-21T20:00:00.000Z",
-    updated_at: "2026-11-22T01:30:00.000Z",
-  },
-  {
-    id: "card-5",
-    workspace_id: "ws-1",
-    author_id: "user-1",
-    author_name: "Raka Pratama",
+  }),
+  makeCard("card-5", {
     title: "Insiden lama terarsip",
     body: "Sudah selesai minggu lalu.",
     recipient_label: "Tim Teknis",
@@ -82,10 +67,7 @@ const SAMPLE_CARDS: DigestCardItem[] = [
     emergency_reason: "Gangguan DNS sementara minggu lalu sudah ditangani.",
     status: "ARCHIVED",
     scheduled_for: "2026-11-15",
-    dispatched_at: null,
-    created_at: "2026-11-15T20:00:00.000Z",
-    updated_at: "2026-11-16T02:00:00.000Z",
-  },
+  }),
 ];
 
 describe("formatMorningDigestWhatsApp", () => {
@@ -150,6 +132,89 @@ describe("formatMorningDigestWhatsApp", () => {
 
     expect(wibText).toContain("(23 Nov 2026)");
     expect(witText).toContain("(24 Nov 2026)");
+  });
+
+  it("mengabaikan kartu EMERGENCY_OPS dan kartu yang sudah berstatus DISPATCHED", () => {
+    const formatted = formatMorningDigestWhatsApp({
+      workspaceName: "Tim Kreatif Nusantara",
+      cards: SAMPLE_CARDS,
+      date: new Date("2026-11-23T01:30:00.000Z"),
+    });
+
+    expect(formatted).toContain("1. [Tim Konten] Revisi copywriting landing page");
+    expect(formatted).toContain("2. [Tim Desain] Pembaruan banner promo desktop");
+    expect(formatted).toContain("Total: 2 instruksi siap dikerjakan");
+    expect(formatted).not.toContain("Pemulihan callback gateway pembayaran");
+    expect(formatted).not.toContain("Konfirmasi vendor cetak kalender");
+    expect(formatted).not.toContain("Insiden lama terarsip");
+  });
+
+  it("mengembalikan string kosong jika seluruh kartu bukan MORNING_QUEUE berstatus QUEUED", () => {
+    const formatted = formatMorningDigestWhatsApp({
+      workspaceName: "Tim Kreatif Nusantara",
+      cards: [SAMPLE_CARDS[2], SAMPLE_CARDS[3], SAMPLE_CARDS[4]],
+    });
+
+    expect(formatted).toBe("");
+  });
+});
+
+describe("formatEmergencyWhatsAppMessage", () => {
+  it("memformat pesan darurat lengkap dengan alasan darurat dan catatan tanpa em-dash", () => {
+    const formatted = formatEmergencyWhatsAppMessage(
+      SAMPLE_CARDS[2],
+      "Tim Kreatif Nusantara"
+    );
+
+    expect(formatted).toBe(
+      [
+        "*[DARURAT OPERASIONAL - Tim Kreatif Nusantara]*",
+        "Instruksi: Pemulihan callback gateway pembayaran",
+        "PIC: Tim Teknis",
+        "Alasan Darurat: Layanan transaksi produksi tertahan sejak pukul 21.15 WIB.",
+        "Catatan: Cek log error 502 server produksi.",
+        "",
+        "(Tercatat pada Audit Darurat BatasJamREG)",
+      ].join("\n")
+    );
+    expect(formatted).not.toContain("\u2014");
+  });
+
+  it("menghilangkan baris Catatan saat description dan body kosong serta memakai fallback PIC", () => {
+    const formatted = formatEmergencyWhatsAppMessage(
+      {
+        title: "Server gateway tidak merespons",
+        assignee_name: " ",
+        recipient_label: "",
+        emergency_reason: "Checkout pelanggan gagal 502.",
+        description: "   ",
+      },
+      "PT Maju Jaya"
+    );
+
+    expect(formatted).toContain("*[DARURAT OPERASIONAL - PT Maju Jaya]*");
+    expect(formatted).toContain("PIC: Tim terkait");
+    expect(formatted).toContain("Alasan Darurat: Checkout pelanggan gagal 502.");
+    expect(formatted).not.toContain("Catatan:");
+    expect(formatted).toContain("(Tercatat pada Audit Darurat BatasJamREG)");
+    expect(formatted).not.toContain("\u2014");
+  });
+
+  it("menormalkan em-dash dan baris baru pada field alias assignee_name dan description", () => {
+    const formatted = formatEmergencyWhatsAppMessage(
+      {
+        title: "Patch hotfix autentikasi \u2014 sesi token",
+        assignee_name: "Tim Backend",
+        emergency_reason: "Login produksi gagal 100%",
+        description: "Cek env\ndan restart worker.",
+      },
+      "Divisi Platform"
+    );
+
+    expect(formatted).toContain("Instruksi: Patch hotfix autentikasi - sesi token");
+    expect(formatted).toContain("PIC: Tim Backend");
+    expect(formatted).toContain("Catatan: Cek env dan restart worker.");
+    expect(formatted).not.toContain("\u2014");
   });
 });
 

@@ -2,8 +2,19 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, Copy, Loader2, MessageSquareText, Send } from "lucide-react";
+import {
+  Check,
+  Clock,
+  Copy,
+  Loader2,
+  MessageSquareText,
+  Send,
+} from "lucide-react";
 import { toast } from "sonner";
+import {
+  formatTimeHHMM,
+  getTimezoneShortLabel,
+} from "@/lib/constants/work-hours";
 import { formatMorningDigestWhatsApp } from "../lib/wa-formatter";
 import type { DigestCardItem } from "../types";
 
@@ -11,6 +22,7 @@ interface DigestFormatterPanelProps {
   workspaceId: string | null;
   workspaceName: string;
   timezone: string;
+  dispatchTime: string;
   queuedCards: DigestCardItem[];
   selectedCards: DigestCardItem[];
   onSelectAll: () => void;
@@ -22,6 +34,7 @@ export function DigestFormatterPanel({
   workspaceId,
   workspaceName,
   timezone,
+  dispatchTime,
   queuedCards,
   selectedCards,
   onSelectAll,
@@ -104,24 +117,32 @@ export function DigestFormatterPanel({
     }
   }
 
+  const dispatchTimeLabel = `${formatTimeHHMM(dispatchTime)} ${getTimezoneShortLabel(timezone)}`;
+
   return (
     <aside className="lg:col-span-4 lg:sticky lg:top-8">
-      <article className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5">
+      <article className="flex flex-col gap-4 rounded-lg border border-brand-border bg-surface p-5">
         <div className="flex flex-col gap-1.5">
-          <span className="text-xs font-medium text-ink-secondary">
+          <span className="text-xs font-medium text-brand">
             Generator Morning Digest
           </span>
           <div className="flex items-center gap-2">
             <MessageSquareText className="h-4 w-4 shrink-0 text-brand" strokeWidth={1.5} aria-hidden="true" />
             <h2 className="text-base font-semibold text-ink-primary">
-              Pratinjau Format WhatsApp
+              Format Morning Digest
             </h2>
           </div>
 
-          <div className="flex items-center justify-between gap-2 pt-1">
-            <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
-              {selectedCards.length} Kartu Dipilih
-            </span>
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
+                {selectedCards.length} Kartu Dipilih
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full border border-brand-border bg-brand-soft px-2.5 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
+                <Clock className="h-3 w-3 shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                <span>Jadwal {dispatchTimeLabel}</span>
+              </span>
+            </div>
 
             {queuedCards.length > 0 ? (
               <div className="flex items-center gap-2 text-xs">
@@ -165,7 +186,7 @@ export function DigestFormatterPanel({
             ) : (
               <>
                 <Copy className="h-4 w-4 shrink-0 text-ink-secondary" strokeWidth={1.5} aria-hidden="true" />
-                <span>Salin Teks ke Clipboard</span>
+                <span>Salin Format Digest</span>
               </>
             )}
           </button>
@@ -184,7 +205,7 @@ export function DigestFormatterPanel({
             ) : (
               <>
                 <Send className="h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
-                <span>Salin & Tandai Terkirim</span>
+                <span>Tandai Terkirim (Dispatch)</span>
               </>
             )}
           </button>

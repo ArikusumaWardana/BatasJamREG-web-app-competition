@@ -1,11 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { AlertCircle } from "lucide-react";
 import { toast } from "sonner";
-import { PageLoadingOverlay } from "@/components/layout/PageLoadingOverlay";
 import type { WorkspaceListItem } from "@/features/workspace/types";
 import {
   getStoredActiveWorkspaceId,
@@ -17,16 +14,21 @@ import {
   loadActiveWorkspaceContext,
   reviewEmergencyCardRequest,
 } from "../lib/digest-api";
-import { filterDigestCardsByTab } from "../lib/wa-formatter";
+import {
+  filterDigestCardsByTab,
+  formatEmergencyWhatsAppMessage,
+} from "../lib/wa-formatter";
 import type {
   DigestCardItem,
   DigestTabKey,
   EmergencyReviewStatus,
 } from "../types";
 import { CreateDigestCardDialog } from "./CreateDigestCardDialog";
+import { DigestBoardFallback } from "./DigestBoardFallback";
 import { DigestFormatterPanel } from "./DigestFormatterPanel";
 import { DigestHeaderBanner } from "./DigestHeaderBanner";
 import { DigestTabsSection } from "./DigestTabsSection";
+import { EmergencyWhatsAppPreview } from "./EmergencyWhatsAppPreview";
 
 export function DigestBoardClient() {
   const router = useRouter();
@@ -39,6 +41,9 @@ export function DigestBoardClient() {
 
   const [activeTab, setActiveTab] = useState<DigestTabKey>("MORNING_QUEUE");
   const [deselectedIds, setDeselectedIds] = useState<Set<string>>(new Set());
+  const [selectedEmergencyCardId, setSelectedEmergencyCardId] = useState<
+    string | null
+  >(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingCard, setEditingCard] = useState<DigestCardItem | null>(null);
   const [deletingCardId, setDeletingCardId] = useState<string | null>(null);
@@ -70,45 +75,8 @@ export function DigestBoardClient() {
     refreshCards,
   } = useRealtimeDigest(workspace?.id ?? null);
 
-  if (wsLoading) {
-    return (
-      <PageLoadingOverlay
-        variant="panel"
-        message="Sedang memuat papan Morning Digest..."
-      />
-    );
-  }
-
-  if (wsError) {
-    return (
-      <div className="flex flex-col items-start gap-3 rounded-lg border border-border-hairline bg-surface p-6">
-        <div className="flex items-center gap-2 text-danger">
-          <AlertCircle className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
-          <h1 className="text-base font-semibold">Gagal Memuat Papan Digest</h1>
-        </div>
-        <p className="text-sm text-ink-secondary">{wsError}</p>
-      </div>
-    );
-  }
-
-  if (!workspace) {
-    return (
-      <div className="mx-auto max-w-xl rounded-lg border border-border-hairline bg-surface p-6">
-        <h1 className="text-xl font-bold text-ink-primary">
-          Belum Ada Workspace Aktif
-        </h1>
-        <p className="mt-2 text-sm text-ink-secondary">
-          Bergabung ke workspace atau buat tim baru terlebih dahulu di halaman
-          Ringkasan Tim sebelum mengelola Morning Digest.
-        </p>
-        <Link
-          href="/workspace"
-          className="mt-4 inline-flex min-h-[40px] items-center rounded-md bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover"
-        >
-          Buka Ringkasan Tim
-        </Link>
-      </div>
-    );
+  if (wsLoading || wsError || !workspace) {
+    return <DigestBoardFallback wsLoading={wsLoading} wsError={wsError} />;
   }
 
   const morningCards = filterDigestCardsByTab(cards, "MORNING_QUEUE");
@@ -117,7 +85,23 @@ export function DigestBoardClient() {
   const selectedMorningCards = morningCards.filter(
     (item) => !deselectedIds.has(item.id)
   );
+  const activeEmergencyCard =
+    emergencyCards.find((item) => item.id === selectedEmergencyCardId) ??
+    emergencyCards[0] ??
+    null;
   const isAdmin = workspace.role === "OWNER" || workspace.role === "LEAD";
+
+  async function handleCopyEmergencyCard(card: DigestCardItem) {
+    if (!workspace) return;
+    setSelectedEmergencyCardId(card.id);
+    const text = formatEmergencyWhatsAppMessage(card, workspace.name);
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.success("Pesan darurat WhatsApp berhasil disalin");
+    } catch {
+      toast.error("Gagal menyalin pesan darurat ke clipboard.");
+    }
+  }
 
   function handleToggleSelect(cardId: string, checked: boolean) {
     setDeselectedIds((prev) => {
@@ -190,12 +174,15 @@ export function DigestBoardClient() {
           userId={userId}
           isAdmin={isAdmin}
           deselectedIds={deselectedIds}
+          selectedEmergencyCardId={activeEmergencyCard?.id ?? null}
           deletingCardId={deletingCardId}
           reviewingCardId={reviewingCardId}
           onTabChange={setActiveTab}
           onRetry={() => void refreshCards()}
           onCreateNew={openCreateModal}
           onToggleSelect={handleToggleSelect}
+          onSelectEmergencyCard={setSelectedEmergencyCardId}
+          onCopyEmergencyCard={(card) => void handleCopyEmergencyCard(card)}
           onEdit={(target) => {
             setEditingCard(target);
             setDialogOpen(true);
@@ -206,21 +193,29 @@ export function DigestBoardClient() {
           }
         />
 
-        <DigestFormatterPanel
-          workspaceId={workspace.id}
-          workspaceName={workspace.name}
-          timezone={workspace.timezone}
-          queuedCards={morningCards}
-          selectedCards={selectedMorningCards}
-          onSelectAll={() => setDeselectedIds(new Set())}
-          onClearSelection={() =>
-            setDeselectedIds(new Set(morningCards.map((item) => item.id)))
-          }
-          onDispatched={() => {
-            setDeselectedIds(new Set());
-            void refreshCards();
-          }}
-        />
+        {activeTab === "EMERGENCY_OPS" ? (
+          <EmergencyWhatsAppPreview
+            workspaceName={workspace.name}
+            card={activeEmergencyCard}
+          />
+        ) : (
+          <DigestFormatterPanel
+            workspaceId={workspace.id}
+            workspaceName={workspace.name}
+            timezone={workspace.timezone}
+            dispatchTime={workspace.digest_dispatch_time}
+            queuedCards={morningCards}
+            selectedCards={selectedMorningCards}
+            onSelectAll={() => setDeselectedIds(new Set())}
+            onClearSelection={() =>
+              setDeselectedIds(new Set(morningCards.map((item) => item.id)))
+            }
+            onDispatched={() => {
+              setDeselectedIds(new Set());
+              void refreshCards();
+            }}
+          />
+        )}
       </div>
 
       <CreateDigestCardDialog

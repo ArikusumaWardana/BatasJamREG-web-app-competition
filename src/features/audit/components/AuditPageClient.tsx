@@ -147,7 +147,12 @@ export function AuditPageClient() {
         </div>
       </section>
 
-      <Heatmap24x7 matrix={result?.heatmap_matrix ?? null} config={config} />
+      <Heatmap24x7
+        matrix={result?.heatmap_matrix ?? null}
+        config={config}
+        periodStart={result?.period_start}
+        periodEnd={result?.period_end}
+      />
 
       <section className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-12">
         <WeeklyTrendChart data={result?.weekly_trend ?? []} />
