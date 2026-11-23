@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { AlertCircle, CheckCircle2, Eye, EyeOff, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,6 +23,20 @@ export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const safeNext = getSafeNextPath(searchParams.get("next"));
+  const isEmailConfirmed = searchParams.get("confirmed") === "true";
+  const isConfirmError = searchParams.get("confirm_error") === "true";
+  const toastFiredRef = useRef(false);
+
+  useEffect(() => {
+    if (toastFiredRef.current) return;
+    if (isEmailConfirmed) {
+      toastFiredRef.current = true;
+      toast.success("Email berhasil dikonfirmasi. Silakan masuk ke akun Anda.");
+    } else if (isConfirmError) {
+      toastFiredRef.current = true;
+      toast.error("Tautan konfirmasi email tidak valid atau sudah kedaluwarsa.");
+    }
+  }, [isEmailConfirmed, isConfirmError]);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -70,6 +84,46 @@ export function LoginForm() {
           Gunakan akun terdaftar atau coba langsung menggunakan workspace demo.
         </p>
       </header>
+
+      {isEmailConfirmed ? (
+        <div
+          role="status"
+          className="flex items-start gap-2.5 rounded-lg border border-safe/30 bg-safe-soft p-3.5 text-sm text-safe"
+        >
+          <CheckCircle2
+            className="mt-0.5 h-4 w-4 shrink-0"
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
+          <div className="flex flex-col gap-0.5">
+            <span className="font-semibold">Email Berhasil Dikonfirmasi</span>
+            <span className="text-xs leading-relaxed">
+              Akun Anda sudah aktif. Silakan masuk menggunakan email dan kata
+              sandi yang baru didaftarkan.
+            </span>
+          </div>
+        </div>
+      ) : null}
+
+      {isConfirmError ? (
+        <div
+          role="alert"
+          className="flex items-start gap-2.5 rounded-lg border border-danger/30 bg-danger-soft p-3.5 text-sm text-danger"
+        >
+          <AlertCircle
+            className="mt-0.5 h-4 w-4 shrink-0"
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
+          <div className="flex flex-col gap-0.5">
+            <span className="font-semibold">Konfirmasi Email Gagal</span>
+            <span className="text-xs leading-relaxed">
+              Tautan konfirmasi tidak valid atau sudah kedaluwarsa. Silakan
+              daftar ulang atau masuk jika akun sudah aktif.
+            </span>
+          </div>
+        </div>
+      ) : null}
 
       <DemoAccessCallout redirectTo={safeNext} />
 

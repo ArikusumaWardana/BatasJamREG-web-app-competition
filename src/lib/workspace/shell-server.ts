@@ -78,13 +78,22 @@ export async function resolveServerShellContext(): Promise<ResolvedShellContext>
   }
 
   const fallbackName = user.email?.split("@")[0] ?? "Pengguna";
+  const rawRoleTitle = profile?.role_title?.trim();
+  const resolvedRoleTitle =
+    rawRoleTitle && rawRoleTitle !== "Anggota Tim"
+      ? rawRoleTitle
+      : preferredOrg?.role === "OWNER" || activeWorkspace?.role === "OWNER"
+        ? "Owner"
+        : activeWorkspace?.role === "LEAD"
+          ? "Team Lead"
+          : "Anggota Tim";
 
   return {
     mode: "authenticated",
     user: {
       id: user.id,
       fullName: profile?.full_name ?? fallbackName,
-      roleTitle: profile?.role_title ?? "Anggota Tim",
+      roleTitle: resolvedRoleTitle,
     },
     organization: preferredOrg
       ? {

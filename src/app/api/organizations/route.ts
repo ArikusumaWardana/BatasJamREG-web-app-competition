@@ -136,6 +136,12 @@ export async function POST(request: Request) {
     );
   }
 
+  await supabase
+    .from("profiles")
+    .update({ role_title: "Owner" })
+    .eq("id", user.id)
+    .eq("role_title", "Anggota Tim");
+
   let initialWorkspace = null;
   if (parsed.data.initial_workspace_name) {
     for (let attempt = 0; attempt < 3; attempt += 1) {

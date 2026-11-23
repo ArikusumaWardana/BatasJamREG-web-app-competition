@@ -40,11 +40,13 @@ export function RegisterForm() {
     setIsSubmitting(true);
     try {
       const supabase = createClient();
+      const emailRedirectTo = `${window.location.origin}/auth/callback`;
       const { data, error } = await supabase.auth.signUp({
         email: email.trim(),
         password,
         options: {
           data: { full_name: fullName.trim() },
+          emailRedirectTo,
         },
       });
 

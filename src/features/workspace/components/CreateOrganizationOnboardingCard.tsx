@@ -144,7 +144,7 @@ export function CreateOrganizationOnboardingCard({
             >
               <SelectTrigger
                 id="onboard-pattern"
-                className="h-10 w-full rounded-md border-border-hairline bg-surface pr-8 pl-3 text-xs"
+                className="w-full rounded-md border-border-hairline bg-surface px-3 text-xs data-[size=default]:h-10"
               >
                 <SelectValue>{WORK_PATTERNS[pattern].label}</SelectValue>
               </SelectTrigger>
@@ -174,7 +174,7 @@ export function CreateOrganizationOnboardingCard({
             >
               <SelectTrigger
                 id="onboard-tz"
-                className="h-10 w-full rounded-md border-border-hairline bg-surface pr-8 pl-3 text-xs"
+                className="w-full rounded-md border-border-hairline bg-surface px-3 text-xs data-[size=default]:h-10"
               >
                 <SelectValue>{selectedTzLabel}</SelectValue>
               </SelectTrigger>
