@@ -135,10 +135,10 @@ export function OrganizationPageClient() {
 
   return (
     <div className="flex flex-col gap-6">
-      <header className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+      <header className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5 lg:flex-row lg:items-center lg:justify-between">
+        <div className="min-w-0 lg:max-w-lg">
           <div className="flex items-center gap-2 text-xs font-medium text-brand">
-            <Building2 className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+            <Building2 className="h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
             <span>Ringkasan Perusahaan (Owner)</span>
           </div>
           <h1 className="mt-1 text-2xl font-bold tracking-tight text-ink-primary">
@@ -150,25 +150,25 @@ export function OrganizationPageClient() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5 lg:shrink-0 lg:flex-nowrap">
           <button
             type="button"
             onClick={refreshOverview}
-            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 whitespace-nowrap rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted"
           >
-            <RefreshCw className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+            <RefreshCw className="h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
             <span>Muat Ulang</span>
           </button>
           <button
             type="button"
             disabled={isExportingPdf || isLoading || overview.divisions.length === 0}
             onClick={handleExportExecutivePdf}
-            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 whitespace-nowrap rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isExportingPdf ? (
-              <Loader2 className="h-4 w-4 animate-spin" strokeWidth={1.5} aria-hidden="true" />
+              <Loader2 className="h-4 w-4 shrink-0 animate-spin" strokeWidth={1.5} aria-hidden="true" />
             ) : (
-              <FileDown className="h-4 w-4 text-brand" strokeWidth={1.5} aria-hidden="true" />
+              <FileDown className="h-4 w-4 shrink-0 text-brand" strokeWidth={1.5} aria-hidden="true" />
             )}
             <span>
               {isExportingPdf
@@ -179,9 +179,9 @@ export function OrganizationPageClient() {
           <button
             type="button"
             onClick={() => setCreateOpen(true)}
-            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 whitespace-nowrap rounded-md bg-brand px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover"
           >
-            <Plus className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+            <Plus className="h-4 w-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
             <span>Buat Divisi Baru</span>
           </button>
         </div>

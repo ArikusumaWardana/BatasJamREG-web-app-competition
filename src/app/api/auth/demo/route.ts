@@ -4,17 +4,22 @@ import {
   ensureDemoAccountAndWorkspace,
 } from "@/features/auth/lib/demo-provisioner";
 import { apiError, apiSuccess, formatZodIssues } from "@/lib/api/response";
-import { getDemoActorConfig } from "@/lib/constants/demo-actors";
+import {
+  findDemoUserByEmail,
+  getDemoActorConfig,
+  type DemoActorRole,
+} from "@/lib/constants/demo-actors";
 import { createClient } from "@/lib/supabase/server";
 
 const demoLoginRequestSchema = z.object({
   actor: z.enum(["OWNER", "LEAD", "MEMBER"]).default("OWNER"),
+  email: z.string().email().optional(),
 });
 
 async function parseOptionalActorBody(
   request: Request
 ): Promise<
-  | { ok: true; actor: "OWNER" | "LEAD" | "MEMBER" }
+  | { ok: true; actor: DemoActorRole; email?: string }
   | { ok: false; response: ReturnType<typeof apiError> }
 > {
   try {
@@ -35,7 +40,11 @@ async function parseOptionalActorBody(
         ),
       };
     }
-    return { ok: true, actor: validated.data.actor };
+    return {
+      ok: true,
+      actor: validated.data.actor,
+      email: validated.data.email,
+    };
   } catch {
     return {
       ok: false,
@@ -54,9 +63,24 @@ export async function POST(request: Request) {
     return actorResult.response;
   }
 
-  const actorConfig = getDemoActorConfig(actorResult.actor);
-  const demoEmail =
-    actorConfig.actor === "OWNER"
+  const matchedUser = actorResult.email
+    ? findDemoUserByEmail(actorResult.email)
+    : undefined;
+
+  if (actorResult.email && !matchedUser) {
+    return apiError(
+      "VALIDATION_ERROR",
+      "Akun demo yang dipilih tidak terdaftar.",
+      400
+    );
+  }
+
+  const actorConfig = getDemoActorConfig(
+    matchedUser?.actor ?? actorResult.actor
+  );
+  const demoEmail = matchedUser
+    ? matchedUser.email
+    : actorConfig.actor === "OWNER"
       ? process.env.DEMO_USER_EMAIL?.trim() || actorConfig.defaultEmail
       : actorConfig.defaultEmail;
   const demoPassword = process.env.DEMO_USER_PASSWORD?.trim();
