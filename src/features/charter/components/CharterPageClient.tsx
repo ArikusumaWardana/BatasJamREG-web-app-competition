@@ -94,12 +94,23 @@ export function CharterPageClient() {
             handoffBaseline ?? latest.baseline_shadow_hours,
           version: latest.version,
           effective_date: latest.created_at,
+          timezone: wsResult.workspace.timezone,
+          organization_name: wsResult.workspace.organization_name ?? null,
+          organization_stamp_url:
+            wsResult.workspace.organization_stamp_url ?? null,
         });
       } else {
         setDraft((prev) => ({
           ...prev,
           company_or_team_name: wsResult.workspace?.name ?? prev.company_or_team_name,
           baseline_shadow_hours: handoffBaseline ?? prev.baseline_shadow_hours,
+          timezone: wsResult.workspace?.timezone ?? prev.timezone,
+          organization_name:
+            wsResult.workspace?.organization_name ?? prev.organization_name ?? null,
+          organization_stamp_url:
+            wsResult.workspace?.organization_stamp_url ??
+            prev.organization_stamp_url ??
+            null,
         }));
       }
     }

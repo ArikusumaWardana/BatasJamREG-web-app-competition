@@ -8,6 +8,12 @@ import {
   drawPageFooters,
   getLastTableY,
 } from "./charter-pdf-sections";
+import {
+  loadStampImageDataUrl,
+  renderDefaultStampDataUrl,
+  type LoadedStampImage,
+} from "./charter-pdf-stamp";
+import { resolveCharterSignatures } from "./charter-signatures";
 
 export function sanitizeCharterFilename(
   companyOrTeamName: string,
@@ -26,7 +32,10 @@ export function sanitizeCharterFilename(
   return `piagam-jam-digital-${safeSlug}-v${safeVersion}.pdf`;
 }
 
-export function buildCharterPdfDocument(draft: CharterDraft): jsPDF {
+export function buildCharterPdfDocument(
+  draft: CharterDraft,
+  stampImage?: LoadedStampImage | null
+): jsPDF {
   const doc = new jsPDF({
     orientation: "portrait",
     unit: "mm",
@@ -121,13 +130,20 @@ export function buildCharterPdfDocument(draft: CharterDraft): jsPDF {
   });
 
   const afterCriteriaY = getLastTableY(doc, afterParamsY + 45) + 9;
+  const signatures = resolveCharterSignatures(
+    draft.acknowledgements,
+    draft.total_members,
+    draft.timezone
+  );
   drawCommitmentsAndSignatures(
     doc,
     draft,
+    signatures,
     afterCriteriaY,
     margin,
     pageWidth,
-    contentWidth
+    contentWidth,
+    stampImage
   );
 
   if (draft.acknowledgements && draft.acknowledgements.length > 0) {
@@ -147,8 +163,17 @@ export function buildCharterPdfDocument(draft: CharterDraft): jsPDF {
   return doc;
 }
 
-export function downloadCharterPdf(draft: CharterDraft): string {
-  const doc = buildCharterPdfDocument(draft);
+export async function downloadCharterPdf(
+  draft: CharterDraft
+): Promise<string> {
+  const customStamp = await loadStampImageDataUrl(draft.organization_stamp_url);
+  const stampOrgName =
+    draft.organization_name?.trim() ||
+    draft.company_or_team_name.trim() ||
+    "BatasJamREG";
+  const stampImage =
+    customStamp ?? (await renderDefaultStampDataUrl(stampOrgName));
+  const doc = buildCharterPdfDocument(draft, stampImage);
   const filename = sanitizeCharterFilename(
     draft.company_or_team_name,
     draft.version

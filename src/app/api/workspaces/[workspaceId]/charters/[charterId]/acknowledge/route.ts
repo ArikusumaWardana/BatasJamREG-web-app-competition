@@ -1,6 +1,7 @@
 import type {
   CharterAcknowledgementItem,
   CharterAdoptionSummary,
+  CharterSignerRole,
 } from "@/features/charter/types";
 import { computeCharterAdoptionPercentage } from "@/features/wellbeing/lib/wellbeing-metrics";
 import { apiError, apiSuccess } from "@/lib/api/response";
@@ -21,6 +22,18 @@ interface RawAckRow {
     | null;
 }
 
+interface RawMemberRoleRow {
+  user_id: string;
+  role: string;
+}
+
+function normalizeSignerRole(rawRole?: string): CharterSignerRole {
+  if (rawRole === "OWNER" || rawRole === "LEAD" || rawRole === "MEMBER") {
+    return rawRole;
+  }
+  return "MEMBER";
+}
+
 async function buildAcknowledgementSummary(
   supabase: Extract<
     Awaited<ReturnType<typeof requireWorkspaceMember>>,
@@ -30,21 +43,46 @@ async function buildAcknowledgementSummary(
   charterId: string,
   currentUserId: string
 ): Promise<CharterAdoptionSummary | null> {
-  const [{ data: ackRows, error: ackErr }, { count: memberCount, error: memErr }] =
-    await Promise.all([
-      supabase
-        .from("charter_acknowledgements")
-        .select("id, user_id, signed_at, profiles(full_name, role_title)")
-        .eq("charter_id", charterId)
-        .eq("workspace_id", workspaceId)
-        .order("signed_at", { ascending: true }),
-      supabase
-        .from("workspace_members")
-        .select("user_id", { count: "exact", head: true })
-        .eq("workspace_id", workspaceId),
-    ]);
+  const [
+    { data: ackRows, error: ackErr },
+    { data: memberRows, error: memErr },
+    { data: wsRow },
+  ] = await Promise.all([
+    supabase
+      .from("charter_acknowledgements")
+      .select("id, user_id, signed_at, profiles(full_name, role_title)")
+      .eq("charter_id", charterId)
+      .eq("workspace_id", workspaceId)
+      .order("signed_at", { ascending: true }),
+    supabase
+      .from("workspace_members")
+      .select("user_id, role")
+      .eq("workspace_id", workspaceId),
+    supabase
+      .from("workspaces")
+      .select("organization_id")
+      .eq("id", workspaceId)
+      .maybeSingle(),
+  ]);
 
   if (ackErr || memErr) return null;
+
+  const orgOwnerIds = new Set<string>();
+  if (wsRow?.organization_id) {
+    const { data: orgOwners } = await supabase
+      .from("organization_members")
+      .select("user_id")
+      .eq("organization_id", wsRow.organization_id)
+      .eq("role", "OWNER");
+    for (const row of orgOwners ?? []) {
+      orgOwnerIds.add(row.user_id);
+    }
+  }
+
+  const memberRoleMap = new Map<string, CharterSignerRole>();
+  for (const row of (memberRows ?? []) as RawMemberRoleRow[]) {
+    memberRoleMap.set(row.user_id, normalizeSignerRole(row.role));
+  }
 
   const acknowledgements: CharterAcknowledgementItem[] = (
     (ackRows ?? []) as RawAckRow[]
@@ -52,17 +90,26 @@ async function buildAcknowledgementSummary(
     const profile = Array.isArray(row.profiles)
       ? row.profiles[0]
       : row.profiles;
+    const directRole = memberRoleMap.get(row.user_id);
+    const workspaceRole: CharterSignerRole =
+      directRole === "OWNER" || directRole === "LEAD"
+        ? directRole
+        : orgOwnerIds.has(row.user_id)
+          ? "OWNER"
+          : (directRole ?? "MEMBER");
+
     return {
       id: row.id,
       user_id: row.user_id,
       full_name: profile?.full_name ?? "Anggota Tim",
       role_title: profile?.role_title ?? "Anggota Tim",
+      workspace_role: workspaceRole,
       signed_at: row.signed_at,
     };
   });
 
   const signedCount = acknowledgements.length;
-  const totalMembers = Math.max(memberCount ?? 0, signedCount);
+  const totalMembers = Math.max(memberRows?.length ?? 0, signedCount);
 
   return {
     charter_id: charterId,

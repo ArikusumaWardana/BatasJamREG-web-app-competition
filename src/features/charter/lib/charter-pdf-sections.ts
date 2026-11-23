@@ -1,5 +1,8 @@
 import type { jsPDF } from "jspdf";
 import type { CharterDraft } from "../types";
+import { drawCharterSignatureBlock } from "./charter-pdf-signatures";
+import type { LoadedStampImage } from "./charter-pdf-stamp";
+import type { ResolvedCharterSignatures } from "./charter-signatures";
 
 const COMMITMENT_CLAUSES = [
   "1. Pesan non-darurat yang dikirim di luar jam tenang ditampung ke Async Morning Digest Board tanpa ekspektasi balasan seketika.",
@@ -105,10 +108,12 @@ export function drawCharterHeader(
 export function drawCommitmentsAndSignatures(
   doc: jsPDF,
   draft: CharterDraft,
+  signatures: ResolvedCharterSignatures,
   startY: number,
   margin: number,
   pageWidth: number,
-  contentWidth: number
+  contentWidth: number,
+  stampImage?: LoadedStampImage | null
 ): void {
   let cursorY = startY;
   if (cursorY > 228) {
@@ -131,36 +136,15 @@ export function drawCommitmentsAndSignatures(
     cursorY += lines.length * 4.5 + 2;
   }
 
-  let signY = cursorY + 8;
-  if (signY > 246) {
-    doc.addPage();
-    signY = 30;
-  }
-
-  doc.setDrawColor(212, 212, 216);
-  doc.setLineWidth(0.3);
-  const leftSignX = margin;
-  const rightSignX = pageWidth / 2 + 8;
-
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(9);
-  doc.setTextColor(82, 82, 91);
-  doc.text("Disetujui Oleh,", leftSignX, signY);
-  doc.text("Disepakati Bersama,", rightSignX, signY);
-
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(24, 24, 27);
-  doc.text("Pimpinan Tim / Manajemen", leftSignX, signY + 5);
-  doc.text("Perwakilan Anggota Tim", rightSignX, signY + 5);
-
-  doc.line(leftSignX, signY + 23, leftSignX + 64, signY + 23);
-  doc.line(rightSignX, signY + 23, rightSignX + 64, signY + 23);
-
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(8.5);
-  doc.setTextColor(113, 113, 122);
-  doc.text(`(${draft.company_or_team_name.trim()})`, leftSignX, signY + 28);
-  doc.text("(Seluruh Anggota Aktif)", rightSignX, signY + 28);
+  drawCharterSignatureBlock(
+    doc,
+    draft,
+    signatures,
+    cursorY,
+    margin,
+    pageWidth,
+    stampImage
+  );
 }
 
 export function drawPageFooters(doc: jsPDF, margin: number): void {

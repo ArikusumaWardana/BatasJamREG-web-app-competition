@@ -82,7 +82,12 @@ function compareSnapshotDesc(
 }
 
 export function buildOrganizationOverview(params: {
-  organization: { id: string; name: string; slug: string };
+  organization: {
+    id: string;
+    name: string;
+    slug: string;
+    stamp_url?: string | null;
+  };
   viewerUserId?: string;
   orgMembers: RawOrgMemberRef[];
   workspaces: RawOrgWorkspaceInput[];
@@ -220,6 +225,9 @@ export function buildOrganizationOverview(params: {
       id: params.organization.id,
       name: params.organization.name,
       slug: params.organization.slug,
+      stamp_url: params.organization.stamp_url ?? null,
+      organization_name: params.organization.name,
+      organization_stamp_url: params.organization.stamp_url ?? null,
       role: "OWNER",
     },
     kpis: {

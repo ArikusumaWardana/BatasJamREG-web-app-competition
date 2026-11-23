@@ -14,6 +14,7 @@ export interface WorkspaceListItem {
   id: string;
   organization_id: string | null;
   organization_name?: string | null;
+  organization_stamp_url?: string | null;
   org_role?: OrganizationRole | null;
   name: string;
   slug: string;

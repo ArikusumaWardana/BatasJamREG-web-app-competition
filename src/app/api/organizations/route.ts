@@ -26,7 +26,7 @@ export async function GET() {
     await Promise.all([
       supabase
         .from("organization_members")
-        .select("role, joined_at, organizations(id, name, slug)")
+        .select("role, joined_at, organizations(id, name, slug, stamp_url)")
         .eq("user_id", user.id)
         .order("joined_at", { ascending: true }),
       supabase.from("workspaces").select("id, organization_id"),
@@ -59,6 +59,9 @@ export async function GET() {
         id: org.id,
         name: org.name,
         slug: org.slug,
+        stamp_url: org.stamp_url ?? null,
+        organization_name: org.name,
+        organization_stamp_url: org.stamp_url ?? null,
         role: item.role === "OWNER" ? "OWNER" : "MEMBER",
         joined_at: item.joined_at,
         workspace_count: countsByOrg.get(org.id) ?? 0,

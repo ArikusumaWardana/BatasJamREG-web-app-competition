@@ -35,7 +35,7 @@ export async function GET(_request: Request, context: RouteContext) {
   ] = await Promise.all([
     auth.supabase
       .from("organizations")
-      .select("id, name, slug")
+      .select("id, name, slug, stamp_url")
       .eq("id", orgId)
       .maybeSingle(),
     auth.supabase

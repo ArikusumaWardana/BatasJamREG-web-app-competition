@@ -25,11 +25,14 @@ export interface TeamCharterRecord {
   updated_at: string;
 }
 
+export type CharterSignerRole = "OWNER" | "LEAD" | "MEMBER";
+
 export interface CharterAcknowledgementItem {
   id: string;
   user_id: string;
   full_name: string;
   role_title: string;
+  workspace_role?: CharterSignerRole;
   signed_at: string;
 }
 
@@ -52,6 +55,10 @@ export interface CharterDraft {
   baseline_shadow_hours: number | null;
   version?: number;
   effective_date?: string;
+  total_members?: number;
+  timezone?: string;
+  organization_name?: string | null;
+  organization_stamp_url?: string | null;
   acknowledgements?: CharterAcknowledgementItem[];
 }
 

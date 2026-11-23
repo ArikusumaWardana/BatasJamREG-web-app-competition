@@ -11,6 +11,7 @@ export interface UserOrganizationSummary {
   id: string;
   name: string;
   slug: string;
+  stamp_url: string | null;
   role: "OWNER" | "MEMBER";
   joined_at: string;
 }
@@ -35,6 +36,7 @@ function toWorkspaceListItem(
   ws: RawWorkspaceFields,
   role: WorkspaceRole,
   orgName: string | null,
+  orgStampUrl: string | null,
   orgRole: "OWNER" | "MEMBER" | null,
   isJoined: boolean
 ): WorkspaceListItem {
@@ -42,6 +44,7 @@ function toWorkspaceListItem(
     id: ws.id,
     organization_id: ws.organization_id,
     organization_name: orgName,
+    organization_stamp_url: orgStampUrl,
     org_role: orgRole,
     name: ws.name,
     slug: ws.slug,
@@ -71,13 +74,13 @@ export async function fetchAccessibleWorkspaces(
     await Promise.all([
       supabase
         .from("organization_members")
-        .select("role, joined_at, organizations(id, name, slug)")
+        .select("role, joined_at, organizations(id, name, slug, stamp_url)")
         .eq("user_id", userId)
         .order("joined_at", { ascending: true }),
       supabase
         .from("workspace_members")
         .select(
-          "role, joined_at, workspaces(id, organization_id, name, slug, invite_code, work_pattern, work_start_time, work_end_time, digest_dispatch_time, timezone, work_days, created_at, updated_at, organizations(name))"
+          "role, joined_at, workspaces(id, organization_id, name, slug, invite_code, work_pattern, work_start_time, work_end_time, digest_dispatch_time, timezone, work_days, created_at, updated_at, organizations(name, stamp_url))"
         )
         .eq("user_id", userId)
         .order("joined_at", { ascending: true }),
@@ -99,6 +102,7 @@ export async function fetchAccessibleWorkspaces(
       id: org.id,
       name: org.name,
       slug: org.slug,
+      stamp_url: org.stamp_url ?? null,
       role: row.role === "OWNER" ? "OWNER" : "MEMBER",
       joined_at: row.joined_at,
     };
@@ -146,11 +150,12 @@ export async function fetchAccessibleWorkspaces(
       ? "OWNER"
       : (item.role as WorkspaceRole);
     const orgName = orgSummary?.name ?? nestedOrg?.name ?? null;
+    const orgStampUrl = orgSummary?.stamp_url ?? nestedOrg?.stamp_url ?? null;
     const orgRole = orgSummary?.role ?? null;
 
     resultMap.set(
       rawWs.id,
-      toWorkspaceListItem(rawWs, effectiveRole, orgName, orgRole, true)
+      toWorkspaceListItem(rawWs, effectiveRole, orgName, orgStampUrl, orgRole, true)
     );
   }
 
@@ -161,7 +166,14 @@ export async function fetchAccessibleWorkspaces(
       : undefined;
     resultMap.set(
       ws.id,
-      toWorkspaceListItem(ws, "OWNER", orgSummary?.name ?? null, "OWNER", false)
+      toWorkspaceListItem(
+        ws,
+        "OWNER",
+        orgSummary?.name ?? null,
+        orgSummary?.stamp_url ?? null,
+        "OWNER",
+        false
+      )
     );
   }
 

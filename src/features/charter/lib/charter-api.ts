@@ -11,6 +11,9 @@ export interface CharterWorkspaceOption {
   id: string;
   name: string;
   invite_code: string;
+  timezone?: string;
+  organization_name?: string | null;
+  organization_stamp_url?: string | null;
 }
 
 export async function fetchActiveCharterWorkspace(): Promise<{

@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { formatCharterTimeShort, type CharterDraft } from "../types";
+import { CharterSignatureFooter } from "./CharterSignatureFooter";
 
 interface CharterLivePreviewProps {
   draft: CharterDraft;
@@ -109,35 +110,7 @@ export function CharterLivePreview({ draft }: CharterLivePreviewProps) {
           </section>
         </div>
 
-        <footer className="mt-1 grid grid-cols-1 gap-6 border-t border-border-hairline pt-5 sm:grid-cols-2">
-          <div className="flex flex-col gap-8">
-            <span className="text-xs font-medium text-ink-secondary">
-              Disetujui Oleh (Pimpinan Tim / Manajemen)
-            </span>
-            <div className="border-t border-border-strong pt-2">
-              <p className="text-xs font-medium text-ink-primary">
-                {draft.company_or_team_name.trim() || "Pimpinan Tim"}
-              </p>
-              <p className="font-mono text-xs text-ink-muted">
-                Tanggal: .... / .... / 2026
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-8">
-            <span className="text-xs font-medium text-ink-secondary">
-              Disepakati Bersama (Perwakilan Anggota Tim)
-            </span>
-            <div className="border-t border-border-strong pt-2">
-              <p className="text-xs font-medium text-ink-primary">
-                Seluruh Anggota Tim Aktif
-              </p>
-              <p className="font-mono text-xs text-ink-muted">
-                Tanggal: .... / .... / 2026
-              </p>
-            </div>
-          </div>
-        </footer>
+        <CharterSignatureFooter draft={draft} />
       </article>
     </div>
   );

@@ -22,6 +22,7 @@ import { CreateDivisionDialog } from "./CreateDivisionDialog";
 import { OrgDivisionsTable } from "./OrgDivisionsTable";
 import { OrgKpiCards } from "./OrgKpiCards";
 import { OrgMembersPanel } from "./OrgMembersPanel";
+import { OrgStampCard } from "./OrgStampCard";
 import { OrgWellbeingComparison } from "./OrgWellbeingComparison";
 
 export function OrganizationPageClient() {
@@ -188,6 +189,26 @@ export function OrganizationPageClient() {
       </header>
 
       <OrgKpiCards kpis={overview.kpis} />
+
+      <OrgStampCard
+        organizationId={overview.organization.id}
+        organizationName={overview.organization.name}
+        stampUrl={overview.organization.stamp_url}
+        onStampUpdated={(nextStampUrl) => {
+          setOverview((prev) =>
+            prev
+              ? {
+                  ...prev,
+                  organization: {
+                    ...prev.organization,
+                    stamp_url: nextStampUrl,
+                    organization_stamp_url: nextStampUrl,
+                  },
+                }
+              : prev
+          );
+        }}
+      />
 
       <OrgWellbeingComparison divisions={overview.divisions} />
 

@@ -9,7 +9,6 @@ import { createCharterSchema } from "@/lib/validations";
 import { saveWorkspaceCharter } from "../lib/charter-api";
 import { downloadCharterPdf } from "../lib/charter-pdf";
 import type {
-  CharterAcknowledgementItem,
   CharterAdoptionSummary,
   CharterDraft,
   TeamCharterRecord,
@@ -39,16 +38,36 @@ export function CharterBuilderTab({
 }: CharterBuilderTabProps) {
   const [isSaving, setIsSaving] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
-  const [acknowledgements, setAcknowledgements] = useState<
-    CharterAcknowledgementItem[]
-  >([]);
+  const [adoptionSummary, setAdoptionSummary] =
+    useState<CharterAdoptionSummary | null>(null);
 
   const activeSavedCharter =
     savedCharters.find((item) => item.is_active) ?? savedCharters[0] ?? null;
 
   const handleSummaryChange = useCallback((summary: CharterAdoptionSummary) => {
-    setAcknowledgements(summary.acknowledgements);
+    setAdoptionSummary(summary);
   }, []);
+
+  const isViewingActiveSavedCharter = Boolean(
+    authStatus === "authenticated" &&
+      workspaceId &&
+      activeSavedCharter &&
+      adoptionSummary &&
+      (draft.version ?? activeSavedCharter.version) ===
+        activeSavedCharter.version
+  );
+
+  const previewDraft: CharterDraft = isViewingActiveSavedCharter
+    ? {
+        ...draft,
+        acknowledgements: adoptionSummary?.acknowledgements,
+        total_members: adoptionSummary?.total_members,
+      }
+    : {
+        ...draft,
+        acknowledgements: undefined,
+        total_members: undefined,
+      };
 
   const validation = createCharterSchema.safeParse({
     title: draft.title,
@@ -61,14 +80,11 @@ export function CharterBuilderTab({
   });
   const isDraftValid = validation.success;
 
-  function handleDownloadPdf() {
+  async function handleDownloadPdf() {
     if (!isDraftValid || isExporting) return;
     setIsExporting(true);
     try {
-      const filename = downloadCharterPdf({
-        ...draft,
-        acknowledgements,
-      });
+      const filename = await downloadCharterPdf(previewDraft);
       toast.success(`Piagam berhasil diunduh sebagai ${filename}.`);
     } catch {
       toast.error("Gagal membuat dokumen PDF piagam.");
@@ -88,7 +104,7 @@ export function CharterBuilderTab({
       return;
     }
 
-    setAcknowledgements([]);
+    setAdoptionSummary(null);
     onCharterSaved(result.data);
     toast.success(
       `Piagam versi ${result.data.version} berhasil disimpan ke workspace.`
@@ -109,6 +125,9 @@ export function CharterBuilderTab({
       baseline_shadow_hours: record.baseline_shadow_hours,
       version: record.version,
       effective_date: record.created_at,
+      timezone: draft.timezone,
+      organization_name: draft.organization_name,
+      organization_stamp_url: draft.organization_stamp_url,
     });
     toast.success(`Memuat draf dari Piagam Versi ${record.version}.`);
   }
@@ -206,7 +225,7 @@ export function CharterBuilderTab({
           </div>
         </div>
 
-        <CharterLivePreview draft={draft} />
+        <CharterLivePreview draft={previewDraft} />
       </section>
     </div>
   );

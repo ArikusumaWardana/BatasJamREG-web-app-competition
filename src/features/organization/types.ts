@@ -15,6 +15,9 @@ export interface OrganizationListItem {
   id: string;
   name: string;
   slug: string;
+  stamp_url?: string | null;
+  organization_name?: string;
+  organization_stamp_url?: string | null;
   role: OrganizationRole;
   joined_at: string;
   workspace_count: number;
@@ -88,6 +91,9 @@ export interface OrganizationOverviewData {
     id: string;
     name: string;
     slug: string;
+    stamp_url: string | null;
+    organization_name: string;
+    organization_stamp_url: string | null;
     role: "OWNER";
   };
   kpis: OrganizationSummaryKpi;
