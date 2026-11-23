@@ -11,16 +11,19 @@ import {
 } from "@/lib/storage/shell-context-cache";
 import { BrandLogo } from "./BrandLogo";
 import { PageLoadingOverlay } from "./PageLoadingOverlay";
-import {
-  SidebarNav,
-  type AppShellUser,
-  type AppShellWorkspace,
-} from "./SidebarNav";
+import type {
+  AppShellOrganization,
+  AppShellUser,
+  AppShellWorkspace,
+} from "./shell-types";
+import { SidebarNav } from "./SidebarNav";
 
 interface AppShellProps {
   children: React.ReactNode;
   mode: "authenticated" | "guest" | "loading";
   user?: AppShellUser | null;
+  organization?: AppShellOrganization | null;
+  workspaces?: AppShellWorkspace[];
   activeWorkspace?: AppShellWorkspace | null;
   queuedDigestCount?: number;
 }
@@ -29,6 +32,8 @@ export function AppShell({
   children,
   mode,
   user,
+  organization,
+  workspaces = [],
   activeWorkspace,
   queuedDigestCount = 0,
 }: AppShellProps) {
@@ -45,28 +50,36 @@ export function AppShell({
     getServerShellContextSnapshot
   );
 
-  const effectiveMode =
-    mode === "loading" && cachedShell ? cachedShell.mode : mode;
-  const effectiveUser =
-    mode === "loading" && cachedShell ? cachedShell.user : user;
-  const effectiveWorkspace =
-    mode === "loading" && cachedShell
-      ? cachedShell.activeWorkspace
-      : activeWorkspace;
-  const effectiveQueuedCount =
-    mode === "loading" && cachedShell
-      ? cachedShell.queuedDigestCount
-      : queuedDigestCount;
+  const useCache = mode === "loading" && cachedShell !== null;
+  const effectiveMode = useCache ? cachedShell.mode : mode;
+  const effectiveUser = useCache ? cachedShell.user : user;
+  const effectiveOrg = useCache ? cachedShell.organization : organization;
+  const effectiveWorkspaces = useCache ? cachedShell.workspaces : workspaces;
+  const effectiveWorkspace = useCache
+    ? cachedShell.activeWorkspace
+    : activeWorkspace;
+  const effectiveQueuedCount = useCache
+    ? cachedShell.queuedDigestCount
+    : queuedDigestCount;
 
   useEffect(() => {
     if (mode === "loading") return;
     saveShellContextCache({
       mode,
       user: user ?? null,
+      organization: organization ?? null,
+      workspaces,
       activeWorkspace: activeWorkspace ?? null,
       queuedDigestCount,
     });
-  }, [mode, user, activeWorkspace, queuedDigestCount]);
+  }, [
+    mode,
+    user,
+    organization,
+    workspaces,
+    activeWorkspace,
+    queuedDigestCount,
+  ]);
 
   const isNavigating =
     pendingNav !== null &&
@@ -74,36 +87,27 @@ export function AppShell({
     pendingNav.to !== pathname;
 
   useEffect(() => {
-    const clearTimer = window.setTimeout(() => {
-      setPendingNav(null);
-    }, 0);
-
+    const clearTimer = window.setTimeout(() => setPendingNav(null), 0);
     return () => {
       window.clearTimeout(clearTimer);
-      window.setTimeout(() => {
-        setPendingNav(null);
-      }, 0);
+      window.setTimeout(() => setPendingNav(null), 0);
     };
   }, [pathname]);
 
   useEffect(() => {
     if (!pendingNav) return;
-    const safetyTimer = window.setTimeout(() => {
-      setPendingNav(null);
-    }, 8000);
+    const safetyTimer = window.setTimeout(() => setPendingNav(null), 8000);
     return () => window.clearTimeout(safetyTimer);
   }, [pendingNav]);
 
   useEffect(() => {
     if (!mobileOpen) return;
-
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setMobileOpen(false);
         triggerRef.current?.focus();
       }
     }
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [mobileOpen]);
@@ -152,6 +156,8 @@ export function AppShell({
         <SidebarNav
           mode={effectiveMode}
           user={effectiveUser}
+          organization={effectiveOrg}
+          workspaces={effectiveWorkspaces}
           activeWorkspace={effectiveWorkspace}
           queuedDigestCount={effectiveQueuedCount}
           onStartNavigation={handleStartNavigation}
@@ -210,6 +216,8 @@ export function AppShell({
                 <SidebarNav
                   mode={effectiveMode}
                   user={effectiveUser}
+                  organization={effectiveOrg}
+                  workspaces={effectiveWorkspaces}
                   activeWorkspace={effectiveWorkspace}
                   queuedDigestCount={effectiveQueuedCount}
                   onStartNavigation={handleStartNavigation}

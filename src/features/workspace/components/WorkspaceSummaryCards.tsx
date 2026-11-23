@@ -108,6 +108,13 @@ export function WorkspaceSummaryCards({
             ? `Versi ${workspace.active_charter.version} Aktif`
             : "Belum Disusun"}
         </p>
+        {workspace.charter_adoption ? (
+          <span className="w-fit rounded-full bg-safe-soft px-2.5 py-0.5 font-mono text-[11px] font-medium tabular-nums text-safe">
+            {workspace.charter_adoption.signed_count}/
+            {workspace.charter_adoption.total_members} Anggota Menyetujui (
+            {workspace.charter_adoption.adoption_percentage}%)
+          </span>
+        ) : null}
         <div className="flex items-center justify-between gap-2">
           <span className="text-sm text-ink-secondary">
             {workspace.active_charter

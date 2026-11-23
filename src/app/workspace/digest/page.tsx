@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
+import { PageLoadingOverlay } from "@/components/layout/PageLoadingOverlay";
 import { DigestBoardClient } from "@/features/digest/components/DigestBoardClient";
 
 export const metadata: Metadata = {
@@ -8,5 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default function DigestPage() {
-  return <DigestBoardClient />;
+  return (
+    <Suspense
+      fallback={
+        <PageLoadingOverlay
+          variant="panel"
+          message="Sedang memuat papan Morning Digest..."
+        />
+      }
+    >
+      <DigestBoardClient />
+    </Suspense>
+  );
 }

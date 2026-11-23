@@ -2,26 +2,36 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { PageLoadingOverlay } from "@/components/layout/PageLoadingOverlay";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { WorkspaceListItem } from "@/features/workspace/types";
+import {
+  getStoredActiveWorkspaceId,
+  setStoredActiveWorkspaceId,
+} from "@/lib/storage/active-workspace";
 import { useRealtimeDigest } from "../hooks/useRealtimeDigest";
 import {
   deleteDigestCardRequest,
   loadActiveWorkspaceContext,
+  reviewEmergencyCardRequest,
 } from "../lib/digest-api";
 import { filterDigestCardsByTab } from "../lib/wa-formatter";
-import type { DigestCardItem, DigestTabKey } from "../types";
+import type {
+  DigestCardItem,
+  DigestTabKey,
+  EmergencyReviewStatus,
+} from "../types";
 import { CreateDigestCardDialog } from "./CreateDigestCardDialog";
-import { DigestCardListTab } from "./DigestCardListTab";
 import { DigestFormatterPanel } from "./DigestFormatterPanel";
 import { DigestHeaderBanner } from "./DigestHeaderBanner";
+import { DigestTabsSection } from "./DigestTabsSection";
 
 export function DigestBoardClient() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const requestedWsId = searchParams.get("ws") ?? undefined;
   const [workspace, setWorkspace] = useState<WorkspaceListItem | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [wsLoading, setWsLoading] = useState(true);
@@ -32,11 +42,16 @@ export function DigestBoardClient() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingCard, setEditingCard] = useState<DigestCardItem | null>(null);
   const [deletingCardId, setDeletingCardId] = useState<string | null>(null);
+  const [reviewingCardId, setReviewingCardId] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
-    void loadActiveWorkspaceContext().then((ctx) => {
+    const preferred = requestedWsId ?? getStoredActiveWorkspaceId() ?? undefined;
+    void loadActiveWorkspaceContext(preferred).then((ctx) => {
       if (!active) return;
+      if (ctx.workspace) {
+        setStoredActiveWorkspaceId(ctx.workspace.id);
+      }
       setWorkspace(ctx.workspace);
       setUserId(ctx.userId);
       setWsError(ctx.error);
@@ -45,7 +60,7 @@ export function DigestBoardClient() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [requestedWsId]);
 
   const {
     cards,
@@ -129,6 +144,28 @@ export function DigestBoardClient() {
     router.refresh();
   }
 
+  async function handleReviewEmergency(
+    cardId: string,
+    status: Exclude<EmergencyReviewStatus, "PENDING">
+  ) {
+    if (!workspace || reviewingCardId) return;
+    setReviewingCardId(cardId);
+    const res = await reviewEmergencyCardRequest(workspace.id, cardId, status);
+    setReviewingCardId(null);
+
+    if (!res.ok) {
+      toast.error(res.errorMessage ?? "Gagal mengevaluasi kartu darurat.");
+      return;
+    }
+
+    toast.success(
+      status === "VALID_EMERGENCY"
+        ? "Kartu ditandai sebagai Darurat Valid."
+        : "Kartu dicatat sebagai Seharusnya Antrean Pagi."
+    );
+    await refreshCards();
+  }
+
   function openCreateModal() {
     setEditingCard(null);
     setDialogOpen(true);
@@ -143,63 +180,31 @@ export function DigestBoardClient() {
       />
 
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-        <section
-          aria-label="Daftar instruksi Morning Digest"
-          className="flex flex-col gap-4 lg:col-span-8"
-        >
-          <Tabs
-            value={activeTab}
-            onValueChange={(value) => {
-              if (typeof value === "string") {
-                setActiveTab(value as DigestTabKey);
-              }
-            }}
-          >
-            <TabsList
-              variant="line"
-              className="w-full justify-start border-b border-border-hairline pb-0"
-            >
-              <TabsTrigger value="MORNING_QUEUE">
-                Antrean Pagi ({morningCards.length})
-              </TabsTrigger>
-              <TabsTrigger value="EMERGENCY_OPS">
-                Darurat Operasional ({emergencyCards.length})
-              </TabsTrigger>
-              <TabsTrigger value="DISPATCHED">
-                Sudah Terkirim ({dispatchedCards.length})
-              </TabsTrigger>
-            </TabsList>
-
-            {(
-              [
-                { key: "MORNING_QUEUE", items: morningCards },
-                { key: "EMERGENCY_OPS", items: emergencyCards },
-                { key: "DISPATCHED", items: dispatchedCards },
-              ] as const
-            ).map(({ key, items }) => (
-              <TabsContent key={key} value={key} className="pt-3">
-                <DigestCardListTab
-                  items={items}
-                  tab={key}
-                  isLoading={cardsLoading}
-                  error={cardsError}
-                  userId={userId}
-                  isAdmin={isAdmin}
-                  deselectedIds={deselectedIds}
-                  deletingCardId={deletingCardId}
-                  onRetry={() => void refreshCards()}
-                  onCreateNew={openCreateModal}
-                  onToggleSelect={handleToggleSelect}
-                  onEdit={(target) => {
-                    setEditingCard(target);
-                    setDialogOpen(true);
-                  }}
-                  onDelete={(id) => void handleDeleteCard(id)}
-                />
-              </TabsContent>
-            ))}
-          </Tabs>
-        </section>
+        <DigestTabsSection
+          activeTab={activeTab}
+          morningCards={morningCards}
+          emergencyCards={emergencyCards}
+          dispatchedCards={dispatchedCards}
+          isLoading={cardsLoading}
+          error={cardsError}
+          userId={userId}
+          isAdmin={isAdmin}
+          deselectedIds={deselectedIds}
+          deletingCardId={deletingCardId}
+          reviewingCardId={reviewingCardId}
+          onTabChange={setActiveTab}
+          onRetry={() => void refreshCards()}
+          onCreateNew={openCreateModal}
+          onToggleSelect={handleToggleSelect}
+          onEdit={(target) => {
+            setEditingCard(target);
+            setDialogOpen(true);
+          }}
+          onDelete={(id) => void handleDeleteCard(id)}
+          onReviewEmergency={(id, status) =>
+            void handleReviewEmergency(id, status)
+          }
+        />
 
         <DigestFormatterPanel
           workspaceId={workspace.id}

@@ -12,6 +12,7 @@ import type { AuditConfig } from "../types";
 import { AuditActionBar } from "./AuditActionBar";
 import { AuditConfigPanel } from "./AuditConfigPanel";
 import { AuditKpiCards } from "./AuditKpiCards";
+import { BoundaryScoreCard } from "./BoundaryScoreCard";
 import { FalseUrgencyTable } from "./FalseUrgencyTable";
 import { Heatmap24x7 } from "./Heatmap24x7";
 import { PrivacyLocalBanner } from "./PrivacyLocalBanner";
@@ -134,7 +135,17 @@ export function AuditPageClient() {
         </div>
       ) : null}
 
-      <AuditKpiCards result={result} timezone={config.timezone} />
+      <section
+        aria-label="Skor Batas Digital dan Ringkasan KPI"
+        className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-12"
+      >
+        <div className="lg:col-span-5">
+          <BoundaryScoreCard result={result} workDays={config.work_days} />
+        </div>
+        <div className="lg:col-span-7">
+          <AuditKpiCards result={result} timezone={config.timezone} />
+        </div>
+      </section>
 
       <Heatmap24x7 matrix={result?.heatmap_matrix ?? null} config={config} />
 

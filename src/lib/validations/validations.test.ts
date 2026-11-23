@@ -2,9 +2,13 @@ import { describe, expect, it } from "vitest";
 import {
   createAuditSnapshotSchema,
   createDigestCardSchema,
+  createOrganizationSchema,
   createWorkspaceSchema,
   diplomaticReplySchema,
+  emergencyReviewSchema,
   joinWorkspaceSchema,
+  updateWorkspaceMemberRoleSchema,
+  wellbeingPulseSchema,
 } from "./index";
 
 function makeValidHeatmap(): number[][] {
@@ -140,5 +144,63 @@ describe("Zod validation schemas", () => {
       next_work_window: "Senin pukul 09.00 WIB",
     });
     expect(valid.success).toBe(true);
+  });
+
+  it("memvalidasi pembuatan organisasi dan larangan mengubah role menjadi OWNER secara langsung", () => {
+    const validOrg = createOrganizationSchema.safeParse({
+      name: "PT Nusantara Digital",
+      initial_workspace_name: "Tim Operasional",
+      work_start_time: "09:00",
+      work_end_time: "17:00",
+    });
+    expect(validOrg.success).toBe(true);
+
+    const invalidHoursOrg = createOrganizationSchema.safeParse({
+      name: "PT Nusantara Digital",
+      initial_workspace_name: "Tim Operasional",
+      work_start_time: "18:00",
+      work_end_time: "09:00",
+    });
+    expect(invalidHoursOrg.success).toBe(false);
+
+    expect(
+      updateWorkspaceMemberRoleSchema.safeParse({ role: "LEAD" }).success
+    ).toBe(true);
+    expect(
+      updateWorkspaceMemberRoleSchema.safeParse({ role: "MEMBER" }).success
+    ).toBe(true);
+    expect(
+      updateWorkspaceMemberRoleSchema.safeParse({ role: "OWNER" }).success
+    ).toBe(false);
+  });
+
+  it("memvalidasi rentang skor 1..5 wellbeing pulse dan status review darurat", () => {
+    expect(
+      wellbeingPulseSchema.safeParse({
+        rest_quality: 4,
+        reply_pressure: 2,
+        boundary_clarity: 5,
+      }).success
+    ).toBe(true);
+
+    expect(
+      wellbeingPulseSchema.safeParse({
+        rest_quality: 6,
+        reply_pressure: 2,
+        boundary_clarity: 3,
+      }).success
+    ).toBe(false);
+
+    expect(
+      emergencyReviewSchema.safeParse({
+        emergency_review_status: "VALID_EMERGENCY",
+      }).success
+    ).toBe(true);
+
+    expect(
+      emergencyReviewSchema.safeParse({
+        emergency_review_status: "PENDING",
+      }).success
+    ).toBe(false);
   });
 });

@@ -11,12 +11,16 @@ import { CreateWorkspaceDialog } from "./CreateWorkspaceDialog";
 interface JoinWorkspaceCardProps {
   inviteCode?: string | null;
   memberCount?: number;
+  organizationId?: string | null;
+  canCreateDivision?: boolean;
   onWorkspaceSelected: (workspaceId: string) => void;
 }
 
 export function JoinWorkspaceCard({
   inviteCode,
   memberCount,
+  organizationId,
+  canCreateDivision = true,
   onWorkspaceSelected,
 }: JoinWorkspaceCardProps) {
   const router = useRouter();
@@ -153,9 +157,14 @@ export function JoinWorkspaceCard({
         </div>
       </form>
 
-      <div className="border-t border-border-hairline pt-3">
-        <CreateWorkspaceDialog onCreated={onWorkspaceSelected} />
-      </div>
+      {canCreateDivision ? (
+        <div className="border-t border-border-hairline pt-3">
+          <CreateWorkspaceDialog
+            organizationId={organizationId}
+            onCreated={onWorkspaceSelected}
+          />
+        </div>
+      ) : null}
     </article>
   );
 }

@@ -30,10 +30,12 @@ import {
 } from "@/lib/constants/work-hours";
 
 interface CreateWorkspaceDialogProps {
+  organizationId?: string | null;
   onCreated: (workspaceId: string) => void;
 }
 
 export function CreateWorkspaceDialog({
+  organizationId,
   onCreated,
 }: CreateWorkspaceDialogProps) {
   const router = useRouter();
@@ -56,6 +58,7 @@ export function CreateWorkspaceDialog({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: trimmed,
+          ...(organizationId ? { organization_id: organizationId } : {}),
           work_pattern: pattern,
           work_start_time: preset.startTime,
           work_end_time: preset.endTime,
@@ -102,7 +105,9 @@ export function CreateWorkspaceDialog({
         }
       >
         <Plus className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-        <span>Buat Workspace Tim Baru</span>
+        <span>
+          {organizationId ? "Buat Divisi Baru" : "Buat Workspace Tim Baru"}
+        </span>
       </DialogTrigger>
       <DialogContent className="border border-border-hairline bg-surface sm:max-w-md">
         <DialogHeader>

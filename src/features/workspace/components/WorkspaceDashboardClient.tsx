@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AlertCircle, RefreshCw } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { AlertCircle, Eye, RefreshCw } from "lucide-react";
 import { PageLoadingOverlay } from "@/components/layout/PageLoadingOverlay";
 import {
   Select,
@@ -10,24 +11,29 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { CharterSignOffCard } from "@/features/charter/components/CharterSignOffCard";
+import type { CharterAdoptionSummary } from "@/features/charter/types";
+import { WellbeingPulseCard } from "@/features/wellbeing/components/WellbeingPulseCard";
+import {
+  getStoredActiveWorkspaceId,
+  setStoredActiveWorkspaceId,
+} from "@/lib/storage/active-workspace";
 import { fetchWorkspaceBundle } from "../lib/workspace-api";
 import type { WorkspaceDetail, WorkspaceListItem } from "../types";
+import { EmergencyAuditSummaryCard } from "./EmergencyAuditSummaryCard";
 import { JoinWorkspaceCard } from "./JoinWorkspaceCard";
+import { SharePublicStatusCard } from "./SharePublicStatusCard";
 import { SnapshotTrendCard } from "./SnapshotTrendCard";
+import { WorkspaceOnboarding } from "./WorkspaceOnboarding";
 import { WorkspaceSettingsCard } from "./WorkspaceSettingsCard";
 import { WorkspaceSummaryCards } from "./WorkspaceSummaryCards";
 import { WorkStatusBanner } from "./WorkStatusBanner";
 
-function DashboardSkeleton() {
-  return (
-    <PageLoadingOverlay
-      variant="panel"
-      message="Sedang memuat ringkasan workspace..."
-    />
-  );
-}
-
 export function WorkspaceDashboardClient() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const requestedWsId = searchParams.get("ws") ?? undefined;
+
   const [workspaces, setWorkspaces] = useState<WorkspaceListItem[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [detail, setDetail] = useState<WorkspaceDetail | null>(null);
@@ -36,8 +42,12 @@ export function WorkspaceDashboardClient() {
 
   useEffect(() => {
     let active = true;
-    void fetchWorkspaceBundle().then((bundle) => {
+    const preferred = requestedWsId ?? getStoredActiveWorkspaceId() ?? undefined;
+    void fetchWorkspaceBundle(preferred).then((bundle) => {
       if (!active) return;
+      if (bundle.selectedId) {
+        setStoredActiveWorkspaceId(bundle.selectedId);
+      }
       setWorkspaces(bundle.workspaces);
       setSelectedId(bundle.selectedId);
       setDetail(bundle.detail);
@@ -47,21 +57,60 @@ export function WorkspaceDashboardClient() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [requestedWsId]);
 
-  async function reloadWorkspace(preferredId?: string) {
-    setIsLoading(true);
-    setErrorMsg(null);
-    const bundle = await fetchWorkspaceBundle(preferredId);
-    setWorkspaces(bundle.workspaces);
-    setSelectedId(bundle.selectedId);
-    setDetail(bundle.detail);
-    setErrorMsg(bundle.errorMsg);
-    setIsLoading(false);
+  const reloadWorkspace = useCallback(
+    async (preferredId?: string) => {
+      setIsLoading(true);
+      setErrorMsg(null);
+      const targetPreferred =
+        preferredId ?? requestedWsId ?? getStoredActiveWorkspaceId() ?? undefined;
+      const bundle = await fetchWorkspaceBundle(targetPreferred);
+      if (bundle.selectedId) {
+        setStoredActiveWorkspaceId(bundle.selectedId);
+      }
+      setWorkspaces(bundle.workspaces);
+      setSelectedId(bundle.selectedId);
+      setDetail(bundle.detail);
+      setErrorMsg(bundle.errorMsg);
+      setIsLoading(false);
+    },
+    [requestedWsId]
+  );
+
+  const handleCharterAdoptionChange = useCallback(
+    (summary: CharterAdoptionSummary) => {
+      setDetail((prev) =>
+        prev
+          ? {
+              ...prev,
+              charter_adoption: {
+                charter_id: summary.charter_id,
+                signed_count: summary.signed_count,
+                total_members: summary.total_members,
+                adoption_percentage: summary.adoption_percentage,
+                has_signed: summary.has_signed,
+              },
+            }
+          : prev
+      );
+    },
+    []
+  );
+
+  function handleSelectDivision(id: string) {
+    setStoredActiveWorkspaceId(id);
+    router.replace(`/workspace?ws=${id}`);
+    void reloadWorkspace(id);
   }
 
   if (isLoading) {
-    return <DashboardSkeleton />;
+    return (
+      <PageLoadingOverlay
+        variant="panel"
+        message="Sedang memuat ringkasan workspace..."
+      />
+    );
   }
 
   if (errorMsg) {
@@ -86,52 +135,57 @@ export function WorkspaceDashboardClient() {
 
   if (workspaces.length === 0 || !detail) {
     return (
-      <div className="mx-auto max-w-xl">
-        <div className="mb-4 rounded-lg border border-border-hairline bg-surface p-6">
-          <h1 className="text-xl font-bold tracking-tight text-ink-primary">
-            Selamat Datang di Workspace BatasJamREG
-          </h1>
-          <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
-            Anda belum tergabung ke workspace mana pun. Masukkan kode undangan
-            dari rekan tim atau buat workspace baru untuk mulai mengatur batas
-            jam digital.
-          </p>
-        </div>
-        <JoinWorkspaceCard
-          onWorkspaceSelected={(id) => void reloadWorkspace(id)}
-        />
-      </div>
+      <WorkspaceOnboarding
+        onCompleted={(newWorkspaceId) => {
+          void reloadWorkspace(newWorkspaceId);
+        }}
+      />
     );
   }
 
   const activeWorkspaceItem = workspaces.find((item) => item.id === detail.id);
+  const isMonitorOnly =
+    detail.org_role === "OWNER" && detail.is_joined === false;
 
   return (
     <div className="flex flex-col gap-6">
-      {workspaces.length > 1 ? (
+      {workspaces.length > 1 || isMonitorOnly ? (
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs font-medium text-ink-secondary">
-            Workspace Aktif ({workspaces.length} tersedia)
-          </span>
-          <Select
-            value={detail.id}
-            onValueChange={(value) => {
-              if (value) void reloadWorkspace(value);
-            }}
-          >
-            <SelectTrigger className="h-9 w-full max-w-xs rounded-md border-border-hairline bg-surface pr-8 pl-3 text-sm text-ink-primary">
-              <SelectValue>
-                {activeWorkspaceItem?.name ?? detail.name}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent>
-              {workspaces.map((item) => (
-                <SelectItem key={item.id} value={item.id}>
-                  {item.name} ({item.role})
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-medium text-ink-secondary">
+              {detail.organization_name
+                ? `${detail.organization_name} (${workspaces.length} divisi)`
+                : `Workspace Aktif (${workspaces.length} tersedia)`}
+            </span>
+            {isMonitorOnly ? (
+              <span className="inline-flex items-center gap-1 rounded-full border border-border-hairline bg-surface-muted px-2 py-0.5 text-[11px] font-medium text-ink-secondary">
+                <Eye className="h-3 w-3" strokeWidth={1.5} aria-hidden="true" />
+                <span>Mode Pantau</span>
+              </span>
+            ) : null}
+          </div>
+          {workspaces.length > 1 ? (
+            <Select
+              value={detail.id}
+              onValueChange={(value) => {
+                if (value) handleSelectDivision(value);
+              }}
+            >
+              <SelectTrigger className="w-full max-w-sm rounded-md border-border-hairline bg-surface pr-3 pl-4 text-sm font-medium text-ink-primary data-[size=default]:h-11 sm:w-80">
+                <SelectValue>
+                  {activeWorkspaceItem?.name ?? detail.name}
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                {workspaces.map((item) => (
+                  <SelectItem key={item.id} value={item.id}>
+                    {item.name} (
+                    {item.is_joined === false ? "Mode Pantau" : item.role})
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          ) : null}
         </div>
       ) : null}
 
@@ -140,14 +194,35 @@ export function WorkspaceDashboardClient() {
       <WorkspaceSummaryCards workspace={detail} />
 
       <section className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <SnapshotTrendCard snapshots={detail.recent_snapshots} />
+        <div className="flex flex-col gap-6 lg:col-span-7">
+          <SnapshotTrendCard
+            snapshots={detail.recent_snapshots}
+            workDays={detail.work_days}
+          />
+          <WellbeingPulseCard key={`wb-${detail.id}`} workspaceId={detail.id} />
+          <EmergencyAuditSummaryCard
+            summary={detail.emergency_audit_summary}
+            workspaceId={detail.id}
+          />
         </div>
         <div className="flex flex-col gap-6 lg:col-span-5">
+          {detail.active_charter ? (
+            <CharterSignOffCard
+              key={`ack-${detail.active_charter.id}`}
+              workspaceId={detail.id}
+              charterId={detail.active_charter.id}
+              charterTitle={detail.active_charter.title}
+              version={detail.active_charter.version}
+              onSummaryChange={handleCharterAdoptionChange}
+            />
+          ) : null}
+          <SharePublicStatusCard workspace={detail} />
           <JoinWorkspaceCard
             inviteCode={detail.invite_code}
             memberCount={detail.member_count}
-            onWorkspaceSelected={(id) => void reloadWorkspace(id)}
+            organizationId={detail.organization_id}
+            canCreateDivision
+            onWorkspaceSelected={(id) => handleSelectDivision(id)}
           />
           <WorkspaceSettingsCard
             workspace={detail}

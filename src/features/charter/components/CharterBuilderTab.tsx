@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
 import { Download, History, Loader2, LogIn, Save } from "lucide-react";
 import { toast } from "sonner";
@@ -8,9 +8,15 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { createCharterSchema } from "@/lib/validations";
 import { saveWorkspaceCharter } from "../lib/charter-api";
 import { downloadCharterPdf } from "../lib/charter-pdf";
-import type { CharterDraft, TeamCharterRecord } from "../types";
+import type {
+  CharterAcknowledgementItem,
+  CharterAdoptionSummary,
+  CharterDraft,
+  TeamCharterRecord,
+} from "../types";
 import { CharterFormPanel } from "./CharterFormPanel";
 import { CharterLivePreview } from "./CharterLivePreview";
+import { CharterSignOffCard } from "./CharterSignOffCard";
 
 interface CharterBuilderTabProps {
   draft: CharterDraft;
@@ -33,6 +39,16 @@ export function CharterBuilderTab({
 }: CharterBuilderTabProps) {
   const [isSaving, setIsSaving] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
+  const [acknowledgements, setAcknowledgements] = useState<
+    CharterAcknowledgementItem[]
+  >([]);
+
+  const activeSavedCharter =
+    savedCharters.find((item) => item.is_active) ?? savedCharters[0] ?? null;
+
+  const handleSummaryChange = useCallback((summary: CharterAdoptionSummary) => {
+    setAcknowledgements(summary.acknowledgements);
+  }, []);
 
   const validation = createCharterSchema.safeParse({
     title: draft.title,
@@ -49,7 +65,10 @@ export function CharterBuilderTab({
     if (!isDraftValid || isExporting) return;
     setIsExporting(true);
     try {
-      const filename = downloadCharterPdf(draft);
+      const filename = downloadCharterPdf({
+        ...draft,
+        acknowledgements,
+      });
       toast.success(`Piagam berhasil diunduh sebagai ${filename}.`);
     } catch {
       toast.error("Gagal membuat dokumen PDF piagam.");
@@ -69,6 +88,7 @@ export function CharterBuilderTab({
       return;
     }
 
+    setAcknowledgements([]);
     onCharterSaved(result.data);
     toast.success(
       `Piagam versi ${result.data.version} berhasil disimpan ke workspace.`
@@ -101,6 +121,19 @@ export function CharterBuilderTab({
           auditHandoffNote={auditHandoffNote}
           onChange={onDraftChange}
         />
+
+        {authStatus === "authenticated" &&
+        workspaceId &&
+        activeSavedCharter ? (
+          <CharterSignOffCard
+            key={activeSavedCharter.id}
+            workspaceId={workspaceId}
+            charterId={activeSavedCharter.id}
+            charterTitle={activeSavedCharter.title}
+            version={activeSavedCharter.version}
+            onSummaryChange={handleSummaryChange}
+          />
+        ) : null}
 
         {savedCharters.length > 0 ? (
           <div className="flex flex-col gap-2 rounded-lg border border-border-hairline bg-surface p-4">

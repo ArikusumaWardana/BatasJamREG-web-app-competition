@@ -47,7 +47,9 @@ export async function POST(request: Request, context: RouteContext) {
         .maybeSingle(),
       auth.supabase
         .from("digest_cards")
-        .select("id, title, body, recipient_label, profiles(full_name)")
+        .select(
+          "id, title, body, recipient_label, profiles!digest_cards_author_id_fkey(full_name)"
+        )
         .eq("workspace_id", workspaceId)
         .eq("triage_type", "MORNING_QUEUE")
         .eq("status", "QUEUED")

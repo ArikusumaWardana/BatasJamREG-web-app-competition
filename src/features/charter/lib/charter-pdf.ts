@@ -1,6 +1,7 @@
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { formatCharterTimeShort, type CharterDraft } from "../types";
+import { drawAcknowledgementsAppendix } from "./charter-pdf-appendix";
 import {
   drawCharterHeader,
   drawCommitmentsAndSignatures,
@@ -128,6 +129,19 @@ export function buildCharterPdfDocument(draft: CharterDraft): jsPDF {
     pageWidth,
     contentWidth
   );
+
+  if (draft.acknowledgements && draft.acknowledgements.length > 0) {
+    drawAcknowledgementsAppendix(
+      doc,
+      draft.acknowledgements,
+      draft.company_or_team_name,
+      draft.version ?? 1,
+      margin,
+      pageWidth,
+      contentWidth
+    );
+  }
+
   drawPageFooters(doc, margin);
 
   return doc;

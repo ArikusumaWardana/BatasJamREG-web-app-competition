@@ -2,6 +2,7 @@ import type {
   DigestCardItem,
   DigestCardStatus,
   DigestTriageType,
+  EmergencyReviewStatus,
 } from "@/features/digest/types";
 import {
   apiError,
@@ -25,6 +26,9 @@ interface RawDigestRow {
   recipient_label: string;
   triage_type: string;
   emergency_reason: string | null;
+  emergency_review_status: string;
+  emergency_reviewed_by: string | null;
+  emergency_reviewed_at: string | null;
   status: string;
   scheduled_for: string;
   dispatched_at: string | null;
@@ -45,6 +49,10 @@ function mapDigestRow(row: RawDigestRow): DigestCardItem {
     recipient_label: row.recipient_label,
     triage_type: row.triage_type as DigestTriageType,
     emergency_reason: row.emergency_reason,
+    emergency_review_status:
+      row.emergency_review_status as EmergencyReviewStatus,
+    emergency_reviewed_by: row.emergency_reviewed_by,
+    emergency_reviewed_at: row.emergency_reviewed_at,
     status: row.status as DigestCardStatus,
     scheduled_for: row.scheduled_for,
     dispatched_at: row.dispatched_at,
@@ -138,7 +146,7 @@ export async function PATCH(request: Request, context: RouteContext) {
     .eq("id", cardId)
     .eq("workspace_id", workspaceId)
     .select(
-      "id, workspace_id, author_id, title, body, recipient_label, triage_type, emergency_reason, status, scheduled_for, dispatched_at, created_at, updated_at, profiles(full_name)"
+      "id, workspace_id, author_id, title, body, recipient_label, triage_type, emergency_reason, emergency_review_status, emergency_reviewed_by, emergency_reviewed_at, status, scheduled_for, dispatched_at, created_at, updated_at, profiles!digest_cards_author_id_fkey(full_name)"
     )
     .single();
 

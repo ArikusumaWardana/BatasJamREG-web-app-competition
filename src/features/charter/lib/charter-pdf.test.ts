@@ -55,4 +55,38 @@ describe("buildCharterPdfDocument", () => {
     expect(header).toBe("%PDF-");
     expect(rawPdf.byteLength).toBeGreaterThan(1500);
   });
+
+  it("melampirkan halaman tabel persetujuan digital jika acknowledgements tersedia", () => {
+    const doc = buildCharterPdfDocument({
+      title: "Piagam Jam Digital Tim Kreatif",
+      company_or_team_name: "Tim Kreatif Nusantara",
+      quiet_hours_start: "18:00:00",
+      quiet_hours_end: "08:00:00",
+      non_urgent_sla_hours: 2,
+      emergency_criteria: ["Server produksi mengalami downtime"],
+      baseline_shadow_hours: 42.5,
+      version: 2,
+      acknowledgements: [
+        {
+          id: "ack-1",
+          user_id: "u-1",
+          full_name: "Sinta Dewi",
+          role_title: "Team Lead",
+          signed_at: "2026-11-22T09:15:00.000Z",
+        },
+        {
+          id: "ack-2",
+          user_id: "u-2",
+          full_name: "Nadya Putri",
+          role_title: "Desainer Kreatif",
+          signed_at: "2026-11-22T10:30:00.000Z",
+        },
+      ],
+    });
+
+    const rawPdf = doc.output("arraybuffer");
+    const header = new TextDecoder().decode(new Uint8Array(rawPdf).slice(0, 5));
+    expect(header).toBe("%PDF-");
+    expect(doc.getNumberOfPages()).toBeGreaterThanOrEqual(2);
+  });
 });

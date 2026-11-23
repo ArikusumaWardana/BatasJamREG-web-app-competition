@@ -3,6 +3,7 @@ import {
   isEndTimeAfterStartTime,
   timeStringSchema,
   timezoneSchema,
+  uuidSchema,
   workDaysSchema,
   workPatternSchema,
 } from "./common";
@@ -14,6 +15,7 @@ export const createWorkspaceSchema = z
       .trim()
       .min(2, "Nama workspace minimal 2 karakter.")
       .max(80, "Nama workspace maksimal 80 karakter."),
+    organization_id: uuidSchema.optional(),
     work_pattern: workPatternSchema.default("FIVE_DAYS_8H"),
     work_start_time: timeStringSchema.default("09:00:00"),
     work_end_time: timeStringSchema.default("17:00:00"),

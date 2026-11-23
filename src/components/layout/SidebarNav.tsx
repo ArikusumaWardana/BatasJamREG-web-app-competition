@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Building2,
   Calculator,
   FileSearch,
   FileText,
@@ -11,23 +12,25 @@ import {
   Sunrise,
 } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
+import type {
+  AppShellOrganization,
+  AppShellUser,
+  AppShellWorkspace,
+} from "./shell-types";
 import { SidebarFooter } from "./SidebarFooter";
+import { WorkspaceSwitcher } from "./WorkspaceSwitcher";
 
-export interface AppShellUser {
-  id: string;
-  fullName: string;
-  roleTitle: string;
-}
-
-export interface AppShellWorkspace {
-  id: string;
-  name: string;
-  role: string;
-}
+export type {
+  AppShellOrganization,
+  AppShellUser,
+  AppShellWorkspace,
+} from "./shell-types";
 
 export interface SidebarNavProps {
   mode: "authenticated" | "guest" | "loading";
   user?: AppShellUser | null;
+  organization?: AppShellOrganization | null;
+  workspaces?: AppShellWorkspace[];
   activeWorkspace?: AppShellWorkspace | null;
   queuedDigestCount?: number;
   onNavigate?: () => void;
@@ -37,11 +40,17 @@ export interface SidebarNavProps {
 interface NavItem {
   href: string;
   label: string;
-  icon: "dashboard" | "digest" | "audit" | "charter" | "simulator";
+  icon:
+    | "organization"
+    | "dashboard"
+    | "digest"
+    | "audit"
+    | "charter"
+    | "simulator";
   requiresAuth?: boolean;
 }
 
-const NAV_ITEMS: NavItem[] = [
+const BASE_NAV_ITEMS: NavItem[] = [
   {
     href: "/workspace",
     label: "Ringkasan Tim",
@@ -62,6 +71,8 @@ const NAV_ITEMS: NavItem[] = [
 function NavIcon({ kind }: { kind: NavItem["icon"] }) {
   const cls = "h-[18px] w-[18px] shrink-0";
   switch (kind) {
+    case "organization":
+      return <Building2 className={cls} strokeWidth={1.5} aria-hidden="true" />;
     case "dashboard":
       return <LayoutDashboard className={cls} strokeWidth={1.5} aria-hidden="true" />;
     case "digest":
@@ -78,12 +89,27 @@ function NavIcon({ kind }: { kind: NavItem["icon"] }) {
 export function SidebarNav({
   mode,
   user,
+  organization,
+  workspaces = [],
   activeWorkspace,
   queuedDigestCount = 0,
   onNavigate,
   onStartNavigation,
 }: SidebarNavProps) {
   const pathname = usePathname();
+  const isOrgOwner = mode === "authenticated" && organization?.role === "OWNER";
+
+  const navItems: NavItem[] = isOrgOwner
+    ? [
+        {
+          href: "/organization",
+          label: "Ringkasan Perusahaan",
+          icon: "organization",
+          requiresAuth: true,
+        },
+        ...BASE_NAV_ITEMS,
+      ]
+    : BASE_NAV_ITEMS;
 
   return (
     <div className="flex h-full flex-col justify-between p-4">
@@ -102,14 +128,13 @@ export function SidebarNav({
             </span>
           </div>
         ) : mode === "authenticated" ? (
-          <div className="rounded-md border border-border-hairline bg-canvas p-2.5">
-            <p className="truncate text-xs font-medium text-ink-primary">
-              {activeWorkspace?.name ?? "Belum ada workspace"}
-            </p>
-            <span className="mt-1 inline-flex items-center rounded bg-brand-soft px-1.5 py-0.5 font-mono text-[11px] font-medium text-brand">
-              {activeWorkspace?.role ?? "TANPA TIM"}
-            </span>
-          </div>
+          <WorkspaceSwitcher
+            organization={organization}
+            workspaces={workspaces}
+            activeWorkspace={activeWorkspace}
+            onStartNavigation={onStartNavigation}
+            onNavigate={onNavigate}
+          />
         ) : (
           <div className="flex items-center justify-between gap-2 rounded-md border border-border-hairline bg-canvas p-2.5">
             <span className="truncate text-xs font-medium text-ink-primary">
@@ -122,7 +147,7 @@ export function SidebarNav({
         )}
 
         <nav aria-label="Navigasi utama aplikasi" className="flex flex-col gap-1">
-          {NAV_ITEMS.map((item) => {
+          {navItems.map((item) => {
             const isLocked = mode === "guest" && Boolean(item.requiresAuth);
             const targetHref = isLocked ? "/auth/login" : item.href;
             const isActive = !isLocked && pathname === item.href;

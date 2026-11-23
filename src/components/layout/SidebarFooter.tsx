@@ -19,10 +19,11 @@ import {
   getDemoActorConfig,
   type DemoActorRole,
 } from "@/lib/constants/demo-actors";
+import { clearStoredActiveWorkspaceId } from "@/lib/storage/active-workspace";
 import { clearShellContextCache } from "@/lib/storage/shell-context-cache";
 import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
-import type { AppShellUser } from "./SidebarNav";
+import type { AppShellUser } from "./shell-types";
 
 interface SidebarFooterProps {
   mode: "authenticated" | "guest" | "loading";
@@ -56,6 +57,7 @@ export function SidebarFooter({ mode, user, onNavigate }: SidebarFooterProps) {
         return;
       }
       clearShellContextCache();
+      clearStoredActiveWorkspaceId();
       setConfirmLogoutOpen(false);
       toast.success("Berhasil keluar dari workspace.");
       onNavigate?.();
@@ -81,6 +83,7 @@ export function SidebarFooter({ mode, user, onNavigate }: SidebarFooterProps) {
         return;
       }
       clearShellContextCache();
+      clearStoredActiveWorkspaceId();
       toast.success(
         `Masuk sebagai ${actorConfig.fullName} (${actorConfig.shortLabel}).`
       );

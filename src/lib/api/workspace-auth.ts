@@ -12,6 +12,9 @@ export type WorkspaceMemberAuthResult =
       supabase: SupabaseServerClient;
       user: User;
       role: string;
+      isOrgOwner: boolean;
+      isJoined: boolean;
+      organizationId: string | null;
     }
   | {
       ok: false;
@@ -41,14 +44,35 @@ export async function requireWorkspaceMember(
     };
   }
 
-  const { data: membership } = await supabase
-    .from("workspace_members")
-    .select("role")
-    .eq("workspace_id", workspaceId)
-    .eq("user_id", user.id)
-    .maybeSingle();
+  const [{ data: membership }, { data: workspace }] = await Promise.all([
+    supabase
+      .from("workspace_members")
+      .select("role")
+      .eq("workspace_id", workspaceId)
+      .eq("user_id", user.id)
+      .maybeSingle(),
+    supabase
+      .from("workspaces")
+      .select("id, organization_id")
+      .eq("id", workspaceId)
+      .maybeSingle(),
+  ]);
 
-  if (!membership) {
+  const organizationId = workspace?.organization_id ?? null;
+  let isOrgOwner = false;
+
+  if (organizationId) {
+    const { data: orgMembership } = await supabase
+      .from("organization_members")
+      .select("role")
+      .eq("organization_id", organizationId)
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    isOrgOwner = orgMembership?.role === "OWNER";
+  }
+
+  if (!membership && !isOrgOwner) {
     return {
       ok: false,
       response: apiError(
@@ -59,5 +83,13 @@ export async function requireWorkspaceMember(
     };
   }
 
-  return { ok: true, supabase, user, role: membership.role };
+  return {
+    ok: true,
+    supabase,
+    user,
+    role: isOrgOwner ? "OWNER" : (membership?.role ?? "MEMBER"),
+    isOrgOwner,
+    isJoined: Boolean(membership),
+    organizationId,
+  };
 }

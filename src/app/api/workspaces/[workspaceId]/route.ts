@@ -1,14 +1,17 @@
 import {
+  computeCharterAdoptionPercentage,
+  summarizeEmergencyAudit,
+} from "@/features/wellbeing/lib/wellbeing-metrics";
+import {
   apiError,
   apiSuccess,
   formatZodIssues,
   parseJsonBody,
 } from "@/lib/api/response";
-import { createClient } from "@/lib/supabase/server";
+import { requireWorkspaceMember } from "@/lib/api/workspace-auth";
 import {
   isEndTimeAfterStartTime,
   updateWorkspaceSchema,
-  uuidSchema,
 } from "@/lib/validations";
 
 interface RouteContext {
@@ -17,34 +20,8 @@ interface RouteContext {
 
 export async function GET(_request: Request, context: RouteContext) {
   const { workspaceId } = await context.params;
-  const idParsed = uuidSchema.safeParse(workspaceId);
-  if (!idParsed.success) {
-    return apiError("VALIDATION_ERROR", "ID workspace tidak valid.", 400);
-  }
-
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return apiError("UNAUTHORIZED", "Silakan masuk terlebih dahulu.", 401);
-  }
-
-  const { data: membership } = await supabase
-    .from("workspace_members")
-    .select("role")
-    .eq("workspace_id", workspaceId)
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  if (!membership) {
-    return apiError(
-      "FORBIDDEN",
-      "Anda tidak memiliki akses ke workspace ini.",
-      403
-    );
-  }
+  const auth = await requireWorkspaceMember(workspaceId);
+  if (!auth.ok) return auth.response;
 
   const [
     { data: workspace, error: wsError },
@@ -52,84 +29,100 @@ export async function GET(_request: Request, context: RouteContext) {
     { count: queuedMorningCount },
     { data: activeCharter },
     { data: recentSnapshots },
+    { data: emergencyCards },
+    orgRes,
   ] = await Promise.all([
-    supabase
+    auth.supabase
       .from("workspaces")
       .select("*")
       .eq("id", workspaceId)
       .maybeSingle(),
-    supabase
+    auth.supabase
       .from("workspace_members")
       .select("user_id", { count: "exact", head: true })
       .eq("workspace_id", workspaceId),
-    supabase
+    auth.supabase
       .from("digest_cards")
       .select("id", { count: "exact", head: true })
       .eq("workspace_id", workspaceId)
       .eq("status", "QUEUED")
       .eq("triage_type", "MORNING_QUEUE"),
-    supabase
+    auth.supabase
       .from("team_charters")
       .select("id, title, version, quiet_hours_start, quiet_hours_end, updated_at")
       .eq("workspace_id", workspaceId)
       .eq("is_active", true)
       .maybeSingle(),
-    supabase
+    auth.supabase
       .from("audit_snapshots")
       .select(
-        "id, label, period_start, period_end, total_messages, after_hours_messages, shadow_overtime_hours, false_urgency_count, peak_day_of_week, peak_hour, created_at"
+        "id, label, period_start, period_end, total_messages, after_hours_messages, shadow_overtime_hours, false_urgency_count, peak_day_of_week, peak_hour, heatmap_matrix, created_at"
       )
       .eq("workspace_id", workspaceId)
       .order("period_start", { ascending: false })
       .limit(6),
+    auth.supabase
+      .from("digest_cards")
+      .select("emergency_review_status")
+      .eq("workspace_id", workspaceId)
+      .eq("triage_type", "EMERGENCY_OPS")
+      .neq("status", "ARCHIVED"),
+    auth.organizationId
+      ? auth.supabase
+          .from("organizations")
+          .select("name")
+          .eq("id", auth.organizationId)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
   ]);
 
   if (wsError || !workspace) {
     return apiError("NOT_FOUND", "Workspace tidak ditemukan.", 404);
   }
 
+  let charterAdoption = null;
+  if (activeCharter) {
+    const { data: ackRows } = await auth.supabase
+      .from("charter_acknowledgements")
+      .select("user_id")
+      .eq("charter_id", activeCharter.id)
+      .eq("workspace_id", workspaceId);
+
+    const signedCount = ackRows?.length ?? 0;
+    const totalMembers = Math.max(memberCount ?? 0, signedCount);
+    charterAdoption = {
+      charter_id: activeCharter.id,
+      signed_count: signedCount,
+      total_members: totalMembers,
+      adoption_percentage: computeCharterAdoptionPercentage(
+        signedCount,
+        totalMembers
+      ),
+      has_signed: (ackRows ?? []).some((row) => row.user_id === auth.user.id),
+    };
+  }
+
   return apiSuccess({
     ...workspace,
-    role: membership.role,
+    organization_name: orgRes.data?.name ?? null,
+    org_role: auth.isOrgOwner ? "OWNER" : auth.organizationId ? "MEMBER" : null,
+    role: auth.role,
+    is_joined: auth.isJoined,
     member_count: memberCount ?? 0,
     queued_morning_count: queuedMorningCount ?? 0,
     active_charter: activeCharter ?? null,
+    charter_adoption: charterAdoption,
+    emergency_audit_summary: summarizeEmergencyAudit(emergencyCards ?? []),
     recent_snapshots: recentSnapshots ?? [],
   });
 }
 
 export async function PATCH(request: Request, context: RouteContext) {
   const { workspaceId } = await context.params;
-  const idParsed = uuidSchema.safeParse(workspaceId);
-  if (!idParsed.success) {
-    return apiError("VALIDATION_ERROR", "ID workspace tidak valid.", 400);
-  }
+  const auth = await requireWorkspaceMember(workspaceId);
+  if (!auth.ok) return auth.response;
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return apiError("UNAUTHORIZED", "Silakan masuk terlebih dahulu.", 401);
-  }
-
-  const { data: membership } = await supabase
-    .from("workspace_members")
-    .select("role")
-    .eq("workspace_id", workspaceId)
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  if (!membership) {
-    return apiError(
-      "FORBIDDEN",
-      "Anda tidak memiliki akses ke workspace ini.",
-      403
-    );
-  }
-
-  if (membership.role !== "OWNER" && membership.role !== "LEAD") {
+  if (auth.role !== "OWNER" && auth.role !== "LEAD") {
     return apiError(
       "FORBIDDEN",
       "Hanya Owner atau Lead yang dapat mengubah pengaturan workspace.",
@@ -138,9 +131,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   }
 
   const bodyResult = await parseJsonBody(request);
-  if (!bodyResult.ok) {
-    return bodyResult.response;
-  }
+  if (!bodyResult.ok) return bodyResult.response;
 
   const parsed = updateWorkspaceSchema.safeParse(bodyResult.data);
   if (!parsed.success) {
@@ -152,7 +143,7 @@ export async function PATCH(request: Request, context: RouteContext) {
     );
   }
 
-  const { data: existing } = await supabase
+  const { data: existing } = await auth.supabase
     .from("workspaces")
     .select("work_start_time, work_end_time")
     .eq("id", workspaceId)
@@ -170,11 +161,15 @@ export async function PATCH(request: Request, context: RouteContext) {
       "VALIDATION_ERROR",
       "Jam selesai kerja harus lebih besar dari jam mulai kerja.",
       400,
-      { work_end_time: ["Jam selesai kerja harus lebih besar dari jam mulai kerja."] }
+      {
+        work_end_time: [
+          "Jam selesai kerja harus lebih besar dari jam mulai kerja.",
+        ],
+      }
     );
   }
 
-  const { data: updated, error: updateError } = await supabase
+  const { data: updated, error: updateError } = await auth.supabase
     .from("workspaces")
     .update(parsed.data)
     .eq("id", workspaceId)
@@ -189,5 +184,5 @@ export async function PATCH(request: Request, context: RouteContext) {
     );
   }
 
-  return apiSuccess({ ...updated, role: membership.role });
+  return apiSuccess({ ...updated, role: auth.role });
 }

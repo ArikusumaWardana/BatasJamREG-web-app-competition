@@ -1,5 +1,7 @@
+import { getStoredActiveWorkspaceId } from "@/lib/storage/active-workspace";
 import type { DiplomaticReplyInput } from "@/lib/validations";
 import type {
+  CharterAdoptionSummary,
   CharterDraft,
   DiplomaticReplyResult,
   TeamCharterRecord,
@@ -30,7 +32,11 @@ export async function fetchActiveCharterWorkspace(): Promise<{
       return { status: "guest", workspace: null };
     }
 
+    const storedId = getStoredActiveWorkspaceId();
     const preferred =
+      (storedId
+        ? payload.data.find((ws) => ws.id === storedId)
+        : undefined) ??
       payload.data.find((ws) => ws.invite_code === "REG-8492") ??
       payload.data[0] ??
       null;
@@ -140,6 +146,75 @@ export async function requestDiplomaticReplies(
     return {
       ok: false,
       message: "Koneksi terputus saat menghubungi penyusun balasan.",
+    };
+  }
+}
+
+export async function fetchCharterAcknowledgements(
+  workspaceId: string,
+  charterId: string
+): Promise<
+  | { ok: true; data: CharterAdoptionSummary }
+  | { ok: false; message: string }
+> {
+  try {
+    const res = await fetch(
+      `/api/workspaces/${workspaceId}/charters/${charterId}/acknowledge`
+    );
+    const payload = (await res.json()) as {
+      success?: boolean;
+      data?: CharterAdoptionSummary;
+      error?: { message?: string };
+    };
+
+    if (!res.ok || !payload.success || !payload.data) {
+      return {
+        ok: false,
+        message:
+          payload.error?.message ?? "Gagal memuat status persetujuan piagam.",
+      };
+    }
+
+    return { ok: true, data: payload.data };
+  } catch {
+    return {
+      ok: false,
+      message: "Koneksi terputus saat memuat persetujuan piagam.",
+    };
+  }
+}
+
+export async function signWorkspaceCharter(
+  workspaceId: string,
+  charterId: string
+): Promise<
+  | { ok: true; data: CharterAdoptionSummary }
+  | { ok: false; message: string }
+> {
+  try {
+    const res = await fetch(
+      `/api/workspaces/${workspaceId}/charters/${charterId}/acknowledge`,
+      { method: "POST" }
+    );
+    const payload = (await res.json()) as {
+      success?: boolean;
+      data?: CharterAdoptionSummary;
+      error?: { message?: string };
+    };
+
+    if (!res.ok || !payload.success || !payload.data) {
+      return {
+        ok: false,
+        message:
+          payload.error?.message ?? "Gagal menandatangani Piagam Jam Digital.",
+      };
+    }
+
+    return { ok: true, data: payload.data };
+  } catch {
+    return {
+      ok: false,
+      message: "Koneksi terputus saat menandatangani piagam.",
     };
   }
 }

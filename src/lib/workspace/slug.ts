@@ -11,7 +11,7 @@ function randomToken(length: number, alphabet: string): string {
   return token;
 }
 
-export function generateWorkspaceSlug(name: string): string {
+function buildSlug(name: string, fallbackPrefix: string): string {
   const base = name
     .toLowerCase()
     .trim()
@@ -19,9 +19,17 @@ export function generateWorkspaceSlug(name: string): string {
     .replace(/^-+|-+$/g, "")
     .slice(0, 48);
 
-  const safeBase = base.length > 0 ? base : "workspace";
+  const safeBase = base.length > 0 ? base : fallbackPrefix;
   const suffix = randomToken(4, "abcdefghijklmnopqrstuvwxyz0123456789");
   return `${safeBase}-${suffix}`;
+}
+
+export function generateWorkspaceSlug(name: string): string {
+  return buildSlug(name, "workspace");
+}
+
+export function generateOrganizationSlug(name: string): string {
+  return buildSlug(name, "organisasi");
 }
 
 export function generateInviteCode(): string {

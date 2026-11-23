@@ -2,7 +2,11 @@
 
 import { Plus, RefreshCw } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import type { DigestCardItem, DigestTabKey } from "../types";
+import type {
+  DigestCardItem,
+  DigestTabKey,
+  EmergencyReviewStatus,
+} from "../types";
 import { DigestCardRow } from "./DigestCardRow";
 
 interface DigestCardListTabProps {
@@ -14,11 +18,16 @@ interface DigestCardListTabProps {
   isAdmin: boolean;
   deselectedIds: Set<string>;
   deletingCardId: string | null;
+  reviewingCardId: string | null;
   onRetry: () => void;
   onCreateNew: () => void;
   onToggleSelect: (cardId: string, checked: boolean) => void;
   onEdit: (card: DigestCardItem) => void;
   onDelete: (cardId: string) => void;
+  onReviewEmergency: (
+    cardId: string,
+    status: Exclude<EmergencyReviewStatus, "PENDING">
+  ) => void;
 }
 
 export function DigestCardListTab({
@@ -30,11 +39,13 @@ export function DigestCardListTab({
   isAdmin,
   deselectedIds,
   deletingCardId,
+  reviewingCardId,
   onRetry,
   onCreateNew,
   onToggleSelect,
   onEdit,
   onDelete,
+  onReviewEmergency,
 }: DigestCardListTabProps) {
   if (isLoading) {
     return (
@@ -94,10 +105,13 @@ export function DigestCardListTab({
           selectable={tab === "MORNING_QUEUE"}
           isSelected={!deselectedIds.has(card.id)}
           canManage={card.author_id === userId || isAdmin}
+          canReviewEmergency={isAdmin}
           isDeleting={deletingCardId === card.id}
+          isReviewing={reviewingCardId === card.id}
           onToggleSelect={onToggleSelect}
           onEdit={onEdit}
           onDelete={onDelete}
+          onReviewEmergency={onReviewEmergency}
         />
       ))}
     </div>

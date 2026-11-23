@@ -4,8 +4,8 @@ import {
   formatZodIssues,
   parseJsonBody,
 } from "@/lib/api/response";
-import { createClient } from "@/lib/supabase/server";
-import { createAuditSnapshotSchema, uuidSchema } from "@/lib/validations";
+import { requireWorkspaceMember } from "@/lib/api/workspace-auth";
+import { createAuditSnapshotSchema } from "@/lib/validations";
 
 interface RouteContext {
   params: Promise<{ workspaceId: string }>;
@@ -13,36 +13,10 @@ interface RouteContext {
 
 export async function GET(_request: Request, context: RouteContext) {
   const { workspaceId } = await context.params;
-  const idParsed = uuidSchema.safeParse(workspaceId);
-  if (!idParsed.success) {
-    return apiError("VALIDATION_ERROR", "ID workspace tidak valid.", 400);
-  }
+  const auth = await requireWorkspaceMember(workspaceId);
+  if (!auth.ok) return auth.response;
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return apiError("UNAUTHORIZED", "Silakan masuk terlebih dahulu.", 401);
-  }
-
-  const { data: membership } = await supabase
-    .from("workspace_members")
-    .select("role")
-    .eq("workspace_id", workspaceId)
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  if (!membership) {
-    return apiError(
-      "FORBIDDEN",
-      "Anda tidak memiliki akses ke workspace ini.",
-      403
-    );
-  }
-
-  const { data, error } = await supabase
+  const { data, error } = await auth.supabase
     .from("audit_snapshots")
     .select("*")
     .eq("workspace_id", workspaceId)
@@ -62,39 +36,11 @@ export async function GET(_request: Request, context: RouteContext) {
 
 export async function POST(request: Request, context: RouteContext) {
   const { workspaceId } = await context.params;
-  const idParsed = uuidSchema.safeParse(workspaceId);
-  if (!idParsed.success) {
-    return apiError("VALIDATION_ERROR", "ID workspace tidak valid.", 400);
-  }
-
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return apiError("UNAUTHORIZED", "Silakan masuk terlebih dahulu.", 401);
-  }
-
-  const { data: membership } = await supabase
-    .from("workspace_members")
-    .select("role")
-    .eq("workspace_id", workspaceId)
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  if (!membership) {
-    return apiError(
-      "FORBIDDEN",
-      "Anda tidak memiliki akses ke workspace ini.",
-      403
-    );
-  }
+  const auth = await requireWorkspaceMember(workspaceId);
+  if (!auth.ok) return auth.response;
 
   const bodyResult = await parseJsonBody(request);
-  if (!bodyResult.ok) {
-    return bodyResult.response;
-  }
+  if (!bodyResult.ok) return bodyResult.response;
 
   const parsed = createAuditSnapshotSchema.safeParse(bodyResult.data);
   if (!parsed.success) {
@@ -106,11 +52,11 @@ export async function POST(request: Request, context: RouteContext) {
     );
   }
 
-  const { data: inserted, error: insertError } = await supabase
+  const { data: inserted, error: insertError } = await auth.supabase
     .from("audit_snapshots")
     .insert({
       workspace_id: workspaceId,
-      created_by: user.id,
+      created_by: auth.user.id,
       label: parsed.data.label,
       period_start: parsed.data.period_start,
       period_end: parsed.data.period_end,

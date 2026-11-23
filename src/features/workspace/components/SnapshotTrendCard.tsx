@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import {
   Bar,
@@ -13,9 +13,15 @@ import {
   YAxis,
 } from "recharts";
 import type { SnapshotSummary } from "../types";
+import { SnapshotComparisonPanel } from "./SnapshotComparisonPanel";
+import {
+  computeAfterHoursPct,
+  SnapshotHistoryTable,
+} from "./SnapshotHistoryTable";
 
 interface SnapshotTrendCardProps {
   snapshots: SnapshotSummary[];
+  workDays?: number[];
 }
 
 interface ChartPoint {
@@ -39,30 +45,19 @@ const MONTH_NAMES = [
   "Des",
 ];
 
-function formatShortPeriod(start: string, end: string): string {
-  const sParts = start.split("-");
-  const eParts = end.split("-");
-  const monthIdx = Number(eParts[1] ?? "1") - 1;
-  const monthLabel = MONTH_NAMES[monthIdx] ?? eParts[1];
-  return `${sParts[2]}-${eParts[2]} ${monthLabel}`;
-}
-
 function formatMonthLabel(periodEnd: string, fallback: string): string {
   const parts = periodEnd.split("-");
   const monthIdx = Number(parts[1] ?? "0") - 1;
   return MONTH_NAMES[monthIdx] ?? fallback.slice(0, 12);
 }
 
-function computeAfterHoursPct(item: SnapshotSummary): number {
-  if (item.total_messages <= 0) return 0;
-  return Number(
-    ((item.after_hours_messages / item.total_messages) * 100).toFixed(1)
-  );
-}
-
 const subscribeNoop = () => () => {};
 
-export function SnapshotTrendCard({ snapshots }: SnapshotTrendCardProps) {
+export function SnapshotTrendCard({
+  snapshots,
+  workDays = [1, 2, 3, 4, 5],
+}: SnapshotTrendCardProps) {
+  const [viewMode, setViewMode] = useState<"trend" | "compare">("trend");
   const isClient = useSyncExternalStore(
     subscribeNoop,
     () => true,
@@ -79,20 +74,61 @@ export function SnapshotTrendCard({ snapshots }: SnapshotTrendCardProps) {
     afterHoursPct: computeAfterHoursPct(item),
   }));
 
+  const canCompare = snapshots.length >= 2;
+  const activeMode = viewMode === "compare" && canCompare ? "compare" : "trend";
+
   return (
     <article className="flex flex-col gap-5 rounded-lg border border-border-hairline bg-surface p-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="text-base font-semibold text-ink-primary">
-            Tren Lembur Bayangan Tim per Periode Audit
+            Riwayat &amp; Perbandingan Audit Tim
           </h2>
           <p className="text-xs text-ink-secondary">
             Agregat jam lembur bayangan dari snapshot anonim tanpa teks chat.
           </p>
         </div>
-        <span className="font-mono text-xs tabular-nums text-ink-secondary">
-          {snapshots.length} Snapshot Tersimpan
-        </span>
+
+        <div className="flex flex-wrap items-center gap-2">
+          <div
+            role="tablist"
+            aria-label="Mode tampilan snapshot"
+            className="inline-flex rounded-md border border-border-hairline bg-canvas p-1"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeMode === "trend"}
+              onClick={() => setViewMode("trend")}
+              className={`min-h-[36px] rounded px-3 py-1.5 text-xs font-medium transition-colors ${
+                activeMode === "trend"
+                  ? "bg-surface text-brand shadow-2xs"
+                  : "text-ink-secondary hover:text-ink-primary"
+              }`}
+            >
+              Tren &amp; Riwayat
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeMode === "compare"}
+              disabled={!canCompare}
+              onClick={() => setViewMode("compare")}
+              title={
+                canCompare
+                  ? "Bandingkan 2 periode audit"
+                  : "Simpan minimal 2 snapshot untuk membandingkan"
+              }
+              className={`min-h-[36px] rounded px-3 py-1.5 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
+                activeMode === "compare"
+                  ? "bg-surface text-brand shadow-2xs"
+                  : "text-ink-secondary hover:text-ink-primary"
+              }`}
+            >
+              Bandingkan 2 Snapshot (Before vs After)
+            </button>
+          </div>
+        </div>
       </div>
 
       {snapshots.length === 0 ? (
@@ -106,11 +142,13 @@ export function SnapshotTrendCard({ snapshots }: SnapshotTrendCardProps) {
           </p>
           <Link
             href="/audit"
-            className="inline-flex min-h-[38px] items-center justify-center rounded-md bg-brand px-3.5 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover"
           >
             Mulai Audit WA Lokal
           </Link>
         </div>
+      ) : activeMode === "compare" ? (
+        <SnapshotComparisonPanel snapshots={snapshots} workDays={workDays} />
       ) : (
         <>
           <div className="h-52 w-full min-w-0 rounded-md border border-border-hairline bg-canvas p-3">
@@ -172,46 +210,7 @@ export function SnapshotTrendCard({ snapshots }: SnapshotTrendCardProps) {
             ) : null}
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-left">
-              <thead>
-                <tr className="border-b border-border-hairline text-xs font-medium text-ink-secondary">
-                  <th className="py-2 pr-3">Label Audit</th>
-                  <th className="px-3 py-2">Periode</th>
-                  <th className="px-3 py-2 text-right">Luar Jam (%)</th>
-                  <th className="py-2 pl-3 text-right">Lembur Bayangan</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border-hairline text-sm">
-                {snapshots.map((item) => {
-                  const pct = computeAfterHoursPct(item);
-                  return (
-                    <tr key={item.id}>
-                      <td className="py-2.5 pr-3 font-medium text-ink-primary">
-                        {item.label}
-                      </td>
-                      <td className="px-3 py-2.5 font-mono text-xs tabular-nums text-ink-secondary">
-                        {formatShortPeriod(item.period_start, item.period_end)}
-                      </td>
-                      <td
-                        className={`px-3 py-2.5 text-right font-mono text-xs font-medium tabular-nums ${
-                          pct <= 30 ? "text-safe" : "text-warn"
-                        }`}
-                      >
-                        {pct.toFixed(1).replace(".", ",")}%
-                      </td>
-                      <td className="py-2.5 pl-3 text-right font-mono text-xs font-semibold tabular-nums text-ink-primary">
-                        {Number(item.shadow_overtime_hours)
-                          .toFixed(1)
-                          .replace(".", ",")}{" "}
-                        Jam
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+          <SnapshotHistoryTable snapshots={snapshots} />
         </>
       )}
     </article>

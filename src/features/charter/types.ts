@@ -25,6 +25,23 @@ export interface TeamCharterRecord {
   updated_at: string;
 }
 
+export interface CharterAcknowledgementItem {
+  id: string;
+  user_id: string;
+  full_name: string;
+  role_title: string;
+  signed_at: string;
+}
+
+export interface CharterAdoptionSummary {
+  charter_id: string;
+  signed_count: number;
+  total_members: number;
+  adoption_percentage: number;
+  has_signed: boolean;
+  acknowledgements: CharterAcknowledgementItem[];
+}
+
 export interface CharterDraft {
   title: string;
   company_or_team_name: string;
@@ -35,6 +52,7 @@ export interface CharterDraft {
   baseline_shadow_hours: number | null;
   version?: number;
   effective_date?: string;
+  acknowledgements?: CharterAcknowledgementItem[];
 }
 
 export interface DiplomaticReplyDraft {

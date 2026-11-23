@@ -1,16 +1,19 @@
 import type {
+  AppShellOrganization,
   AppShellUser,
   AppShellWorkspace,
-} from "@/components/layout/SidebarNav";
+} from "@/components/layout/shell-types";
 
 export interface CachedShellContext {
   mode: "authenticated" | "guest";
   user: AppShellUser | null;
+  organization: AppShellOrganization | null;
+  workspaces: AppShellWorkspace[];
   activeWorkspace: AppShellWorkspace | null;
   queuedDigestCount: number;
 }
 
-const STORAGE_KEY = "batasjamreg:shell-ctx:v1";
+const STORAGE_KEY = "batasjamreg:shell-ctx:v3";
 const listeners = new Set<() => void>();
 
 let memoryCache: CachedShellContext | null = null;
@@ -28,7 +31,8 @@ function readInitialCache(): CachedShellContext | null {
       typeof parsed === "object" &&
       parsed !== null &&
       ((parsed as CachedShellContext).mode === "authenticated" ||
-        (parsed as CachedShellContext).mode === "guest")
+        (parsed as CachedShellContext).mode === "guest") &&
+      Array.isArray((parsed as CachedShellContext).workspaces)
     ) {
       memoryCache = parsed as CachedShellContext;
     }

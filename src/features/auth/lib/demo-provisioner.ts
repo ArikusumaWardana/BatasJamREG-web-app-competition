@@ -3,6 +3,7 @@ import type { DemoActorConfig } from "@/lib/constants/demo-actors";
 import type { Database } from "@/types/database.types";
 
 export const DEMO_INVITE_CODE = "REG-8492";
+export const DEMO_ORG_SLUG = "pt-nusantara-digital";
 
 export async function ensureDemoAccountAndWorkspace(
   actorConfig: DemoActorConfig,
@@ -21,10 +22,7 @@ export async function ensureDemoAccountAndWorkspace(
   });
 
   const { data: usersData, error: listError } =
-    await admin.auth.admin.listUsers({
-      page: 1,
-      perPage: 200,
-    });
+    await admin.auth.admin.listUsers({ page: 1, perPage: 200 });
 
   if (listError) {
     return false;
@@ -51,10 +49,7 @@ export async function ensureDemoAccountAndWorkspace(
   } else {
     const { error: updateErr } = await admin.auth.admin.updateUserById(
       existingUser.id,
-      {
-        password: demoPassword,
-        email_confirm: true,
-      }
+      { password: demoPassword, email_confirm: true }
     );
     if (updateErr) {
       return false;
@@ -72,9 +67,30 @@ export async function ensureDemoAccountAndWorkspace(
     { onConflict: "id" }
   );
 
+  const { data: existingOrg } = await admin
+    .from("organizations")
+    .select("id")
+    .eq("slug", DEMO_ORG_SLUG)
+    .maybeSingle();
+
+  let orgId = existingOrg?.id ?? null;
+
+  if (!orgId) {
+    const { data: insertedOrg } = await admin
+      .from("organizations")
+      .insert({
+        name: "PT Nusantara Digital",
+        slug: DEMO_ORG_SLUG,
+        created_by: userId,
+      })
+      .select("id")
+      .single();
+    orgId = insertedOrg?.id ?? null;
+  }
+
   const { data: existingWs } = await admin
     .from("workspaces")
-    .select("id")
+    .select("id, organization_id")
     .eq("invite_code", DEMO_INVITE_CODE)
     .maybeSingle();
 
@@ -87,6 +103,7 @@ export async function ensureDemoAccountAndWorkspace(
         name: "Tim Kreatif Nusantara",
         slug: "tim-kreatif-nusantara",
         invite_code: DEMO_INVITE_CODE,
+        organization_id: orgId,
         work_pattern: "FIVE_DAYS_8H",
         work_start_time: "09:00:00",
         work_end_time: "17:00:00",
@@ -98,6 +115,22 @@ export async function ensureDemoAccountAndWorkspace(
       .select("id")
       .single();
     workspaceId = insertedWs?.id ?? null;
+  } else if (orgId && !existingWs?.organization_id) {
+    await admin
+      .from("workspaces")
+      .update({ organization_id: orgId })
+      .eq("id", workspaceId);
+  }
+
+  if (orgId) {
+    await admin.from("organization_members").upsert(
+      {
+        organization_id: orgId,
+        user_id: userId,
+        role: actorConfig.actor === "OWNER" ? "OWNER" : "MEMBER",
+      },
+      { onConflict: "organization_id,user_id" }
+    );
   }
 
   if (workspaceId) {

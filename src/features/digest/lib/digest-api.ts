@@ -1,6 +1,6 @@
 import type { WorkspaceListItem } from "@/features/workspace/types";
 import { createClient } from "@/lib/supabase/client";
-import type { DigestTriageType } from "../types";
+import type { DigestTriageType, EmergencyReviewStatus } from "../types";
 
 export interface SaveDigestCardPayload {
   title: string;
@@ -11,7 +11,9 @@ export interface SaveDigestCardPayload {
   scheduled_for: string;
 }
 
-export async function loadActiveWorkspaceContext(): Promise<{
+export async function loadActiveWorkspaceContext(
+  preferredId?: string
+): Promise<{
   workspace: WorkspaceListItem | null;
   userId: string | null;
   error: string | null;
@@ -38,6 +40,9 @@ export async function loadActiveWorkspaceContext(): Promise<{
     }
 
     const active =
+      (preferredId
+        ? payload.data.find((item) => item.id === preferredId)
+        : undefined) ??
       payload.data.find((item) => item.invite_code === "REG-8492") ??
       payload.data[0] ??
       null;
@@ -106,6 +111,42 @@ export async function deleteDigestCardRequest(
     return {
       ok: false,
       errorMessage: "Koneksi terputus saat menghapus kartu.",
+    };
+  }
+}
+
+export async function reviewEmergencyCardRequest(
+  workspaceId: string,
+  cardId: string,
+  status: Exclude<EmergencyReviewStatus, "PENDING">
+): Promise<{ ok: boolean; errorMessage?: string }> {
+  try {
+    const response = await fetch(
+      `/api/workspaces/${workspaceId}/digest-cards/${cardId}/review`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emergency_review_status: status }),
+      }
+    );
+    const payload = (await response.json()) as {
+      success?: boolean;
+      error?: { message?: string };
+    };
+
+    if (!response.ok || !payload.success) {
+      return {
+        ok: false,
+        errorMessage:
+          payload.error?.message ?? "Gagal menyimpan evaluasi kartu darurat.",
+      };
+    }
+
+    return { ok: true };
+  } catch {
+    return {
+      ok: false,
+      errorMessage: "Koneksi terputus saat mengevaluasi kartu darurat.",
     };
   }
 }

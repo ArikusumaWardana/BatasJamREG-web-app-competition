@@ -80,6 +80,52 @@ export type Database = {
           },
         ]
       }
+      charter_acknowledgements: {
+        Row: {
+          charter_id: string
+          id: string
+          signed_at: string
+          user_id: string
+          workspace_id: string
+        }
+        Insert: {
+          charter_id: string
+          id?: string
+          signed_at?: string
+          user_id: string
+          workspace_id: string
+        }
+        Update: {
+          charter_id?: string
+          id?: string
+          signed_at?: string
+          user_id?: string
+          workspace_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "charter_acknowledgements_charter_id_fkey"
+            columns: ["charter_id"]
+            isOneToOne: false
+            referencedRelation: "team_charters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "charter_acknowledgements_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "charter_acknowledgements_workspace_id_fkey"
+            columns: ["workspace_id"]
+            isOneToOne: false
+            referencedRelation: "workspaces"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       digest_cards: {
         Row: {
           author_id: string
@@ -87,6 +133,9 @@ export type Database = {
           created_at: string
           dispatched_at: string | null
           emergency_reason: string | null
+          emergency_review_status: string
+          emergency_reviewed_at: string | null
+          emergency_reviewed_by: string | null
           id: string
           recipient_label: string
           scheduled_for: string
@@ -102,6 +151,9 @@ export type Database = {
           created_at?: string
           dispatched_at?: string | null
           emergency_reason?: string | null
+          emergency_review_status?: string
+          emergency_reviewed_at?: string | null
+          emergency_reviewed_by?: string | null
           id?: string
           recipient_label?: string
           scheduled_for?: string
@@ -117,6 +169,9 @@ export type Database = {
           created_at?: string
           dispatched_at?: string | null
           emergency_reason?: string | null
+          emergency_review_status?: string
+          emergency_reviewed_at?: string | null
+          emergency_reviewed_by?: string | null
           id?: string
           recipient_label?: string
           scheduled_for?: string
@@ -135,10 +190,88 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "digest_cards_emergency_reviewed_by_fkey"
+            columns: ["emergency_reviewed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "digest_cards_workspace_id_fkey"
             columns: ["workspace_id"]
             isOneToOne: false
             referencedRelation: "workspaces"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organization_members: {
+        Row: {
+          joined_at: string
+          organization_id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          joined_at?: string
+          organization_id: string
+          role?: string
+          user_id: string
+        }
+        Update: {
+          joined_at?: string
+          organization_id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organization_members_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "organization_members_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organizations: {
+        Row: {
+          created_at: string
+          created_by: string
+          id: string
+          name: string
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          id?: string
+          name: string
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          id?: string
+          name?: string
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organizations_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -233,6 +366,54 @@ export type Database = {
           },
         ]
       }
+      wellbeing_pulses: {
+        Row: {
+          boundary_clarity: number
+          created_at: string
+          id: string
+          reply_pressure: number
+          rest_quality: number
+          user_id: string
+          week_start_date: string
+          workspace_id: string
+        }
+        Insert: {
+          boundary_clarity: number
+          created_at?: string
+          id?: string
+          reply_pressure: number
+          rest_quality: number
+          user_id: string
+          week_start_date: string
+          workspace_id: string
+        }
+        Update: {
+          boundary_clarity?: number
+          created_at?: string
+          id?: string
+          reply_pressure?: number
+          rest_quality?: number
+          user_id?: string
+          week_start_date?: string
+          workspace_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wellbeing_pulses_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "wellbeing_pulses_workspace_id_fkey"
+            columns: ["workspace_id"]
+            isOneToOne: false
+            referencedRelation: "workspaces"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       workspace_members: {
         Row: {
           joined_at: string
@@ -277,6 +458,7 @@ export type Database = {
           id: string
           invite_code: string
           name: string
+          organization_id: string | null
           slug: string
           timezone: string
           updated_at: string
@@ -292,6 +474,7 @@ export type Database = {
           id?: string
           invite_code: string
           name: string
+          organization_id?: string | null
           slug: string
           timezone?: string
           updated_at?: string
@@ -307,6 +490,7 @@ export type Database = {
           id?: string
           invite_code?: string
           name?: string
+          organization_id?: string | null
           slug?: string
           timezone?: string
           updated_at?: string
@@ -323,6 +507,13 @@ export type Database = {
             referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "workspaces_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
         ]
       }
     }
@@ -330,8 +521,39 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_public_workspace_status: {
+        Args: { p_slug: string }
+        Returns: {
+          digest_dispatch_time: string
+          emergency_criteria: Json
+          non_urgent_sla_hours: number
+          quiet_hours_end: string
+          quiet_hours_start: string
+          slug: string
+          timezone: string
+          work_days: number[]
+          work_end_time: string
+          work_pattern: string
+          work_start_time: string
+          workspace_name: string
+        }[]
+      }
+      get_workspace_wellbeing_summary: {
+        Args: { p_workspace_id: string }
+        Returns: {
+          avg_boundary_clarity: number
+          avg_reply_pressure: number
+          avg_rest_quality: number
+          is_threshold_met: boolean
+          response_count: number
+          week_start_date: string
+        }[]
+      }
+      is_org_member: { Args: { org_id: string }; Returns: boolean }
+      is_org_owner: { Args: { org_id: string }; Returns: boolean }
       is_workspace_admin: { Args: { ws_id: string }; Returns: boolean }
       is_workspace_member: { Args: { ws_id: string }; Returns: boolean }
+      is_workspace_org_owner: { Args: { ws_id: string }; Returns: boolean }
       join_workspace_by_invite_code: {
         Args: { p_invite_code: string }
         Returns: {

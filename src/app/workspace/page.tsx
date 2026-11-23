@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
+import { PageLoadingOverlay } from "@/components/layout/PageLoadingOverlay";
 import { WorkspaceDashboardClient } from "@/features/workspace/components/WorkspaceDashboardClient";
 
 export const metadata: Metadata = {
@@ -8,5 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default function WorkspacePage() {
-  return <WorkspaceDashboardClient />;
+  return (
+    <Suspense
+      fallback={
+        <PageLoadingOverlay
+          variant="panel"
+          message="Sedang memuat ringkasan workspace..."
+        />
+      }
+    >
+      <WorkspaceDashboardClient />
+    </Suspense>
+  );
 }

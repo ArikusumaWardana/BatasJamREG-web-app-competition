@@ -27,7 +27,7 @@ export function AuditKpiCards({ result, timezone }: AuditKpiCardsProps) {
   return (
     <section
       aria-label="Ringkasan Metrik Audit"
-      className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      className="grid h-full grid-cols-1 items-stretch gap-4 sm:grid-cols-2"
     >
       <article className="flex h-full flex-col justify-between gap-2 rounded-lg border border-border-hairline bg-surface p-4">
         <div className="flex items-center justify-between gap-2">

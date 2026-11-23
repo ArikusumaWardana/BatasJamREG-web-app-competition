@@ -20,7 +20,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(safeNext, request.url));
   }
 
-  if (pathname.startsWith("/workspace") && !user) {
+  const isProtectedAppRoute =
+    pathname.startsWith("/workspace") || pathname.startsWith("/organization");
+
+  if (isProtectedAppRoute && !user) {
     const loginUrl = new URL("/auth/login", request.url);
     const nextPath = `${pathname}${search}`;
     loginUrl.searchParams.set("next", nextPath);
