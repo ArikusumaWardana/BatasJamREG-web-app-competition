@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Loader2, SlidersHorizontal } from "lucide-react";
 import { toast } from "sonner";
+import {
+  BENTO_CARD_CLS,
+  BENTO_PILL_PRIMARY_CLS,
+  BentoCardHeader,
+} from "@/components/shared/BentoPrimitives";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -157,17 +162,18 @@ function WorkspaceSettingsForm({
   }
 
   return (
-    <article className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5">
-      <div className="flex items-center justify-between gap-2">
-        <h2 className="text-base font-semibold text-ink-primary">
-          Pengaturan Jam Reguler
-        </h2>
-        {!isAdmin ? (
-          <span className="rounded bg-surface-muted px-2 py-0.5 text-[11px] font-medium text-ink-secondary">
-            Hanya Lihat ({workspace.role})
-          </span>
-        ) : null}
-      </div>
+    <article id="pengaturan-divisi" className={`flex h-full flex-col gap-4 ${BENTO_CARD_CLS}`}>
+      <BentoCardHeader
+        icon={<SlidersHorizontal className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />}
+        title="Pengaturan Jam Reguler"
+        rightSlot={
+          !isAdmin ? (
+            <span className="rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-medium text-ink-secondary">
+              Hanya Lihat ({workspace.role})
+            </span>
+          ) : null
+        }
+      />
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
         <div className="flex flex-col gap-1.5">
@@ -180,7 +186,7 @@ function WorkspaceSettingsForm({
             value={name}
             disabled={!isAdmin}
             onChange={(event) => setName(event.target.value)}
-            className="h-10 rounded-md border-border-hairline bg-surface px-3 text-sm text-ink-primary"
+            className="h-10 rounded-xl border-stone-200 bg-surface px-3 text-sm text-ink-primary"
           />
         </div>
 
@@ -188,14 +194,10 @@ function WorkspaceSettingsForm({
           <Label htmlFor="ws-pattern" className="text-xs font-medium text-ink-secondary">
             Pola Jam Kerja
           </Label>
-          <Select
-            value={workPattern}
-            onValueChange={handlePatternChange}
-            disabled={!isAdmin}
-          >
+          <Select value={workPattern} onValueChange={handlePatternChange} disabled={!isAdmin}>
             <SelectTrigger
               id="ws-pattern"
-              className="h-10 w-full rounded-md border-border-hairline bg-surface pr-8 pl-3 text-sm text-ink-primary"
+              className="h-10 w-full rounded-xl border-stone-200 bg-surface pr-8 pl-3 text-sm text-ink-primary"
             >
               <SelectValue>{WORK_PATTERNS[workPattern].label}</SelectValue>
             </SelectTrigger>
@@ -229,11 +231,7 @@ function WorkspaceSettingsForm({
           onToggleDay={handleToggleDay}
         />
 
-        <button
-          type="submit"
-          disabled={!canSubmit}
-          className="mt-1 inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
-        >
+        <button type="submit" disabled={!canSubmit} className={`mt-1 w-full ${BENTO_PILL_PRIMARY_CLS}`}>
           {isSaving ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" strokeWidth={1.5} aria-hidden="true" />

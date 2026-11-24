@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { HeartPulse, ShieldCheck } from "lucide-react";
+import { BENTO_CARD_CLS } from "@/components/shared/BentoPrimitives";
 import { useDebouncedValue } from "@/hooks/useDebouncedValue";
 import type { DivisionOverviewItem } from "../types";
 import { OrgDivisionsPagination } from "./OrgDivisionsPagination";
@@ -50,7 +51,7 @@ export function OrgWellbeingComparison({
   return (
     <section
       aria-label="Perbandingan lembur bayangan dan kesejahteraan mental antar divisi"
-      className="rounded-lg border border-border-hairline bg-surface p-5"
+      className={BENTO_CARD_CLS}
     >
       <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>

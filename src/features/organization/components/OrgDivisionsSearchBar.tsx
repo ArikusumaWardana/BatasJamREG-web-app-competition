@@ -33,7 +33,7 @@ export function OrgDivisionsSearchBar({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="h-10 w-full rounded-md border border-border-hairline bg-canvas pr-8 pl-8 text-xs text-ink-primary placeholder:text-ink-muted focus:border-brand focus:outline-none"
+        className="h-10 w-full rounded-full border border-stone-200 bg-canvas pr-8 pl-9 text-xs text-ink-primary placeholder:text-ink-muted focus:border-brand focus:outline-none"
       />
       {value ? (
         <button

@@ -100,7 +100,7 @@ export function CreateWorkspaceDialog({
         render={
           <button
             type="button"
-            className="inline-flex min-h-[38px] w-full items-center justify-center gap-2 rounded-md border border-border-hairline bg-canvas px-3 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted"
+            className="inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-bento-canvas/60 px-4 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted"
           />
         }
       >
@@ -109,7 +109,7 @@ export function CreateWorkspaceDialog({
           {organizationId ? "Buat Divisi Baru" : "Buat Workspace Tim Baru"}
         </span>
       </DialogTrigger>
-      <DialogContent className="border border-border-hairline bg-surface sm:max-w-md">
+      <DialogContent className="rounded-[24px] border border-stone-200/80 bg-surface sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-base font-semibold text-ink-primary">
             Buat Workspace Baru

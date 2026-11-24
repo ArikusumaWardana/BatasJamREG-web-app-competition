@@ -11,7 +11,7 @@ export function MethodologyPanel() {
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <Card className="border-border-hairline bg-surface">
+    <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
       <CardContent className="flex flex-col gap-3 pt-5">
         <button
           type="button"
@@ -73,14 +73,22 @@ export function MethodologyPanel() {
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <Link
                 href="/audit"
-                className={buttonVariants({ variant: "outline", size: "sm" })}
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "sm",
+                  className: "rounded-full px-4",
+                })}
               >
                 <FileSearch className="size-3.5" />
                 <span>Uji Chat Lokal di Audit WA</span>
               </Link>
               <Link
                 href="/charter"
-                className={buttonVariants({ variant: "outline", size: "sm" })}
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "sm",
+                  className: "rounded-full px-4",
+                })}
               >
                 <FileCheck className="size-3.5" />
                 <span>Susun Piagam Jam Digital</span>

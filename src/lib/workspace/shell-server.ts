@@ -58,6 +58,11 @@ export async function resolveServerShellContext(): Promise<ResolvedShellContext>
       organizationName: ws.organization_name ?? preferredOrg?.name ?? null,
       orgRole: ws.org_role ?? null,
       isJoined: ws.is_joined,
+      workStartTime: ws.work_start_time,
+      workEndTime: ws.work_end_time,
+      digestDispatchTime: ws.digest_dispatch_time,
+      timezone: ws.timezone,
+      workDays: ws.work_days,
     })
   );
 

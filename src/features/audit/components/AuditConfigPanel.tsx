@@ -71,17 +71,17 @@ export function AuditConfigPanel({
     config.timezone;
 
   return (
-    <article className="flex flex-col gap-3.5 rounded-lg border border-border-hairline bg-surface p-5 lg:col-span-5">
-      <div className="flex items-center justify-between gap-2">
+    <article className="flex min-w-0 flex-col gap-3.5 rounded-[24px] border border-stone-200/80 bg-surface p-6 shadow-[0_1px_2px_rgba(28,25,23,0.03)] lg:col-span-5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-base font-semibold text-ink-primary">
           Konfigurasi Jam Reguler
         </h2>
-        <span className="font-mono text-xs text-ink-secondary">
+        <span className="shrink-0 whitespace-nowrap rounded-full bg-stone-100 px-3 py-1 font-mono text-[11px] font-medium text-ink-secondary">
           UU 13/2003 Ps. 77
         </span>
       </div>
 
-      <div className="grid grid-cols-3 gap-1 rounded-md border border-border-hairline bg-surface-muted p-1">
+      <div className="grid grid-cols-3 gap-1 rounded-full border border-stone-200 bg-stone-100/80 p-1">
         {PRESET_BUTTONS.map((preset) => {
           const active = config.work_pattern === preset.code;
           return (
@@ -93,8 +93,8 @@ export function AuditConfigPanel({
               onClick={() => selectPreset(preset.code)}
               className={
                 active
-                  ? "min-h-[34px] rounded bg-brand px-2 py-1 text-xs font-medium text-white"
-                  : "min-h-[34px] rounded px-2 py-1 text-xs font-medium text-ink-secondary hover:text-ink-primary"
+                  ? "min-h-[34px] rounded-full bg-brand px-2 py-1 text-xs font-medium text-white shadow-2xs"
+                  : "min-h-[34px] rounded-full px-2 py-1 text-xs font-medium text-ink-secondary hover:text-ink-primary"
               }
             >
               {preset.label}

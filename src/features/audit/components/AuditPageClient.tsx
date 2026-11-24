@@ -119,7 +119,7 @@ export function AuditPageClient() {
       {error ? (
         <div
           role="alert"
-          className="flex items-start justify-between gap-3 rounded-lg border border-danger/30 bg-danger-soft p-4 text-sm text-danger"
+          className="flex flex-wrap items-center justify-between gap-3 rounded-[24px] border border-danger/30 bg-danger-soft p-5 text-sm text-danger"
         >
           <div className="flex items-start gap-2.5">
             <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
@@ -128,7 +128,7 @@ export function AuditPageClient() {
           <button
             type="button"
             onClick={() => void loadDemoDataset(config)}
-            className="shrink-0 rounded-md border border-danger/30 bg-surface px-3 py-1 text-xs font-medium text-danger hover:bg-canvas"
+            className="shrink-0 rounded-full border border-danger/30 bg-surface px-4 py-1.5 text-xs font-medium text-danger hover:bg-canvas"
           >
             Muat Simulasi
           </button>
@@ -137,12 +137,12 @@ export function AuditPageClient() {
 
       <section
         aria-label="Skor Batas Digital dan Ringkasan KPI"
-        className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-12"
+        className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-12"
       >
-        <div className="lg:col-span-5">
+        <div className="min-w-0 lg:col-span-5">
           <BoundaryScoreCard result={result} workDays={config.work_days} />
         </div>
-        <div className="lg:col-span-7">
+        <div className="min-w-0 lg:col-span-7">
           <AuditKpiCards result={result} timezone={config.timezone} />
         </div>
       </section>

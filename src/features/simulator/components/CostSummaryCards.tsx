@@ -20,14 +20,14 @@ export function CostSummaryCards({ output }: CostSummaryCardsProps) {
         : "border-safe/30 bg-safe-soft text-safe";
 
   return (
-    <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-3">
-      <Card className="border-border-hairline bg-surface">
+    <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <CardContent className="flex h-full flex-col justify-between gap-2.5 pt-5">
           <div className="flex items-center justify-between gap-2">
             <span className="text-xs font-medium text-ink-secondary">
               Estimasi Risiko Presenteeism
             </span>
-            <Badge variant="outline" className={cn("text-[11px]", badgeClass)}>
+            <Badge variant="outline" className={cn("rounded-full text-[11px]", badgeClass)}>
               {output.risk_level}
             </Badge>
           </div>
@@ -44,22 +44,22 @@ export function CostSummaryCards({ output }: CostSummaryCardsProps) {
         </CardContent>
       </Card>
 
-      <Card className="border-border-hairline border-t-2 border-t-warn bg-surface">
+      <Card className="rounded-[24px] border-0 bg-brand text-white shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <CardContent className="flex h-full flex-col justify-between gap-2.5 pt-5">
-          <span className="text-xs font-medium text-ink-secondary">
+          <span className="text-xs font-medium text-white/80">
             Estimasi Kerugian Finansial
           </span>
           <div className="flex flex-col gap-0.5">
-            <p className="font-mono text-2xl font-semibold text-warn tabular-nums sm:text-[28px]">
+            <p className="font-mono text-2xl font-bold text-white tabular-nums sm:text-[28px]">
               {formatRupiahCompact(output.annual_loss_idr)}
             </p>
-            <span className="font-mono text-xs text-ink-muted tabular-nums">
+            <span className="font-mono text-xs text-white/80 tabular-nums">
               {formatRupiah(output.annual_loss_idr)} / tahun
             </span>
           </div>
-          <p className="text-xs text-ink-secondary">
+          <p className="text-xs text-white/80">
             Setara{" "}
-            <span className="font-mono font-medium text-ink-primary tabular-nums">
+            <span className="font-mono font-semibold text-white tabular-nums">
               {formatRupiahCompact(output.monthly_loss_idr)}
             </span>{" "}
             / bulan
@@ -67,7 +67,7 @@ export function CostSummaryCards({ output }: CostSummaryCardsProps) {
         </CardContent>
       </Card>
 
-      <Card className="border-border-hairline bg-surface">
+      <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)] sm:col-span-2 xl:col-span-1">
         <CardContent className="flex h-full flex-col justify-between gap-2.5 pt-5">
           <span className="text-xs font-medium text-ink-secondary">
             Hari Kerja Efektif Hilang

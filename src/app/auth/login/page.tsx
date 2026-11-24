@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 function LoginFormFallback() {
   return (
     <div className="flex flex-col gap-4">
-      <Skeleton className="h-8 w-56" />
-      <Skeleton className="h-28 w-full rounded-lg" />
-      <Skeleton className="h-10 w-full" />
-      <Skeleton className="h-10 w-full" />
-      <Skeleton className="h-10 w-full" />
+      <Skeleton className="h-8 w-56 rounded-full" />
+      <Skeleton className="h-14 w-full rounded-2xl" />
+      <Skeleton className="h-11 w-full rounded-xl" />
+      <Skeleton className="h-11 w-full rounded-xl" />
+      <Skeleton className="h-11 w-full rounded-full" />
     </div>
   );
 }
 
 export default function LoginPage() {
   return (
-    <AuthSplitShell>
+    <AuthSplitShell activeMode="login">
       <Suspense fallback={<LoginFormFallback />}>
         <LoginForm />
       </Suspense>

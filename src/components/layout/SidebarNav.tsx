@@ -2,16 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Building2,
-  Calculator,
-  FileSearch,
-  FileText,
-  LayoutDashboard,
-  Lock,
-  Sunrise,
-} from "lucide-react";
+import { Lock } from "lucide-react";
+import { AppNavIcon } from "./AppNavIcon";
 import { BrandLogo } from "./BrandLogo";
+import { getAppNavItems } from "./nav-items";
 import type {
   AppShellOrganization,
   AppShellUser,
@@ -37,55 +31,6 @@ export interface SidebarNavProps {
   onStartNavigation?: (href: string) => void;
 }
 
-interface NavItem {
-  href: string;
-  label: string;
-  icon:
-    | "organization"
-    | "dashboard"
-    | "digest"
-    | "audit"
-    | "charter"
-    | "simulator";
-  requiresAuth?: boolean;
-}
-
-const BASE_NAV_ITEMS: NavItem[] = [
-  {
-    href: "/workspace",
-    label: "Ringkasan Tim",
-    icon: "dashboard",
-    requiresAuth: true,
-  },
-  {
-    href: "/workspace/digest",
-    label: "Morning Digest",
-    icon: "digest",
-    requiresAuth: true,
-  },
-  { href: "/audit", label: "Audit WA Lokal", icon: "audit" },
-  { href: "/charter", label: "Piagam & Balasan", icon: "charter" },
-  { href: "/simulator", label: "Simulator Biaya", icon: "simulator" },
-];
-
-function NavIcon({ kind }: { kind: NavItem["icon"] }) {
-  const cls = "h-[18px] w-[18px] shrink-0";
-  switch (kind) {
-    case "organization":
-      return <Building2 className={cls} strokeWidth={1.5} aria-hidden="true" />;
-    case "dashboard":
-      return <LayoutDashboard className={cls} strokeWidth={1.5} aria-hidden="true" />;
-    case "digest":
-      return <Sunrise className={cls} strokeWidth={1.5} aria-hidden="true" />;
-    case "audit":
-      return <FileSearch className={cls} strokeWidth={1.5} aria-hidden="true" />;
-    case "charter":
-      return <FileText className={cls} strokeWidth={1.5} aria-hidden="true" />;
-    case "simulator":
-      return <Calculator className={cls} strokeWidth={1.5} aria-hidden="true" />;
-  }
-}
-
 export function SidebarNav({
   mode,
   user,
@@ -98,18 +43,7 @@ export function SidebarNav({
 }: SidebarNavProps) {
   const pathname = usePathname();
   const isOrgOwner = mode === "authenticated" && organization?.role === "OWNER";
-
-  const navItems: NavItem[] = isOrgOwner
-    ? [
-        {
-          href: "/organization",
-          label: "Ringkasan Perusahaan",
-          icon: "organization",
-          requiresAuth: true,
-        },
-        ...BASE_NAV_ITEMS,
-      ]
-    : BASE_NAV_ITEMS;
+  const navItems = getAppNavItems(isOrgOwner);
 
   return (
     <div className="flex h-full flex-col justify-between p-4">
@@ -163,12 +97,12 @@ export function SidebarNav({
                 aria-current={isActive ? "page" : undefined}
                 className={
                   isActive
-                    ? "flex min-h-[40px] items-center justify-between gap-2 rounded-md bg-brand-soft px-2.5 py-2 text-sm font-medium text-brand transition-colors"
-                    : "flex min-h-[40px] items-center justify-between gap-2 rounded-md px-2.5 py-2 text-sm text-ink-secondary transition-colors hover:bg-surface-muted hover:text-ink-primary"
+                    ? "flex min-h-[40px] items-center justify-between gap-2 rounded-full bg-brand px-3.5 py-2 text-sm font-medium text-white transition-colors"
+                    : "flex min-h-[40px] items-center justify-between gap-2 rounded-full px-3.5 py-2 text-sm text-ink-secondary transition-colors hover:bg-surface-muted hover:text-ink-primary"
                 }
               >
                 <span className="flex items-center gap-2.5 truncate">
-                  <NavIcon kind={item.icon} />
+                  <AppNavIcon kind={item.icon} />
                   <span className="truncate">{item.label}</span>
                 </span>
 

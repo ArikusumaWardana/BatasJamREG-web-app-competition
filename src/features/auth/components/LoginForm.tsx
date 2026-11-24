@@ -77,8 +77,9 @@ export function LoginForm() {
   return (
     <>
       <header className="flex flex-col gap-1">
-        <h2 className="text-2xl font-bold tracking-tight text-ink-primary">
-          Masuk ke Workspace
+        <h2 className="text-2xl font-semibold tracking-tight text-ink-primary">
+          Masuk{" "}
+          <span className="font-normal text-ink-secondary">ke Workspace</span>
         </h2>
         <p className="text-sm text-ink-secondary">
           Gunakan akun terdaftar atau coba langsung menggunakan workspace demo.
@@ -88,7 +89,7 @@ export function LoginForm() {
       {isEmailConfirmed ? (
         <div
           role="status"
-          className="flex items-start gap-2.5 rounded-lg border border-safe/30 bg-safe-soft p-3.5 text-sm text-safe"
+          className="flex items-start gap-2.5 rounded-2xl border border-safe/30 bg-safe-soft p-3.5 text-sm text-safe"
         >
           <CheckCircle2
             className="mt-0.5 h-4 w-4 shrink-0"
@@ -108,7 +109,7 @@ export function LoginForm() {
       {isConfirmError ? (
         <div
           role="alert"
-          className="flex items-start gap-2.5 rounded-lg border border-danger/30 bg-danger-soft p-3.5 text-sm text-danger"
+          className="flex items-start gap-2.5 rounded-2xl border border-danger/30 bg-danger-soft p-3.5 text-sm text-danger"
         >
           <AlertCircle
             className="mt-0.5 h-4 w-4 shrink-0"
@@ -128,11 +129,11 @@ export function LoginForm() {
       <DemoAccessCallout redirectTo={safeNext} />
 
       <div className="relative flex items-center py-1" role="separator">
-        <div className="flex-1 border-t border-border-hairline" />
+        <div className="flex-1 border-t border-stone-200/80" />
         <span className="bg-surface px-3 text-xs font-medium text-ink-secondary">
           atau masuk dengan email
         </span>
-        <div className="flex-1 border-t border-border-hairline" />
+        <div className="flex-1 border-t border-stone-200/80" />
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
@@ -148,7 +149,7 @@ export function LoginForm() {
             placeholder="nama@perusahaan.id"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="h-10 rounded-md border-border-hairline bg-surface px-3 text-sm text-ink-primary focus-visible:border-brand focus-visible:ring-brand/20"
+            className="h-11 rounded-xl border-stone-200 bg-bento-canvas/40 px-3.5 text-sm text-ink-primary transition-colors focus-visible:border-brand focus-visible:bg-surface focus-visible:ring-brand/20"
             required
           />
         </div>
@@ -166,7 +167,7 @@ export function LoginForm() {
               placeholder="Minimal 6 karakter"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="h-10 rounded-md border-border-hairline bg-surface pr-10 pl-3 text-sm text-ink-primary focus-visible:border-brand focus-visible:ring-brand/20"
+              className="h-11 rounded-xl border-stone-200 bg-bento-canvas/40 pr-11 pl-3.5 text-sm text-ink-primary transition-colors focus-visible:border-brand focus-visible:bg-surface focus-visible:ring-brand/20"
               required
             />
             <button
@@ -176,7 +177,7 @@ export function LoginForm() {
                 showPassword ? "Sembunyikan kata sandi" : "Tampilkan kata sandi"
               }
               aria-pressed={showPassword}
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-ink-secondary hover:text-ink-primary"
+              className="absolute inset-y-0 right-0 flex min-w-[44px] items-center justify-center px-3 text-ink-secondary hover:text-ink-primary"
             >
               {showPassword ? (
                 <Eye className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
@@ -190,7 +191,7 @@ export function LoginForm() {
         <button
           type="submit"
           disabled={!canSubmit}
-          className="mt-1 inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
+          className="mt-1 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting ? (
             <>

@@ -134,7 +134,7 @@ export function CharterBuilderTab({
 
   return (
     <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-      <section className="flex flex-col gap-4 lg:col-span-5">
+      <section className="flex min-w-0 flex-col gap-4 lg:col-span-5">
         <CharterFormPanel
           draft={draft}
           auditHandoffNote={auditHandoffNote}
@@ -155,7 +155,7 @@ export function CharterBuilderTab({
         ) : null}
 
         {savedCharters.length > 0 ? (
-          <div className="flex flex-col gap-2 rounded-lg border border-border-hairline bg-surface p-4">
+          <div className="flex flex-col gap-2.5 rounded-[24px] border border-stone-200/80 bg-surface p-5 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
             <div className="flex items-center gap-2 text-xs font-medium text-ink-secondary">
               <History className="size-3.5 text-brand" />
               <span>Riwayat Versi Tersimpan ({savedCharters.length})</span>
@@ -166,7 +166,7 @@ export function CharterBuilderTab({
                   key={item.id}
                   type="button"
                   onClick={() => handleSelectVersion(item)}
-                  className="inline-flex items-center gap-1 rounded-md border border-border-hairline bg-canvas px-2.5 py-1 font-mono text-xs text-ink-primary transition-colors hover:border-brand-border hover:bg-brand-soft"
+                  className="inline-flex items-center gap-1 rounded-full border border-stone-200 bg-bento-canvas/60 px-3 py-1 font-mono text-xs text-ink-primary transition-colors hover:border-brand-border hover:bg-brand-soft"
                 >
                   <span>v{item.version}</span>
                   {item.is_active ? (
@@ -179,7 +179,7 @@ export function CharterBuilderTab({
         ) : null}
       </section>
 
-      <section className="flex flex-col gap-4 lg:col-span-7">
+      <section className="flex min-w-0 flex-col gap-4 lg:col-span-7">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-xs font-medium text-ink-secondary">
             Pratinjau Langsung Dokumen (A4)
@@ -192,6 +192,7 @@ export function CharterBuilderTab({
                 variant="outline"
                 disabled={!isDraftValid || isSaving}
                 onClick={handleSaveToWorkspace}
+                className="rounded-full px-4"
               >
                 {isSaving ? (
                   <Loader2 className="size-4 animate-spin" />
@@ -203,7 +204,10 @@ export function CharterBuilderTab({
             ) : (
               <Link
                 href="/auth/login?next=/charter"
-                className={buttonVariants({ variant: "outline" })}
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "rounded-full px-4",
+                })}
               >
                 <LogIn className="size-4" />
                 <span>Masuk untuk Simpan</span>
@@ -214,6 +218,7 @@ export function CharterBuilderTab({
               type="button"
               disabled={!isDraftValid || isExporting}
               onClick={handleDownloadPdf}
+              className="rounded-full px-5"
             >
               {isExporting ? (
                 <Loader2 className="size-4 animate-spin" />

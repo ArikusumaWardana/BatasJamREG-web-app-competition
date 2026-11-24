@@ -10,6 +10,11 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import {
+  BENTO_CARD_CLS,
+  BENTO_PILL_PRIMARY_CLS,
+  BentoCardHeader,
+} from "@/components/shared/BentoPrimitives";
+import {
   fetchWorkspaceWellbeingPulse,
   submitWorkspaceWellbeingPulse,
 } from "../lib/wellbeing-api";
@@ -95,25 +100,23 @@ export function WellbeingPulseCard({ workspaceId }: WellbeingPulseCardProps) {
   const weekSummary = pulseData?.current_week_summary ?? null;
 
   return (
-    <article className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5">
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <div>
-          <h2 className="text-base font-semibold text-ink-primary">
-            Check-In Kesejahteraan Mingguan (15 Detik - Anonim)
-          </h2>
-          <p className="mt-0.5 text-xs text-ink-secondary">
-            Pantau dampak jam kerja terhadap istirahat tim secara kolektif.
-          </p>
-        </div>
-        {pulseData?.has_submitted_this_week ? (
-          <span className="inline-flex items-center gap-1 rounded-full bg-safe-soft px-2.5 py-0.5 text-[11px] font-medium text-safe">
-            <CheckCircle2 className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
-            <span>Sudah Mengisi Minggu Ini</span>
-          </span>
-        ) : null}
-      </div>
+    <article className={`flex flex-col gap-4 ${BENTO_CARD_CLS}`}>
+      <BentoCardHeader
+        icon={<ShieldCheck className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />}
+        iconToneClass="bg-safe-soft text-safe"
+        title="Check-In Kesejahteraan Mingguan"
+        subtitle="15 detik & anonim untuk memantau dampak jam kerja terhadap istirahat tim."
+        rightSlot={
+          pulseData?.has_submitted_this_week ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-safe-soft px-3 py-1 text-[11px] font-medium text-safe">
+              <CheckCircle2 className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+              <span>Sudah Mengisi</span>
+            </span>
+          ) : null
+        }
+      />
 
-      <div className="flex items-start gap-2 rounded-md border border-safe/25 bg-safe-soft px-3 py-2 text-xs text-safe">
+      <div className="flex items-start gap-2.5 rounded-2xl border border-safe/20 bg-safe-soft px-3.5 py-2.5 text-xs text-safe">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
         <span>
           Jaminan K-Anonymity: jawaban per individu tidak pernah dapat dibuka
@@ -123,12 +126,12 @@ export function WellbeingPulseCard({ workspaceId }: WellbeingPulseCardProps) {
       </div>
 
       {isLoading ? (
-        <div className="flex items-center gap-2 rounded-md border border-border-hairline bg-canvas p-4 text-xs text-ink-secondary">
+        <div className="flex items-center gap-2 rounded-2xl border border-stone-200/70 bg-bento-canvas/50 p-4 text-xs text-ink-secondary">
           <Loader2 className="h-4 w-4 animate-spin text-brand" strokeWidth={1.5} aria-hidden="true" />
           <span>Memuat status check-in minggu ini...</span>
         </div>
       ) : errorMsg ? (
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-border-hairline bg-canvas p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-stone-200/70 bg-bento-canvas/50 p-4">
           <div className="flex items-center gap-2 text-xs text-danger">
             <AlertCircle className="h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
             <span>{errorMsg}</span>
@@ -136,7 +139,7 @@ export function WellbeingPulseCard({ workspaceId }: WellbeingPulseCardProps) {
           <button
             type="button"
             onClick={() => void handleReload()}
-            className="inline-flex min-h-[38px] items-center gap-1.5 rounded-md border border-border-hairline bg-surface px-3 py-1.5 text-xs font-medium text-ink-primary hover:bg-surface-muted"
+            className="inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-stone-200 bg-surface px-3.5 py-1.5 text-xs font-medium text-ink-primary hover:bg-surface-muted"
           >
             <RefreshCw className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
             <span>Coba Lagi</span>
@@ -172,7 +175,7 @@ export function WellbeingPulseCard({ workspaceId }: WellbeingPulseCardProps) {
           <button
             type="submit"
             disabled={isSubmitting || isLoading}
-            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
+            className={`w-full ${BENTO_PILL_PRIMARY_CLS}`}
           >
             {isSubmitting ? (
               <>
@@ -188,14 +191,14 @@ export function WellbeingPulseCard({ workspaceId }: WellbeingPulseCardProps) {
             )}
           </button>
 
-          <div className="rounded-md border border-border-hairline bg-canvas px-3.5 py-2.5 text-xs">
+          <div className="rounded-2xl border border-stone-200/70 bg-bento-canvas/50 px-4 py-3 text-xs">
             {weekSummary?.is_threshold_met ? (
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="font-medium text-ink-primary">
                   Skor Kesejahteraan Divisi Minggu Ini ({weekSummary.response_count}{" "}
                   responden):
                 </span>
-                <span className="rounded-full bg-brand-soft px-2.5 py-0.5 font-mono font-semibold tabular-nums text-brand">
+                <span className="rounded-full bg-brand-soft px-3 py-0.5 font-mono font-semibold tabular-nums text-brand">
                   {formatScoreId(weekSummary.composite_score)} / 5,0
                 </span>
               </div>

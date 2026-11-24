@@ -138,8 +138,11 @@ export function CharterPageClient() {
       <Tabs value={activeTab} onValueChange={setActiveTab} className="gap-6">
         <header className="flex flex-col justify-between gap-4 xl:flex-row xl:items-end">
           <div className="flex flex-col gap-1">
-            <h1 className="text-2xl font-bold tracking-tight text-ink-primary sm:text-[30px]">
-              Studio Piagam & Balasan Diplomatis
+            <h1 className="text-2xl font-semibold tracking-tight text-ink-primary sm:text-3xl">
+              Studio Piagam,{" "}
+              <span className="font-normal text-ink-secondary">
+                &amp; Balasan Diplomatis
+              </span>
             </h1>
             <p className="text-sm text-ink-secondary">
               Tetapkan kesepakatan jam kerja digital tertulis dan susun balasan
@@ -147,19 +150,31 @@ export function CharterPageClient() {
             </p>
           </div>
 
-          <TabsList className="w-fit max-w-full flex-wrap shrink-0 gap-1 rounded-lg border border-border-hairline bg-surface-muted p-1.5 group-data-horizontal/tabs:h-auto sm:flex-nowrap">
+          <TabsList className="grid w-full max-w-full shrink-0 grid-cols-1 gap-1 rounded-[20px] border border-stone-200/80 bg-surface p-1.5 shadow-2xs group-data-horizontal/tabs:h-auto sm:inline-flex sm:w-fit sm:flex-nowrap sm:rounded-full sm:p-1">
             <TabsTrigger
               value="piagam"
-              className="min-h-[42px] gap-2.5 rounded-md px-4 py-2.5 text-sm font-medium data-active:border-border-hairline data-active:bg-surface data-active:text-ink-primary sm:px-5 sm:text-[15px]"
+              className={`h-auto min-h-[40px] w-full gap-2 rounded-[14px] px-4 py-2 text-xs font-medium transition-colors sm:w-auto sm:rounded-full sm:px-5 ${
+                activeTab === "piagam"
+                  ? "!bg-brand !text-white shadow-2xs"
+                  : "text-ink-secondary hover:text-ink-primary"
+              }`}
             >
-              <FileCheck className="size-[18px] text-brand" />
+              <FileCheck
+                className={`size-4 ${activeTab === "piagam" ? "text-white" : "text-brand"}`}
+              />
               <span>Piagam Jam Digital Tim</span>
             </TabsTrigger>
             <TabsTrigger
               value="reply"
-              className="min-h-[42px] gap-2.5 rounded-md px-4 py-2.5 text-sm font-medium data-active:border-border-hairline data-active:bg-surface data-active:text-ink-primary sm:px-5 sm:text-[15px]"
+              className={`h-auto min-h-[40px] w-full gap-2 rounded-[14px] px-4 py-2 text-xs font-medium transition-colors sm:w-auto sm:rounded-full sm:px-5 ${
+                activeTab === "reply"
+                  ? "!bg-brand !text-white shadow-2xs"
+                  : "text-ink-secondary hover:text-ink-primary"
+              }`}
             >
-              <MessageSquare className="size-[18px] text-brand" />
+              <MessageSquare
+                className={`size-4 ${activeTab === "reply" ? "text-white" : "text-brand"}`}
+              />
               <span>Penyusun Balasan Diplomatis</span>
             </TabsTrigger>
           </TabsList>

@@ -26,25 +26,25 @@ export function WeeklyTrendChart({ data }: WeeklyTrendChartProps) {
   );
 
   return (
-    <article className="flex h-full flex-col justify-between gap-4 rounded-lg border border-border-hairline bg-surface p-5 lg:col-span-6">
+    <article className="flex h-full min-w-0 flex-col justify-between gap-4 rounded-[24px] border border-stone-200/80 bg-surface p-6 shadow-[0_1px_2px_rgba(28,25,23,0.03)] lg:col-span-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-base font-semibold text-ink-primary">
           Tren Mingguan Pesan Reguler vs Luar Jam
         </h2>
         <div className="flex items-center gap-4 text-xs text-ink-secondary">
           <span className="inline-flex items-center gap-1.5">
-            <span className="h-0.5 w-3 bg-brand" aria-hidden="true" />
+            <span className="h-1 w-3 rounded-full bg-brand" aria-hidden="true" />
             <span>Reguler</span>
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="h-0.5 w-3 bg-warn" aria-hidden="true" />
+            <span className="h-1 w-3 rounded-full bg-warn" aria-hidden="true" />
             <span>Luar Jam</span>
           </span>
         </div>
       </div>
 
       {data.length === 0 ? (
-        <div className="flex h-52 items-center justify-center rounded-md border border-dashed border-border-strong bg-canvas p-4 text-center text-sm text-ink-secondary">
+        <div className="flex h-52 items-center justify-center rounded-2xl border border-dashed border-stone-300 bg-bento-canvas/50 p-4 text-center text-sm text-ink-secondary">
           Belum ada data tren mingguan. Unggah file ekspor WhatsApp atau muat
           dataset simulasi.
         </div>

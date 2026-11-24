@@ -168,7 +168,7 @@ export function SnapshotComparisonPanel({
             >
               <SelectTrigger
                 id={sel.id}
-                className="w-full rounded-md border-border-hairline bg-canvas px-3 text-xs font-medium text-ink-primary data-[size=default]:h-11"
+                className="w-full rounded-full border-stone-200 bg-bento-canvas/50 px-4 text-xs font-medium text-ink-primary data-[size=default]:h-10"
               >
                 <SelectValue>{sel.display}</SelectValue>
               </SelectTrigger>
@@ -184,7 +184,7 @@ export function SnapshotComparisonPanel({
         ))}
       </div>
 
-      <div className="rounded-md border border-border-hairline bg-canvas px-3.5 py-2.5 text-xs text-ink-secondary">
+      <div className="rounded-2xl border border-stone-200/70 bg-bento-canvas/50 px-4 py-3 text-xs text-ink-secondary">
         {beforeSnap.id === afterSnap.id ? (
           <span>
             Anda memilih periode yang sama. Pilih dua snapshot berbeda untuk
@@ -206,7 +206,7 @@ export function SnapshotComparisonPanel({
         {cards.map((card) => (
           <div
             key={card.key}
-            className="flex flex-col justify-between gap-2.5 rounded-md border border-border-hairline bg-canvas p-3.5"
+            className="flex flex-col justify-between gap-2.5 rounded-2xl border border-stone-200/70 bg-bento-canvas/50 p-4"
           >
             <span className="text-xs font-medium text-ink-secondary">
               {card.title}

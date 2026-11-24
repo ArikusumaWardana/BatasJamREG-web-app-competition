@@ -29,7 +29,7 @@ export function AuditKpiCards({ result, timezone }: AuditKpiCardsProps) {
       aria-label="Ringkasan Metrik Audit"
       className="grid h-full grid-cols-1 items-stretch gap-4 sm:grid-cols-2"
     >
-      <article className="flex h-full flex-col justify-between gap-2 rounded-lg border border-border-hairline bg-surface p-4">
+      <article className="flex h-full flex-col justify-between gap-2 rounded-[24px] border border-stone-200/80 bg-surface p-5 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs font-medium text-ink-secondary">
             Estimasi Lembur Bayangan
@@ -46,7 +46,7 @@ export function AuditKpiCards({ result, timezone }: AuditKpiCardsProps) {
         </p>
       </article>
 
-      <article className="flex h-full flex-col justify-between gap-2 rounded-lg border border-border-hairline bg-surface p-4">
+      <article className="flex h-full flex-col justify-between gap-2 rounded-[24px] border border-stone-200/80 bg-surface p-5 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs font-medium text-ink-secondary">
             Pesan Luar Jam Reguler
@@ -58,7 +58,7 @@ export function AuditKpiCards({ result, timezone }: AuditKpiCardsProps) {
         </p>
         <div>
           {result ? (
-            <span className="inline-flex items-center rounded-full bg-warn-soft px-2.5 py-0.5 font-mono text-xs font-medium tabular-nums text-warn">
+            <span className="inline-flex items-center rounded-full bg-warn-soft px-3 py-0.5 font-mono text-xs font-medium tabular-nums text-warn">
               {result.after_hours_messages.toLocaleString("id-ID")} dari{" "}
               {result.total_messages.toLocaleString("id-ID")} pesan
             </span>
@@ -70,7 +70,7 @@ export function AuditKpiCards({ result, timezone }: AuditKpiCardsProps) {
         </div>
       </article>
 
-      <article className="flex h-full flex-col justify-between gap-2 rounded-lg border border-border-hairline bg-surface p-4">
+      <article className="flex h-full flex-col justify-between gap-2 rounded-[24px] border border-stone-200/80 bg-surface p-5 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs font-medium text-ink-secondary">
             Pemicu False Urgency
@@ -87,7 +87,7 @@ export function AuditKpiCards({ result, timezone }: AuditKpiCardsProps) {
         </p>
       </article>
 
-      <article className="flex h-full flex-col justify-between gap-2 rounded-lg border border-border-hairline bg-surface p-4">
+      <article className="flex h-full flex-col justify-between gap-2 rounded-[24px] border border-stone-200/80 bg-surface p-5 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs font-medium text-ink-secondary">
             Hari & Jam Paling Rawan

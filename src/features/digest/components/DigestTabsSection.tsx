@@ -67,7 +67,7 @@ export function DigestTabsSection({
   return (
     <section
       aria-label="Daftar instruksi Morning Digest"
-      className="flex flex-col gap-4 lg:col-span-8"
+      className="flex min-w-0 flex-col gap-4 lg:col-span-7"
     >
       <Tabs
         value={activeTab}
@@ -77,18 +77,36 @@ export function DigestTabsSection({
           }
         }}
       >
-        <TabsList
-          variant="line"
-          className="w-full justify-start border-b border-border-hairline pb-0"
-        >
-          <TabsTrigger value="MORNING_QUEUE">
+        <TabsList className="flex w-full max-w-full flex-wrap justify-start gap-1 rounded-[20px] border border-stone-200/80 bg-surface p-1.5 shadow-2xs group-data-horizontal/tabs:h-auto sm:inline-flex sm:w-fit sm:flex-nowrap sm:rounded-full sm:p-1">
+          <TabsTrigger
+            value="MORNING_QUEUE"
+            className={`h-auto min-h-[36px] flex-1 rounded-[14px] px-3.5 py-1.5 text-xs font-medium transition-colors sm:flex-none sm:rounded-full sm:px-4 ${
+              activeTab === "MORNING_QUEUE"
+                ? "!bg-brand !text-white shadow-2xs"
+                : "text-ink-secondary hover:text-ink-primary"
+            }`}
+          >
             Antrean Pagi ({morningCards.length})
           </TabsTrigger>
-          <TabsTrigger value="EMERGENCY_OPS">
+          <TabsTrigger
+            value="EMERGENCY_OPS"
+            className={`h-auto min-h-[36px] flex-1 rounded-[14px] px-3.5 py-1.5 text-xs font-medium transition-colors sm:flex-none sm:rounded-full sm:px-4 ${
+              activeTab === "EMERGENCY_OPS"
+                ? "!bg-brand !text-white shadow-2xs"
+                : "text-ink-secondary hover:text-ink-primary"
+            }`}
+          >
             Darurat Operasional ({emergencyCards.length})
           </TabsTrigger>
-          <TabsTrigger value="DISPATCHED">
-            Sudah Terkirim ({dispatchedCards.length})
+          <TabsTrigger
+            value="DISPATCHED"
+            className={`h-auto min-h-[36px] flex-1 rounded-[14px] px-3.5 py-1.5 text-xs font-medium transition-colors sm:flex-none sm:rounded-full sm:px-4 ${
+              activeTab === "DISPATCHED"
+                ? "!bg-brand !text-white shadow-2xs"
+                : "text-ink-secondary hover:text-ink-primary"
+            }`}
+          >
+            Riwayat ({dispatchedCards.length})
           </TabsTrigger>
         </TabsList>
 

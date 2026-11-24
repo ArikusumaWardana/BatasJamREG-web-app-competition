@@ -7,24 +7,33 @@ interface PageLoadingOverlayProps {
 }
 
 export function PageLoadingOverlay({
+  variant = "panel",
   title = "Mohon tunggu sebentar",
   message = "Sedang memproses halaman...",
 }: PageLoadingOverlayProps) {
+  const isOverlay = variant === "overlay";
+
   return (
     <div
       role="status"
       aria-live="polite"
       aria-label={message}
-      className="fixed inset-x-0 bottom-0 top-14 z-20 flex items-center justify-center bg-canvas p-6 lg:left-60 lg:top-0"
+      className={
+        isOverlay
+          ? "absolute inset-0 z-20 flex min-h-[68vh] items-start justify-center rounded-[24px] bg-bento-canvas/75 px-4 backdrop-blur-[2px]"
+          : "flex min-h-[68vh] w-full items-start justify-center px-4 pt-[20vh]"
+      }
     >
-      <div className="flex flex-col items-center gap-3.5 text-center">
-        <div className="relative flex h-12 w-12 items-center justify-center">
-          <span
-            className="absolute inset-0 rounded-full border-2 border-brand-border/80"
-            aria-hidden="true"
-          />
+      <div
+        className={
+          isOverlay
+            ? "sticky top-[34vh] mt-[20vh] flex w-full max-w-xs flex-col items-center gap-3.5 rounded-[24px] border border-stone-200/80 bg-surface px-7 py-6 text-center shadow-[0_8px_28px_rgba(28,25,23,0.06)]"
+            : "flex w-full max-w-xs flex-col items-center gap-3.5 rounded-[24px] border border-stone-200/80 bg-surface px-7 py-6 text-center shadow-[0_8px_28px_rgba(28,25,23,0.06)]"
+        }
+      >
+        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-border/70 bg-brand-soft">
           <Loader2
-            className="h-6 w-6 animate-spin text-brand"
+            className="h-5 w-5 animate-spin text-brand"
             strokeWidth={1.75}
             aria-hidden="true"
           />

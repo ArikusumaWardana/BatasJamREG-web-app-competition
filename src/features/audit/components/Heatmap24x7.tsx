@@ -94,7 +94,7 @@ export function Heatmap24x7({
   return (
     <section
       aria-label="Heatmap Interupsi 24x7"
-      className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5"
+      className="flex flex-col gap-4 rounded-[24px] border border-stone-200/80 bg-surface p-6 shadow-[0_1px_2px_rgba(28,25,23,0.03)]"
     >
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
         <div>
@@ -103,7 +103,7 @@ export function Heatmap24x7({
               Heatmap Interupsi 24x7
             </h2>
             {periodStart && periodEnd ? (
-              <span className="rounded-full border border-border-hairline bg-canvas px-2.5 py-0.5 font-mono text-[11px] font-medium tabular-nums text-ink-secondary">
+              <span className="rounded-full border border-stone-200 bg-bento-canvas/60 px-3 py-0.5 font-mono text-[11px] font-medium tabular-nums text-ink-secondary">
                 Periode: {formatPeriodDateId(periodStart)} -{" "}
                 {formatPeriodDateId(periodEnd)}
               </span>
@@ -119,7 +119,7 @@ export function Heatmap24x7({
 
         <div className="flex flex-wrap items-center gap-2 text-[11px] text-ink-secondary">
           <span>Rendah</span>
-          <span className="h-3.5 w-3.5 rounded-[4px] border border-border-hairline bg-heat-0" />
+          <span className="h-3.5 w-3.5 rounded-[4px] border border-stone-200 bg-heat-0" />
           <span className="h-3.5 w-3.5 rounded-[4px] bg-heat-1" />
           <span className="h-3.5 w-3.5 rounded-[4px] bg-heat-2" />
           <span className="h-3.5 w-3.5 rounded-[4px] bg-heat-3" />
@@ -128,7 +128,7 @@ export function Heatmap24x7({
         </div>
       </div>
 
-      <div className="min-h-[28px] rounded-md border border-border-hairline bg-canvas px-3 py-1.5 font-mono text-xs text-ink-secondary">
+      <div className="min-h-[28px] rounded-full border border-stone-200/70 bg-bento-canvas/50 px-4 py-1.5 font-mono text-xs text-ink-secondary">
         {hoveredCell ? (
           <span className="text-ink-primary">
             {hoveredDayLabel}, {hoveredHourStart}-{hoveredHourEnd} {tzLabel}:{" "}

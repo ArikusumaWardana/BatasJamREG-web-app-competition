@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronRight } from "lucide-react";
+import { ArrowUpRight, Users } from "lucide-react";
 import { toast } from "sonner";
 import {
-  DEMO_ACTORS,
+  DEMO_ROLE_USERS,
   getDemoActorConfig,
-  getDemoUsersByRole,
-  type DemoActorRole,
   type DemoRoleUserOption,
 } from "@/lib/constants/demo-actors";
 import { clearShellContextCache } from "@/lib/storage/shell-context-cache";
@@ -22,7 +20,7 @@ export function DemoAccessCallout({
   redirectTo = "/workspace",
 }: DemoAccessCalloutProps) {
   const router = useRouter();
-  const [selectedRole, setSelectedRole] = useState<DemoActorRole | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const [loadingEmail, setLoadingEmail] = useState<string | null>(null);
 
   async function handleSelectUser(user: DemoRoleUserOption) {
@@ -49,7 +47,7 @@ export function DemoAccessCallout({
       clearShellContextCache();
       const roleConfig = getDemoActorConfig(user.actor);
       toast.success(`Masuk sebagai ${user.fullName} (${roleConfig.shortLabel}).`);
-      setSelectedRole(null);
+      setDialogOpen(false);
       router.push(redirectTo);
       router.refresh();
     } catch {
@@ -59,73 +57,45 @@ export function DemoAccessCallout({
     }
   }
 
-  const activeRoleConfig = selectedRole ? getDemoActorConfig(selectedRole) : null;
-  const activeRoleUsers = selectedRole ? getDemoUsersByRole(selectedRole) : [];
-
   return (
     <>
-      <section
-        aria-label="Akses Cepat Evaluasi"
-        className="flex flex-col gap-3 rounded-lg border border-brand-border bg-brand-soft p-4"
+      <button
+        type="button"
+        onClick={() => setDialogOpen(true)}
+        disabled={loadingEmail !== null}
+        className="group flex min-h-[56px] w-full items-center justify-between gap-3 rounded-2xl border border-brand-border bg-brand-soft/80 px-4 py-3 text-left transition-all hover:border-brand hover:bg-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50"
       >
-        <div className="flex flex-col gap-1">
-          <h2 className="text-base font-semibold text-brand">
-            Akses Cepat Evaluasi (Pilih Role Aktor)
-          </h2>
-          <p className="text-sm leading-relaxed text-ink-secondary">
-            Pilih role aktor yang ingin diuji untuk melihat daftar pengguna demo
-            dan langsung masuk tanpa mendaftar akun.
-          </p>
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+            <Users className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+          </span>
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm font-semibold text-ink-primary">
+                Masuk Workspace Demo
+              </span>
+              <span className="rounded-full bg-surface px-2 py-0.5 font-mono text-[10px] font-semibold text-brand">
+                {DEMO_ROLE_USERS.length} Akun
+              </span>
+            </div>
+            <p className="mt-0.5 truncate text-xs text-ink-secondary">
+              Pilih role Owner, Team Lead, atau Anggota tanpa daftar
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          {DEMO_ACTORS.map((item) => {
-            const roleCount = getDemoUsersByRole(item.actor).length;
-            return (
-              <button
-                key={item.actor}
-                type="button"
-                onClick={() => setSelectedRole(item.actor)}
-                disabled={loadingEmail !== null}
-                className="flex w-full items-center justify-between gap-3 rounded-md border border-brand-border bg-surface px-3.5 py-2.5 text-left transition-colors hover:border-brand hover:bg-canvas disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-sm font-semibold text-ink-primary">
-                      {item.shortLabel}
-                    </span>
-                    <span className="rounded bg-brand-soft px-1.5 py-0.5 font-mono text-[10px] font-medium text-brand">
-                      {item.actor}
-                    </span>
-                    <span className="font-mono text-[11px] tabular-nums text-ink-muted">
-                      {roleCount} pengguna
-                    </span>
-                  </div>
-                  <p className="mt-0.5 text-xs text-ink-secondary">
-                    {item.description}
-                  </p>
-                </div>
-
-                <ChevronRight
-                  className="h-4 w-4 shrink-0 text-brand"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-              </button>
-            );
-          })}
-        </div>
-      </section>
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface text-brand transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+          <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+        </span>
+      </button>
 
       <DemoActorPickerDialog
-        open={selectedRole !== null}
+        open={dialogOpen}
         onOpenChange={(open) => {
-          if (!open && loadingEmail === null) {
-            setSelectedRole(null);
+          if (loadingEmail === null) {
+            setDialogOpen(open);
           }
         }}
-        roleConfig={activeRoleConfig}
-        users={activeRoleUsers}
         loadingEmail={loadingEmail}
         onSelectUser={(user) => void handleSelectUser(user)}
       />

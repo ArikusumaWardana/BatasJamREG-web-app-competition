@@ -27,7 +27,7 @@ export function OrgDivisionsMobileList({
         return (
           <article
             key={div.id}
-            className="flex flex-col gap-3 rounded-md border border-border-hairline bg-canvas p-4"
+            className="flex flex-col gap-3 rounded-[18px] border border-stone-200/70 bg-canvas p-4"
           >
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
@@ -76,7 +76,7 @@ export function OrgDivisionsMobileList({
               <button
                 type="button"
                 onClick={() => onCopyCode(div)}
-                className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-md border border-border-hairline bg-surface px-3 py-2 text-xs font-medium text-ink-primary hover:bg-surface-muted"
+                className="inline-flex min-h-[42px] items-center justify-center gap-1.5 rounded-full border border-stone-200 bg-surface px-3 py-2 text-xs font-medium text-ink-primary hover:bg-surface-muted"
               >
                 {isCopied ? (
                   <>
@@ -93,7 +93,7 @@ export function OrgDivisionsMobileList({
               <Link
                 href={`/workspace?ws=${div.id}`}
                 onClick={() => setStoredActiveWorkspaceId(div.id)}
-                className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-md bg-brand px-3 py-2 text-xs font-medium text-white hover:bg-brand-hover"
+                className="inline-flex min-h-[42px] items-center justify-center gap-1.5 rounded-full bg-brand px-3 py-2 text-xs font-medium text-white hover:bg-brand-hover"
               >
                 <span>Buka Divisi</span>
                 <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />

@@ -40,7 +40,7 @@ export function OrgDivisionsPagination({
           disabled={currentPage <= 1}
           onClick={() => onPageChange(currentPage - 1)}
           aria-label="Halaman sebelumnya"
-          className="inline-flex min-h-[38px] items-center gap-1 rounded-md border border-border-hairline bg-surface px-2.5 py-1.5 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex min-h-[38px] items-center gap-1 rounded-full border border-stone-200 bg-surface px-3 py-1.5 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50"
         >
           <ChevronLeft className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
           <span>Sebelumnya</span>
@@ -55,10 +55,10 @@ export function OrgDivisionsPagination({
               onClick={() => onPageChange(page)}
               aria-label={`Halaman ${page}`}
               aria-current={isActive ? "page" : undefined}
-              className={`inline-flex min-h-[38px] min-w-[38px] items-center justify-center rounded-md border px-2.5 font-mono text-xs font-medium tabular-nums transition-colors ${
+              className={`inline-flex min-h-[38px] min-w-[38px] items-center justify-center rounded-full border px-2.5 font-mono text-xs font-medium tabular-nums transition-colors ${
                 isActive
                   ? "border-brand bg-brand text-white"
-                  : "border-border-hairline bg-surface text-ink-primary hover:bg-surface-muted"
+                  : "border-stone-200 bg-surface text-ink-primary hover:bg-surface-muted"
               }`}
             >
               {page}
@@ -71,7 +71,7 @@ export function OrgDivisionsPagination({
           disabled={currentPage >= totalPages}
           onClick={() => onPageChange(currentPage + 1)}
           aria-label="Halaman berikutnya"
-          className="inline-flex min-h-[38px] items-center gap-1 rounded-md border border-border-hairline bg-surface px-2.5 py-1.5 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex min-h-[38px] items-center gap-1 rounded-full border border-stone-200 bg-surface px-3 py-1.5 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50"
         >
           <span>Berikutnya</span>
           <ChevronRight className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />

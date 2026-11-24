@@ -42,7 +42,7 @@ export function SimulatorInputPanel({
   onCopySummary,
 }: SimulatorInputPanelProps) {
   return (
-    <Card className="border-border-hairline bg-surface">
+    <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
       <CardHeader className="pb-3">
         <CardTitle className="text-base font-semibold text-ink-primary">
           Parameter Tim
@@ -182,7 +182,7 @@ export function SimulatorInputPanel({
 
         <div className="flex flex-col gap-1.5">
           <Label>Intensitas Interupsi Malam</Label>
-          <div className="grid grid-cols-3 gap-1 rounded-md border border-border-hairline bg-surface-muted p-1">
+          <div className="grid grid-cols-3 gap-1 rounded-full border border-stone-200 bg-stone-100/80 p-1">
             {INTENSITY_OPTIONS.map((option) => (
               <button
                 key={option.value}
@@ -195,9 +195,9 @@ export function SimulatorInputPanel({
                   })
                 }
                 className={cn(
-                  "rounded-sm px-2 py-1.5 text-xs font-medium transition-colors",
+                  "rounded-full px-2 py-1.5 text-xs font-medium transition-colors",
                   input.night_interruption_intensity === option.value
-                    ? "bg-brand text-white"
+                    ? "bg-brand text-white shadow-2xs"
                     : "text-ink-secondary hover:text-ink-primary"
                 )}
               >
@@ -207,13 +207,13 @@ export function SimulatorInputPanel({
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-border-hairline pt-4">
+        <div className="flex flex-col gap-2 border-t border-stone-100 pt-4">
           <Button
             type="button"
             variant="outline"
             disabled={!canCopySummary}
             onClick={onCopySummary}
-            className="w-full"
+            className="w-full rounded-full"
           >
             <Copy className="size-4" />
             <span>Salin Ringkasan Advokasi</span>

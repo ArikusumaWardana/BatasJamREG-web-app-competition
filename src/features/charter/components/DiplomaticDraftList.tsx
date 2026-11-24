@@ -23,7 +23,7 @@ export function DiplomaticDraftList({
   return (
     <section
       aria-label="Alternatif balasan siap kirim"
-      className="flex flex-col gap-4 lg:col-span-7"
+      className="flex min-w-0 flex-col gap-4 lg:col-span-7"
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-base font-semibold text-ink-primary">
@@ -31,18 +31,19 @@ export function DiplomaticDraftList({
         </h2>
         <Badge
           variant="outline"
-          className={
+          className={cn(
+            "rounded-full px-3 py-0.5",
             source === "AI"
               ? "border-safe/30 bg-safe-soft text-safe"
               : "border-brand-border bg-brand-soft text-brand"
-          }
+          )}
         >
           {source === "AI" ? "Diperhalus AI" : "Template Terkurasi"}
         </Badge>
       </div>
 
       {replies.length === 0 ? (
-        <Card className="border-border-hairline bg-surface">
+        <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
           <CardContent className="py-8 text-center text-sm text-ink-secondary">
             Isi jendela kerja (minimal 3 karakter) dan konteks singkat (minimal 5
             karakter) untuk menyusun 3 draf balasan diplomatis.
@@ -52,9 +53,12 @@ export function DiplomaticDraftList({
         replies.map((reply, index) => {
           const isCopied = copiedIndex === index;
           return (
-            <Card key={reply.label} className="border-border-hairline bg-surface">
+            <Card
+              key={reply.label}
+              className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]"
+            >
               <CardContent className="flex flex-col gap-3 pt-5">
-                <div className="flex items-center justify-between gap-2 border-b border-border-hairline pb-3">
+                <div className="flex items-center justify-between gap-2 border-b border-stone-100 pb-3">
                   <span className="text-sm font-semibold text-ink-primary">
                     {index + 1}. {reply.label}
                   </span>
@@ -64,6 +68,7 @@ export function DiplomaticDraftList({
                     variant="outline"
                     onClick={() => onCopy(reply.text, index)}
                     className={cn(
+                      "rounded-full",
                       isCopied && "border-safe bg-safe-soft text-safe hover:bg-safe-soft"
                     )}
                   >

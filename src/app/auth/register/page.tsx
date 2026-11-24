@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RegisterPage() {
   return (
-    <AuthSplitShell>
+    <AuthSplitShell activeMode="register">
       <RegisterForm />
     </AuthSplitShell>
   );

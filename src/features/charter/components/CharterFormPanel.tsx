@@ -46,7 +46,7 @@ export function CharterFormPanel({
   }
 
   return (
-    <Card className="border-border-hairline bg-surface">
+    <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
       <CardHeader className="pb-3">
         <CardTitle className="text-base font-semibold text-ink-primary">
           Konfigurasi Piagam
@@ -55,7 +55,7 @@ export function CharterFormPanel({
 
       <CardContent className="flex flex-col gap-4">
         {auditHandoffNote ? (
-          <div className="flex items-start gap-2 rounded-md border border-brand-border bg-brand-soft px-3 py-2 text-xs text-brand">
+          <div className="flex items-start gap-2 rounded-2xl border border-brand-border bg-brand-soft px-3.5 py-2.5 text-xs text-brand">
             <Info className="mt-0.5 size-4 shrink-0" />
             <span>{auditHandoffNote}</span>
           </div>
@@ -191,7 +191,7 @@ export function CharterFormPanel({
             {draft.emergency_criteria.map((criterion, index) => (
               <div
                 key={`${index}-${criterion.slice(0, 18)}`}
-                className="flex items-start justify-between gap-2 rounded-md border border-border-hairline bg-canvas px-3 py-2 text-sm text-ink-primary"
+                className="flex items-start justify-between gap-2 rounded-2xl border border-stone-200/70 bg-bento-canvas/50 px-3.5 py-2.5 text-sm text-ink-primary"
               >
                 <span className="leading-snug">{criterion}</span>
                 <button
@@ -225,7 +225,7 @@ export function CharterFormPanel({
               variant="outline"
               disabled={!canAddCriterion}
               onClick={handleAddCriterion}
-              className="shrink-0 border-border-strong text-brand hover:bg-brand-soft"
+              className="shrink-0 rounded-full border-stone-200 px-4 text-brand hover:bg-brand-soft"
             >
               <Plus className="size-4" />
               <span>Tambah</span>

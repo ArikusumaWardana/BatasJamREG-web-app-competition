@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AlertCircle, Loader2, RefreshCw, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
+import { BENTO_CARD_CLS } from "@/components/shared/BentoPrimitives";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -98,7 +99,7 @@ export function OrgMembersPanel({
   return (
     <section
       aria-label="Kelola anggota dan penetapan Team Lead"
-      className="rounded-lg border border-border-hairline bg-surface p-5"
+      className={BENTO_CARD_CLS}
     >
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>

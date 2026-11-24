@@ -38,7 +38,7 @@ export function ProjectionChart({
   );
 
   return (
-    <Card className="border-border-hairline bg-surface">
+    <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
       <CardContent className="flex flex-col gap-4 pt-5">
         <div className="flex flex-col justify-between gap-2 md:flex-row md:items-start">
           <div className="flex flex-col gap-0.5">
@@ -53,7 +53,7 @@ export function ProjectionChart({
 
           <Badge
             variant="outline"
-            className="w-fit shrink-0 border-safe/30 bg-safe-soft font-mono text-xs text-safe tabular-nums"
+            className="w-fit shrink-0 rounded-full border-safe/30 bg-safe-soft px-3 py-0.5 font-mono text-xs text-safe tabular-nums"
           >
             Potensi Hemat: {formatRupiahCompact(projectedAnnualSavingsIdr)} (
             {savingsPercentage.toLocaleString("id-ID")}%)
@@ -62,11 +62,11 @@ export function ProjectionChart({
 
         <div className="flex flex-wrap items-center gap-5 text-xs text-ink-secondary">
           <span className="inline-flex items-center gap-2">
-            <span className="h-0.5 w-3.5 bg-warn" aria-hidden="true" />
+            <span className="h-1 w-3.5 rounded-full bg-warn" aria-hidden="true" />
             <span>Status Quo (Always-On)</span>
           </span>
           <span className="inline-flex items-center gap-2">
-            <span className="h-0.5 w-3.5 bg-brand" aria-hidden="true" />
+            <span className="h-1 w-3.5 rounded-full bg-brand" aria-hidden="true" />
             <span>Dengan BatasJamREG (Morning Digest & Piagam)</span>
           </span>
         </div>
@@ -109,7 +109,7 @@ export function ProjectionChart({
                   contentStyle={{
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #E7E5E4",
-                    borderRadius: "8px",
+                    borderRadius: "14px",
                     fontSize: "12px",
                   }}
                 />

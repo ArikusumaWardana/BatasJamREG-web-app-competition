@@ -39,20 +39,20 @@ export function SnapshotHistoryTable({
 }: SnapshotHistoryTableProps) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-left">
+      <table className="w-full min-w-[440px] border-collapse text-left">
         <thead>
-          <tr className="border-b border-border-hairline text-xs font-medium text-ink-secondary">
-            <th className="py-2 pr-3">Label Audit</th>
-            <th className="px-3 py-2">Periode</th>
-            <th className="px-3 py-2 text-right">Luar Jam (%)</th>
-            <th className="py-2 pl-3 text-right">Lembur Bayangan</th>
+          <tr className="border-b border-stone-200/80 text-xs font-medium text-ink-secondary">
+            <th className="py-2.5 pr-3">Label Audit</th>
+            <th className="px-3 py-2.5">Periode</th>
+            <th className="px-3 py-2.5 text-right">Luar Jam (%)</th>
+            <th className="py-2.5 pl-3 text-right">Lembur Bayangan</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-border-hairline text-sm">
+        <tbody className="divide-y divide-stone-100 text-sm">
           {snapshots.map((item) => {
             const pct = computeAfterHoursPct(item);
             return (
-              <tr key={item.id}>
+              <tr key={item.id} className="transition-colors hover:bg-stone-50/70">
                 <td className="py-2.5 pr-3 font-medium text-ink-primary">
                   {item.label}
                 </td>

@@ -12,6 +12,12 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { BarChart3 } from "lucide-react";
+import {
+  BENTO_CARD_CLS,
+  BENTO_PILL_PRIMARY_CLS,
+  BentoCardHeader,
+} from "@/components/shared/BentoPrimitives";
 import type { SnapshotSummary } from "../types";
 import { SnapshotComparisonPanel } from "./SnapshotComparisonPanel";
 import {
@@ -78,31 +84,25 @@ export function SnapshotTrendCard({
   const activeMode = viewMode === "compare" && canCompare ? "compare" : "trend";
 
   return (
-    <article className="flex flex-col gap-5 rounded-lg border border-border-hairline bg-surface p-5">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h2 className="text-base font-semibold text-ink-primary">
-            Riwayat &amp; Perbandingan Audit Tim
-          </h2>
-          <p className="text-xs text-ink-secondary">
-            Agregat jam lembur bayangan dari snapshot anonim tanpa teks chat.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
+    <article className={`flex h-full flex-col gap-5 ${BENTO_CARD_CLS}`}>
+      <BentoCardHeader
+        icon={<BarChart3 className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />}
+        title="Riwayat & Perbandingan Audit Tim"
+        subtitle="Agregat jam lembur bayangan dari snapshot anonim tanpa teks chat."
+        rightSlot={
           <div
             role="tablist"
             aria-label="Mode tampilan snapshot"
-            className="inline-flex rounded-md border border-border-hairline bg-canvas p-1"
+            className="grid w-full grid-cols-2 gap-1 rounded-full border border-stone-200 bg-stone-100/80 p-1 sm:inline-flex sm:w-auto"
           >
             <button
               type="button"
               role="tab"
               aria-selected={activeMode === "trend"}
               onClick={() => setViewMode("trend")}
-              className={`min-h-[36px] rounded px-3 py-1.5 text-xs font-medium transition-colors ${
+              className={`min-h-[34px] rounded-full px-3 py-1 text-center text-xs font-medium whitespace-nowrap transition-colors sm:px-3.5 ${
                 activeMode === "trend"
-                  ? "bg-surface text-brand shadow-2xs"
+                  ? "bg-brand text-white shadow-2xs"
                   : "text-ink-secondary hover:text-ink-primary"
               }`}
             >
@@ -119,20 +119,21 @@ export function SnapshotTrendCard({
                   ? "Bandingkan 2 periode audit"
                   : "Simpan minimal 2 snapshot untuk membandingkan"
               }
-              className={`min-h-[36px] rounded px-3 py-1.5 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
+              className={`min-h-[34px] rounded-full px-3 py-1 text-center text-xs font-medium whitespace-nowrap transition-colors disabled:cursor-not-allowed disabled:opacity-50 sm:px-3.5 ${
                 activeMode === "compare"
-                  ? "bg-surface text-brand shadow-2xs"
+                  ? "bg-brand text-white shadow-2xs"
                   : "text-ink-secondary hover:text-ink-primary"
               }`}
             >
-              Bandingkan 2 Snapshot (Before vs After)
+              <span className="sm:hidden">Bandingkan</span>
+              <span className="hidden sm:inline">Bandingkan 2 Snapshot</span>
             </button>
           </div>
-        </div>
-      </div>
+        }
+      />
 
       {snapshots.length === 0 ? (
-        <div className="flex flex-col items-start gap-3 rounded-md border border-dashed border-border-strong bg-canvas p-6">
+        <div className="flex flex-col items-start gap-3 rounded-2xl border border-dashed border-stone-300 bg-bento-canvas/50 p-6">
           <p className="text-sm font-medium text-ink-primary">
             Belum ada riwayat snapshot audit untuk workspace ini.
           </p>
@@ -140,10 +141,7 @@ export function SnapshotTrendCard({
             Proses file ekspor WhatsApp secara lokal di browser, lalu simpan
             angka agregatnya untuk memantau tren penurunan lembur tim.
           </p>
-          <Link
-            href="/audit"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover"
-          >
+          <Link href="/audit" className={BENTO_PILL_PRIMARY_CLS}>
             Mulai Audit WA Lokal
           </Link>
         </div>
@@ -151,7 +149,7 @@ export function SnapshotTrendCard({
         <SnapshotComparisonPanel snapshots={snapshots} workDays={workDays} />
       ) : (
         <>
-          <div className="h-52 w-full min-w-0 rounded-md border border-border-hairline bg-canvas p-3">
+          <div className="h-52 w-full min-w-0 rounded-2xl border border-stone-200/70 bg-bento-canvas/40 p-3">
             {isClient ? (
               <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart
@@ -187,7 +185,7 @@ export function SnapshotTrendCard({
                     contentStyle={{
                       backgroundColor: "#FFFFFF",
                       border: "1px solid #E7E5E4",
-                      borderRadius: "8px",
+                      borderRadius: "14px",
                       fontSize: "12px",
                     }}
                     formatter={(value) => [`${String(value)} jam`, "Lembur Bayangan"]}
@@ -195,8 +193,8 @@ export function SnapshotTrendCard({
                   <Bar
                     dataKey="hours"
                     fill="#CBDCE0"
-                    radius={[4, 4, 0, 0]}
-                    barSize={40}
+                    radius={[999, 999, 999, 999]}
+                    barSize={32}
                   />
                   <Line
                     type="monotone"

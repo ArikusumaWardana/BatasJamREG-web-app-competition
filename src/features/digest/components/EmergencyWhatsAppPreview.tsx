@@ -39,8 +39,8 @@ export function EmergencyWhatsAppPreview({
   }
 
   return (
-    <aside className="lg:col-span-4 lg:sticky lg:top-8">
-      <article className="flex flex-col gap-4 rounded-lg border border-danger/30 bg-surface p-5">
+    <aside className="min-w-0 lg:col-span-5 lg:sticky lg:top-8">
+      <article className="flex flex-col gap-4 rounded-[24px] border border-danger/30 bg-surface p-6 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <div className="flex flex-col gap-1.5">
           <span className="text-xs font-medium text-danger">
             Jalur Darurat Operasional
@@ -58,7 +58,7 @@ export function EmergencyWhatsAppPreview({
 
           {card ? (
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="inline-flex items-center rounded-full bg-danger-soft px-2.5 py-0.5 text-xs font-medium text-danger">
+              <span className="inline-flex items-center rounded-full bg-danger-soft px-3 py-0.5 text-xs font-medium text-danger">
                 PIC: {picLabel}
               </span>
               <span className="max-w-full truncate text-xs text-ink-secondary">
@@ -69,11 +69,11 @@ export function EmergencyWhatsAppPreview({
         </div>
 
         {card && previewText ? (
-          <div className="max-h-72 overflow-y-auto rounded-md border border-danger/20 bg-danger-soft/40 p-3.5 font-mono text-xs leading-relaxed whitespace-pre-wrap text-ink-primary">
+          <div className="max-h-72 overflow-y-auto rounded-2xl border border-danger/20 bg-danger-soft/40 p-4 font-mono text-xs leading-relaxed whitespace-pre-wrap text-ink-primary">
             {previewText}
           </div>
         ) : (
-          <div className="rounded-md border border-dashed border-danger/25 bg-danger-soft/30 p-4 text-xs leading-relaxed text-ink-secondary">
+          <div className="rounded-2xl border border-dashed border-danger/25 bg-danger-soft/30 p-4 text-xs leading-relaxed text-ink-secondary">
             Belum ada kartu darurat operasional yang aktif untuk dipratinjau.
             Pilih atau tambahkan kartu darurat terlebih dahulu untuk membuat
             pesan WhatsApp cepat.
@@ -84,7 +84,7 @@ export function EmergencyWhatsAppPreview({
           type="button"
           disabled={!card || !previewText}
           onClick={handleCopyEmergency}
-          className="inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-md bg-danger px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-danger/90 disabled:opacity-50"
+          className="inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-full bg-danger px-5 py-2 text-xs font-medium text-white transition-colors hover:bg-danger/90 disabled:opacity-50"
         >
           {isCopied ? (
             <>

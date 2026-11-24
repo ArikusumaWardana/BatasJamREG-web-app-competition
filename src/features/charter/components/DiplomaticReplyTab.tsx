@@ -88,7 +88,7 @@ export function DiplomaticReplyTab() {
 
   return (
     <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-      <section className="lg:col-span-5">
+      <section className="min-w-0 lg:col-span-5">
         <DiplomaticScenarioCard
           formInput={formInput}
           isFormValid={isFormValid}

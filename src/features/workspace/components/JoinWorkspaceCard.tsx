@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, Copy, Loader2 } from "lucide-react";
+import { Check, Copy, Loader2, Users } from "lucide-react";
 import { toast } from "sonner";
+import {
+  BENTO_CARD_CLS,
+  BENTO_PILL_OUTLINE_CLS,
+  BentoCardHeader,
+} from "@/components/shared/BentoPrimitives";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CreateWorkspaceDialog } from "./CreateWorkspaceDialog";
@@ -77,17 +82,18 @@ export function JoinWorkspaceCard({
   }
 
   return (
-    <article className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5">
-      <div className="flex items-center justify-between gap-2">
-        <h2 className="text-base font-semibold text-ink-primary">
-          Akses Anggota Tim
-        </h2>
-        {typeof memberCount === "number" ? (
-          <span className="font-mono text-xs tabular-nums text-ink-secondary">
-            {memberCount} Anggota
-          </span>
-        ) : null}
-      </div>
+    <article className={`flex h-full flex-col gap-4 ${BENTO_CARD_CLS}`}>
+      <BentoCardHeader
+        icon={<Users className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />}
+        title="Akses Anggota Tim"
+        rightSlot={
+          typeof memberCount === "number" ? (
+            <span className="rounded-full bg-stone-100 px-3 py-1 font-mono text-xs font-medium tabular-nums text-ink-secondary">
+              {memberCount} Anggota
+            </span>
+          ) : null
+        }
+      />
 
       {inviteCode ? (
         <div className="flex flex-col gap-1.5">
@@ -95,13 +101,13 @@ export function JoinWorkspaceCard({
             Kode Undangan Workspace
           </span>
           <div className="flex items-center gap-2">
-            <div className="flex-1 rounded-md border border-border-hairline bg-canvas px-3 py-2 font-mono text-sm font-medium tracking-wider tabular-nums text-ink-primary">
+            <div className="flex-1 rounded-full border border-stone-200 bg-bento-canvas/50 px-4 py-2 font-mono text-sm font-medium tracking-wider tabular-nums text-ink-primary">
               {inviteCode}
             </div>
             <button
               type="button"
               onClick={handleCopyInvite}
-              className="inline-flex min-h-[38px] shrink-0 items-center justify-center gap-1.5 rounded-md border border-border-hairline bg-surface px-3 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted"
+              className={BENTO_PILL_OUTLINE_CLS}
             >
               {copied ? (
                 <>
@@ -122,7 +128,7 @@ export function JoinWorkspaceCard({
       <form
         onSubmit={handleJoinSubmit}
         className={`flex flex-col gap-1.5 ${
-          inviteCode ? "border-t border-border-hairline pt-4" : ""
+          inviteCode ? "border-t border-stone-100 pt-4" : ""
         }`}
       >
         <Label
@@ -138,12 +144,12 @@ export function JoinWorkspaceCard({
             placeholder="Contoh: REG-8492"
             value={joinCode}
             onChange={(event) => setJoinCode(event.target.value)}
-            className="h-10 min-w-0 flex-1 rounded-md border-border-hairline bg-surface px-3 font-mono text-sm uppercase text-ink-primary"
+            className="h-10 min-w-0 flex-1 rounded-full border-stone-200 bg-surface px-4 font-mono text-sm uppercase text-ink-primary"
           />
           <button
             type="submit"
             disabled={joinCode.trim().length < 4 || isJoining}
-            className="inline-flex min-h-[40px] shrink-0 items-center justify-center gap-1.5 rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-sm font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
+            className={BENTO_PILL_OUTLINE_CLS}
           >
             {isJoining ? (
               <>
@@ -158,7 +164,7 @@ export function JoinWorkspaceCard({
       </form>
 
       {canCreateDivision ? (
-        <div className="border-t border-border-hairline pt-3">
+        <div className="mt-auto border-t border-stone-100 pt-3">
           <CreateWorkspaceDialog
             organizationId={organizationId}
             onCreated={onWorkspaceSelected}

@@ -19,4 +19,9 @@ export interface AppShellWorkspace {
   organizationName?: string | null;
   orgRole?: "OWNER" | "MEMBER" | null;
   isJoined?: boolean;
+  workStartTime?: string;
+  workEndTime?: string;
+  digestDispatchTime?: string;
+  timezone?: "Asia/Jakarta" | "Asia/Makassar" | "Asia/Jayapura";
+  workDays?: number[];
 }

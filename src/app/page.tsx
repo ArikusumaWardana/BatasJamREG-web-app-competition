@@ -1,21 +1,23 @@
-import { LandingFooter } from "@/components/layout/LandingFooter";
-import { LandingNavbar } from "@/components/layout/LandingNavbar";
-import { LandingCrisisSection } from "@/features/landing/components/LandingCrisisSection";
-import { LandingFirewallSection } from "@/features/landing/components/LandingFirewallSection";
-import { LandingHeroSection } from "@/features/landing/components/LandingHeroSection";
-import { LandingModulesSection } from "@/features/landing/components/LandingModulesSection";
+import { FeaturesSection } from "@/features/landing/components/FeaturesSection";
+import { HeroSection } from "@/features/landing/components/HeroSection";
+import { HowItWorksSection } from "@/features/landing/components/HowItWorksSection";
+import { LandingFooterCta } from "@/features/landing/components/LandingFooterCta";
+import { LandingNavbar } from "@/features/landing/components/LandingNavbar";
+import { PrivacyArchitectureSection } from "@/features/landing/components/PrivacyArchitectureSection";
+import { RoleImpactSection } from "@/features/landing/components/RoleImpactSection";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-canvas text-ink-primary">
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-surface text-ink-primary">
       <LandingNavbar />
-      <main id="top" className="flex-1">
-        <LandingHeroSection />
-        <LandingCrisisSection />
-        <LandingFirewallSection />
-        <LandingModulesSection />
+      <main className="flex-1">
+        <HeroSection />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <PrivacyArchitectureSection />
+        <RoleImpactSection />
       </main>
-      <LandingFooter />
+      <LandingFooterCta />
     </div>
   );
 }

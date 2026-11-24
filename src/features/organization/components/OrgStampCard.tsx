@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Loader2, Stamp, Trash2, Upload } from "lucide-react";
 import { toast } from "sonner";
+import { BENTO_CARD_CLS } from "@/components/shared/BentoPrimitives";
 import { DigitalStampSvg } from "@/components/shared/DigitalStampSvg";
 import {
   deleteOrganizationStamp,
@@ -94,7 +95,7 @@ export function OrgStampCard({
   return (
     <section
       aria-label="Identitas dan Stempel Perusahaan"
-      className="flex flex-col gap-4 rounded-lg border border-border-hairline bg-surface p-5"
+      className={`flex h-full flex-col justify-between gap-4 ${BENTO_CARD_CLS}`}
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
@@ -106,8 +107,7 @@ export function OrgStampCard({
             Identitas &amp; Stempel Perusahaan
           </h2>
           <p className="mt-0.5 text-xs leading-relaxed text-ink-secondary">
-            Ditampilkan otomatis pada kolom persetujuan pimpinan di Piagam Jam
-            Digital (/charter) dan ekspor PDF.
+            Ditampilkan otomatis pada piagam /charter dan ekspor PDF.
           </p>
         </div>
 
@@ -122,31 +122,31 @@ export function OrgStampCard({
         </span>
       </div>
 
-      <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-12">
-        <div className="flex min-h-[116px] items-center justify-center rounded-md border border-border-hairline bg-white p-4 md:col-span-4">
+      <div className="flex flex-col gap-3.5">
+        <div className="flex min-h-[108px] items-center justify-center rounded-[18px] border border-stone-200/80 bg-white p-4">
           {stampUrl ? (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
               src={stampUrl}
               alt={`Stempel resmi ${organizationName}`}
               crossOrigin="anonymous"
-              className="pointer-events-none max-h-[84px] w-auto -rotate-6 object-contain opacity-85 mix-blend-multiply select-none"
+              className="pointer-events-none max-h-[80px] w-auto -rotate-6 object-contain opacity-85 mix-blend-multiply select-none"
             />
           ) : (
             <DigitalStampSvg
               organizationName={organizationName}
-              className="pointer-events-none h-[88px] w-[88px] shrink-0 -rotate-6 opacity-85 select-none"
+              className="pointer-events-none h-[84px] w-[84px] shrink-0 -rotate-6 opacity-85 select-none"
             />
           )}
         </div>
 
-        <div className="flex flex-col gap-3 md:col-span-8">
-          <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-1">
             <label
               htmlFor={inputId}
               className="text-xs font-medium text-ink-primary"
             >
-              Pilih Berkas Stempel (PNG atau WebP, maks 1 MB)
+              Berkas Stempel (PNG atau WebP, maks 1 MB)
             </label>
             <input
               ref={inputRef}
@@ -155,21 +155,21 @@ export function OrgStampCard({
               accept="image/png,image/webp"
               disabled={isBusy}
               onChange={handleFileChange}
-              className="block w-full rounded-md border border-border-hairline bg-canvas px-3 py-2 text-xs text-ink-primary file:mr-3 file:rounded file:border-0 file:bg-brand-soft file:px-2.5 file:py-1 file:text-xs file:font-medium file:text-brand disabled:opacity-50"
+              className="block w-full rounded-xl border border-stone-200 bg-canvas px-3 py-2 text-xs text-ink-primary file:mr-3 file:rounded-full file:border-0 file:bg-brand-soft file:px-3 file:py-1 file:text-xs file:font-medium file:text-brand disabled:opacity-50"
             />
-            <p className="text-[11px] text-ink-secondary">
+            <p className="truncate text-[11px] text-ink-secondary">
               {selectedFile
-                ? `Berkas dipilih: ${selectedFile.name}`
-                : "Disarankan menggunakan gambar dengan latar transparan."}
+                ? `Dipilih: ${selectedFile.name}`
+                : "Disarankan gambar berlatar transparan."}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
               disabled={!selectedFile || isBusy}
               onClick={() => void handleUpload()}
-              className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
+              className="inline-flex min-h-[38px] items-center justify-center gap-1.5 rounded-full bg-brand px-4 py-1.5 text-xs font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
             >
               {isUploading ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin shrink-0" strokeWidth={1.5} aria-hidden="true" />
@@ -183,7 +183,7 @@ export function OrgStampCard({
               type="button"
               disabled={!stampUrl || isBusy}
               onClick={() => void handleDelete()}
-              className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
+              className="inline-flex min-h-[38px] items-center justify-center gap-1.5 rounded-full border border-stone-200 bg-surface px-3.5 py-1.5 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
             >
               {isDeleting ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin shrink-0" strokeWidth={1.5} aria-hidden="true" />

@@ -120,8 +120,8 @@ export function DigestFormatterPanel({
   const dispatchTimeLabel = `${formatTimeHHMM(dispatchTime)} ${getTimezoneShortLabel(timezone)}`;
 
   return (
-    <aside className="lg:col-span-4 lg:sticky lg:top-8">
-      <article className="flex flex-col gap-4 rounded-lg border border-brand-border bg-surface p-5">
+    <aside className="min-w-0 lg:col-span-5 lg:sticky lg:top-8">
+      <article className="flex flex-col gap-4 rounded-[24px] border border-stone-200/80 bg-surface p-6 shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
         <div className="flex flex-col gap-1.5">
           <span className="text-xs font-medium text-brand">
             Generator Morning Digest
@@ -135,10 +135,10 @@ export function DigestFormatterPanel({
 
           <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
             <div className="flex flex-wrap items-center gap-1.5">
-              <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
+              <span className="inline-flex items-center rounded-full bg-brand-soft px-3 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
                 {selectedCards.length} Kartu Dipilih
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-brand-border bg-brand-soft px-2.5 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
+              <span className="inline-flex items-center gap-1 rounded-full border border-brand-border bg-brand-soft px-3 py-0.5 font-mono text-xs font-medium tabular-nums text-brand">
                 <Clock className="h-3 w-3 shrink-0" strokeWidth={1.5} aria-hidden="true" />
                 <span>Jadwal {dispatchTimeLabel}</span>
               </span>
@@ -166,7 +166,7 @@ export function DigestFormatterPanel({
           </div>
         </div>
 
-        <div className="max-h-72 overflow-y-auto rounded-md border border-border-hairline bg-surface-subtle p-3.5 font-mono text-xs leading-relaxed whitespace-pre-wrap text-ink-primary">
+        <div className="max-h-72 overflow-y-auto rounded-2xl border border-stone-200/70 bg-bento-canvas/50 p-4 font-mono text-xs leading-relaxed whitespace-pre-wrap text-ink-primary">
           {previewText ||
             "Pilih minimal satu kartu pada tab Antrean Pagi untuk melihat pratinjau pesan WhatsApp."}
         </div>
@@ -176,7 +176,7 @@ export function DigestFormatterPanel({
             type="button"
             disabled={!hasSelection || isDispatching}
             onClick={handleCopyOnly}
-            className="inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-md border border-border-hairline bg-surface px-4 py-2 text-sm font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
+            className="inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-surface px-4 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
           >
             {copied ? (
               <>
@@ -195,11 +195,11 @@ export function DigestFormatterPanel({
             type="button"
             disabled={!hasSelection || isDispatching || !workspaceId}
             onClick={handleDispatch}
-            className="inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
+            className="inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
           >
             {isDispatching ? (
               <>
-                <Loader2 className="h-4 w-4 animate-spin shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                <Loader2 className="h-4 w-4 shrink-0 animate-spin" strokeWidth={1.5} aria-hidden="true" />
                 <span>Mengirim Digest...</span>
               </>
             ) : (
@@ -212,7 +212,7 @@ export function DigestFormatterPanel({
         </div>
 
         <p className="text-xs leading-relaxed text-ink-secondary">
-          Menandai terkirim memindahkan kartu terpilih ke tab Sudah Terkirim
+          Menandai terkirim memindahkan kartu terpilih ke tab Riwayat
           secara realtime untuk seluruh anggota tim.
         </p>
       </article>

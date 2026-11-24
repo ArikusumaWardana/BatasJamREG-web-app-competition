@@ -76,8 +76,9 @@ export function RegisterForm() {
   return (
     <>
       <header className="flex flex-col gap-1">
-        <h2 className="text-2xl font-bold tracking-tight text-ink-primary">
-          Buat Akun Workspace
+        <h2 className="text-2xl font-semibold tracking-tight text-ink-primary">
+          Buat Akun{" "}
+          <span className="font-normal text-ink-secondary">Workspace</span>
         </h2>
         <p className="text-sm text-ink-secondary">
           Daftarkan akun untuk membuat tim baru atau bergabung dengan kode
@@ -88,11 +89,11 @@ export function RegisterForm() {
       <DemoAccessCallout />
 
       <div className="relative flex items-center py-1" role="separator">
-        <div className="flex-1 border-t border-border-hairline" />
+        <div className="flex-1 border-t border-stone-200/80" />
         <span className="bg-surface px-3 text-xs font-medium text-ink-secondary">
           atau daftar dengan email
         </span>
-        <div className="flex-1 border-t border-border-hairline" />
+        <div className="flex-1 border-t border-stone-200/80" />
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
@@ -108,7 +109,7 @@ export function RegisterForm() {
             placeholder="Nama lengkap Anda"
             value={fullName}
             onChange={(event) => setFullName(event.target.value)}
-            className="h-10 rounded-md border-border-hairline bg-surface px-3 text-sm text-ink-primary focus-visible:border-brand focus-visible:ring-brand/20"
+            className="h-11 rounded-xl border-stone-200 bg-bento-canvas/40 px-3.5 text-sm text-ink-primary transition-colors focus-visible:border-brand focus-visible:bg-surface focus-visible:ring-brand/20"
             required
           />
         </div>
@@ -125,7 +126,7 @@ export function RegisterForm() {
             placeholder="nama@perusahaan.id"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="h-10 rounded-md border-border-hairline bg-surface px-3 text-sm text-ink-primary focus-visible:border-brand focus-visible:ring-brand/20"
+            className="h-11 rounded-xl border-stone-200 bg-bento-canvas/40 px-3.5 text-sm text-ink-primary transition-colors focus-visible:border-brand focus-visible:bg-surface focus-visible:ring-brand/20"
             required
           />
         </div>
@@ -143,7 +144,7 @@ export function RegisterForm() {
               placeholder="Minimal 6 karakter"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="h-10 rounded-md border-border-hairline bg-surface pr-10 pl-3 text-sm text-ink-primary focus-visible:border-brand focus-visible:ring-brand/20"
+              className="h-11 rounded-xl border-stone-200 bg-bento-canvas/40 pr-11 pl-3.5 text-sm text-ink-primary transition-colors focus-visible:border-brand focus-visible:bg-surface focus-visible:ring-brand/20"
               required
             />
             <button
@@ -153,7 +154,7 @@ export function RegisterForm() {
                 showPassword ? "Sembunyikan kata sandi" : "Tampilkan kata sandi"
               }
               aria-pressed={showPassword}
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-ink-secondary hover:text-ink-primary"
+              className="absolute inset-y-0 right-0 flex min-w-[44px] items-center justify-center px-3 text-ink-secondary hover:text-ink-primary"
             >
               {showPassword ? (
                 <Eye className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
@@ -177,7 +178,7 @@ export function RegisterForm() {
             value={confirmPassword}
             onChange={(event) => setConfirmPassword(event.target.value)}
             aria-invalid={confirmPassword.length > 0 && !passwordsMatch}
-            className="h-10 rounded-md border-border-hairline bg-surface px-3 text-sm text-ink-primary focus-visible:border-brand focus-visible:ring-brand/20"
+            className="h-11 rounded-xl border-stone-200 bg-bento-canvas/40 px-3.5 text-sm text-ink-primary transition-colors focus-visible:border-brand focus-visible:bg-surface focus-visible:ring-brand/20"
             required
           />
           {confirmPassword.length > 0 && !passwordsMatch ? (
@@ -190,7 +191,7 @@ export function RegisterForm() {
         <button
           type="submit"
           disabled={!canSubmit}
-          className="mt-1 inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
+          className="mt-1 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting ? (
             <>

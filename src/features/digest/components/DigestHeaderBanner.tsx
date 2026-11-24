@@ -59,8 +59,11 @@ export function DigestHeaderBanner({
   return (
     <header className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
       <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-bold tracking-tight text-ink-primary sm:text-[28px]">
-          Async Morning Digest Board
+        <h1 className="text-2xl font-semibold tracking-tight text-ink-primary sm:text-3xl">
+          Morning Digest,{" "}
+          <span className="font-normal text-ink-secondary">
+            {workspace ? workspace.name : "Tim Anda"}
+          </span>
         </h1>
         <p className="text-sm leading-relaxed text-ink-secondary">
           {workStatus
@@ -69,10 +72,10 @@ export function DigestHeaderBanner({
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+      <div className="flex shrink-0 flex-wrap items-center gap-2.5">
         <span
           role="status"
-          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium ${statusTone.wrap}`}
+          className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium ${statusTone.wrap}`}
         >
           <span
             className={`h-2 w-2 shrink-0 rounded-full ${statusTone.dot}`}
@@ -85,9 +88,9 @@ export function DigestHeaderBanner({
           type="button"
           disabled={!workspace}
           onClick={onOpenCreate}
-          className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
+          className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full bg-brand px-5 py-2 text-xs font-medium text-white transition-colors hover:bg-brand-hover disabled:opacity-50"
         >
-          <Plus className="h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
+          <Plus className="h-4 w-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
           <span>Tambah Instruksi</span>
         </button>
       </div>

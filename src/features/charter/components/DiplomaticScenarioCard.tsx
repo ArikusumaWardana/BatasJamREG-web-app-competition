@@ -81,7 +81,7 @@ function SegmentedToggle<T extends string>({
   return (
     <div className="flex flex-col gap-1.5">
       <Label>{label}</Label>
-      <div className="grid grid-cols-3 gap-1 rounded-md border border-border-hairline bg-surface-muted p-1">
+      <div className="grid grid-cols-3 gap-1 rounded-full border border-stone-200 bg-stone-100/80 p-1">
         {options.map((option) => (
           <button
             key={option.value}
@@ -89,9 +89,9 @@ function SegmentedToggle<T extends string>({
             aria-pressed={value === option.value}
             onClick={() => onChange(option.value)}
             className={cn(
-              "rounded-sm px-2 py-1.5 text-xs font-medium transition-colors",
+              "rounded-full px-2 py-1.5 text-xs font-medium transition-colors",
               value === option.value
-                ? "bg-brand text-white"
+                ? "bg-brand text-white shadow-2xs"
                 : "text-ink-secondary hover:text-ink-primary"
             )}
           >
@@ -121,7 +121,7 @@ export function DiplomaticScenarioCard({
   onResetToTemplate,
 }: DiplomaticScenarioCardProps) {
   return (
-    <Card className="border-border-hairline bg-surface">
+    <Card className="rounded-[24px] border-stone-200/80 bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.03)]">
       <CardHeader className="pb-3">
         <CardTitle className="text-base font-semibold text-ink-primary">
           Atur Skenario Pesan
@@ -135,7 +135,7 @@ export function DiplomaticScenarioCard({
               key={chip.label}
               type="button"
               onClick={() => onChange({ ...chip.preset })}
-              className="rounded-md border border-border-hairline bg-canvas px-2.5 py-1 text-xs font-medium text-ink-secondary transition-colors hover:border-brand-border hover:bg-brand-soft hover:text-brand"
+              className="rounded-full border border-stone-200 bg-bento-canvas/50 px-3 py-1 text-xs font-medium text-ink-secondary transition-colors hover:border-brand-border hover:bg-brand-soft hover:text-brand"
             >
               {chip.label}
             </button>
@@ -204,7 +204,7 @@ export function DiplomaticScenarioCard({
             type="button"
             disabled={!isFormValid || isGenerating}
             onClick={onRefineWithAi}
-            className="w-full"
+            className="w-full rounded-full"
           >
             {isGenerating ? (
               <Loader2 className="size-4 animate-spin" />
@@ -219,7 +219,7 @@ export function DiplomaticScenarioCard({
             variant="outline"
             disabled={!isFormValid || isGenerating}
             onClick={onResetToTemplate}
-            className="w-full"
+            className="w-full rounded-full"
           >
             <RefreshCw className="size-4" />
             <span>Gunakan Template Instan</span>

@@ -140,7 +140,7 @@ export function DigestCardListTab({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex w-fit flex-wrap items-center gap-2.5 self-start rounded-lg border border-border-hairline bg-surface px-3 py-2">
+      <div className="flex w-fit max-w-full flex-wrap items-center gap-2.5 self-start rounded-[20px] border border-stone-200/80 bg-surface px-4 py-2 shadow-2xs sm:rounded-full">
         <div className="flex items-center gap-1.5 text-xs text-ink-secondary">
           <Calendar className="h-3.5 w-3.5 text-brand" strokeWidth={1.5} aria-hidden="true" />
           <label htmlFor={filterInputId} className="font-medium text-ink-primary">
@@ -156,7 +156,7 @@ export function DigestCardListTab({
             setSelectedDate(e.target.value);
             setCurrentPage(1);
           }}
-          className="h-9 rounded-md border border-border-hairline bg-canvas px-2.5 font-mono text-xs text-ink-primary focus:border-brand focus:outline-none"
+          className="h-8 rounded-full border border-stone-200 bg-bento-canvas/50 px-3 font-mono text-xs text-ink-primary focus:border-brand focus:outline-none"
         />
         {selectedDate ? (
           <button
@@ -165,7 +165,7 @@ export function DigestCardListTab({
               setSelectedDate("");
               setCurrentPage(1);
             }}
-            className="inline-flex min-h-[36px] items-center gap-1 rounded-md border border-border-hairline bg-surface px-2.5 py-1 text-xs font-medium text-ink-primary hover:bg-surface-muted"
+            className="inline-flex min-h-[34px] items-center gap-1 rounded-full border border-stone-200 bg-surface px-3 py-1 text-xs font-medium text-ink-primary hover:bg-surface-muted"
           >
             <X className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
             <span>Semua Tanggal</span>
@@ -174,7 +174,7 @@ export function DigestCardListTab({
       </div>
 
       {filteredItems.length === 0 ? (
-        <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed border-border-hairline bg-surface p-6 text-center">
+        <div className="flex flex-col items-center gap-2 rounded-[24px] border border-dashed border-stone-300 bg-surface p-8 text-center">
           <p className="text-sm font-medium text-ink-primary">
             Tidak ada kartu pada tanggal{" "}
             <span className="font-mono">{selectedDate}</span>.
@@ -185,7 +185,7 @@ export function DigestCardListTab({
               setSelectedDate("");
               setCurrentPage(1);
             }}
-            className="inline-flex min-h-[36px] items-center rounded-md border border-border-hairline bg-canvas px-3 py-1.5 text-xs font-medium text-ink-primary hover:bg-surface-muted"
+            className="inline-flex min-h-[36px] items-center rounded-full border border-stone-200 bg-surface px-4 py-1.5 text-xs font-medium text-ink-primary hover:bg-surface-muted"
           >
             Tampilkan Semua Tanggal
           </button>

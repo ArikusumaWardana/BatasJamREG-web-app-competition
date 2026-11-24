@@ -33,7 +33,7 @@ export function UploadDropzoneCard({
   }
 
   return (
-    <article className="flex flex-col justify-between gap-4 rounded-lg border border-border-hairline bg-surface p-5 lg:col-span-7">
+    <article className="flex min-w-0 flex-col justify-between gap-4 rounded-[24px] border border-stone-200/80 bg-surface p-6 shadow-[0_1px_2px_rgba(28,25,23,0.03)] lg:col-span-7">
       <div
         onDragOver={(event) => {
           event.preventDefault();
@@ -41,10 +41,10 @@ export function UploadDropzoneCard({
         }}
         onDragLeave={() => setIsDragging(false)}
         onDrop={handleDrop}
-        className={`flex flex-1 flex-col items-center justify-center gap-4 rounded-md border border-dashed p-6 text-center transition-colors ${
+        className={`flex flex-1 flex-col items-center justify-center gap-4 rounded-[18px] border border-dashed p-5 text-center transition-colors sm:p-6 ${
           isDragging
             ? "border-brand bg-brand-soft/60"
-            : "border-border-strong bg-canvas"
+            : "border-stone-300 bg-bento-canvas/50"
         }`}
       >
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft text-brand">
@@ -55,19 +55,22 @@ export function UploadDropzoneCard({
           )}
         </div>
 
-        <div className="flex max-w-md flex-col gap-1">
-          <p className="text-base font-semibold text-ink-primary">
+        <div className="flex w-full max-w-md flex-col items-center gap-1.5">
+          <p className="text-[15px] leading-snug font-semibold text-ink-primary sm:text-base">
             Seret file ekspor WhatsApp (.txt Android atau .zip iOS)
           </p>
           {sourceLabel && totalMessages !== null ? (
-            <div className="mt-1 inline-flex items-center justify-center gap-1.5">
-              <span className="h-2 w-2 shrink-0 rounded-full bg-safe" aria-hidden="true" />
-              <span className="font-mono text-xs tabular-nums text-ink-secondary">
-                {sourceLabel} ({totalMessages.toLocaleString("id-ID")} pesan)
+            <div className="mx-auto mt-1 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-0.5 rounded-2xl border border-safe/20 bg-safe-soft/80 px-3.5 py-1.5 text-center sm:rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-safe">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-safe" aria-hidden="true" />
+                <span>{sourceLabel}</span>
+              </span>
+              <span className="font-mono text-[11px] whitespace-nowrap tabular-nums text-safe/90">
+                ({totalMessages.toLocaleString("id-ID")} pesan)
               </span>
             </div>
           ) : (
-            <p className="text-xs text-ink-secondary">
+            <p className="text-xs leading-relaxed text-ink-secondary">
               File dibaca langsung di memori browser melalui Web Worker tanpa
               mengirim satu byte pun ke server.
             </p>
@@ -89,12 +92,12 @@ export function UploadDropzoneCard({
           }}
         />
 
-        <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+        <div className="flex w-full max-w-sm flex-col items-stretch gap-2.5 pt-1 sm:w-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
           <button
             type="button"
             disabled={isProcessing}
             onClick={() => inputRef.current?.click()}
-            className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-md border border-border-hairline bg-surface px-3.5 py-2 text-sm font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
+            className="inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-surface px-4 py-2 text-xs font-medium text-ink-primary transition-colors hover:bg-surface-muted disabled:opacity-50 sm:w-auto"
           >
             <span>{sourceLabel ? "Pilih File Lain" : "Pilih File Lokal"}</span>
           </button>
@@ -103,7 +106,7 @@ export function UploadDropzoneCard({
             type="button"
             disabled={isProcessing}
             onClick={onLoadDemo}
-            className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-md border border-brand-border bg-brand-soft px-3.5 py-2 text-sm font-medium text-brand transition-colors hover:bg-surface disabled:opacity-50"
+            className="inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-full border border-brand-border bg-brand-soft px-4 py-2 text-xs font-medium text-brand transition-colors hover:bg-surface disabled:opacity-50 sm:w-auto"
           >
             {isProcessing ? (
               <>

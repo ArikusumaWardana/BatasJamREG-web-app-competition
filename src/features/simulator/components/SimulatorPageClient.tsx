@@ -79,8 +79,11 @@ export function SimulatorPageClient() {
     <div className="flex flex-col gap-6">
       <header className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold tracking-tight text-ink-primary sm:text-[30px]">
-            Simulator Biaya Presenteeism & Burnout
+          <h1 className="text-2xl font-semibold tracking-tight text-ink-primary sm:text-3xl">
+            Simulator Biaya,{" "}
+            <span className="font-normal text-ink-secondary">
+              Presenteeism &amp; Burnout
+            </span>
           </h1>
           <p className="text-sm text-ink-secondary">
             Hitung estimasi dampak finansial lembur bayangan sebagai dasar
@@ -88,7 +91,7 @@ export function SimulatorPageClient() {
           </p>
         </div>
 
-        <div className="flex flex-col justify-between gap-3 rounded-lg border border-brand-border bg-brand-soft p-4 sm:flex-row sm:items-center">
+        <div className="flex flex-col justify-between gap-3 rounded-[24px] border border-brand-border bg-brand-soft/80 p-5 sm:flex-row sm:items-center">
           <div className="flex items-start gap-2.5 text-sm text-brand sm:items-center">
             <Info className="mt-0.5 size-4 shrink-0 sm:mt-0" />
             <span>
@@ -107,7 +110,7 @@ export function SimulatorPageClient() {
               variant="outline"
               size="sm"
               onClick={handleApplyHandoff}
-              className="w-fit shrink-0 border-brand-border bg-surface text-brand hover:bg-surface-subtle"
+              className="w-fit shrink-0 rounded-full border-brand-border bg-surface px-4 text-brand hover:bg-surface-subtle"
             >
               Terapkan Data Audit
             </Button>
@@ -118,7 +121,7 @@ export function SimulatorPageClient() {
                 variant: "outline",
                 size: "sm",
                 className:
-                  "w-fit shrink-0 border-brand-border bg-surface text-brand hover:bg-surface-subtle",
+                  "w-fit shrink-0 rounded-full border-brand-border bg-surface px-4 text-brand hover:bg-surface-subtle",
               })}
             >
               Jalankan Audit Demo
@@ -128,7 +131,7 @@ export function SimulatorPageClient() {
       </header>
 
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-        <section className="lg:col-span-4">
+        <section className="min-w-0 lg:col-span-5">
           <SimulatorInputPanel
             input={input}
             canCopySummary={
@@ -140,7 +143,7 @@ export function SimulatorPageClient() {
           />
         </section>
 
-        <section className="flex flex-col gap-6 lg:col-span-8">
+        <section className="flex min-w-0 flex-col gap-5 lg:col-span-7">
           <CostSummaryCards output={output} />
           <ProjectionChart
             data={output.monthly_projections}
