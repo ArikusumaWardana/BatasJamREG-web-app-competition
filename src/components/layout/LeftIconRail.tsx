@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogIn, LogOut, Settings } from "lucide-react";
+import { LogIn, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AppNavIcon } from "./AppNavIcon";
 import { getAppNavItems } from "./nav-items";
@@ -42,37 +42,9 @@ export function LeftIconRail({
   const isOrgOwner = mode === "authenticated" && organization?.role === "OWNER";
   const navItems = getAppNavItems(isOrgOwner);
 
-  const quickShortcuts = [
-    {
-      href: "/audit",
-      label: "Audit WA Lokal",
-      icon: "audit" as const,
-      isActive: pathname === "/audit",
-    },
-    {
-      href: mode === "authenticated" ? "/workspace#status-publik" : "/charter",
-      label: mode === "authenticated" ? "Status Publik & Bio WA" : "Piagam Digital",
-      icon: (mode === "authenticated" ? "status" : "charter") as "status" | "charter",
-      isActive: false,
-    },
-    {
-      href: "/charter",
-      label: "Piagam & Ekspor PDF",
-      icon: "charter" as const,
-      isActive: pathname === "/charter",
-    },
-  ];
-
-  const settingsHref =
-    mode === "authenticated"
-      ? isOrgOwner
-        ? "/organization"
-        : "/workspace#pengaturan-divisi"
-      : "/auth/login";
-
   return (
     <aside
-      aria-label="Bilah pintasan cepat vertikal"
+      aria-label="Bilah navigasi vertikal"
       className="sticky top-24 z-20 hidden w-[64px] shrink-0 flex-col items-center gap-3.5 self-start lg:flex"
     >
       <div className="flex flex-col items-center gap-2 rounded-full border border-stone-200/80 bg-surface px-2 py-2.5 shadow-[0_2px_12px_rgba(28,25,23,0.04)]">
@@ -123,31 +95,6 @@ export function LeftIconRail({
       </div>
 
       <div className="flex flex-col items-center gap-2 rounded-full border border-stone-200/80 bg-surface px-2 py-2.5 shadow-[0_2px_12px_rgba(28,25,23,0.04)]">
-        {quickShortcuts.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            onClick={() => onStartNavigation(item.href)}
-            aria-label={item.label}
-            className="group/rail relative inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-secondary transition-colors hover:bg-brand-soft hover:text-brand"
-          >
-            <AppNavIcon kind={item.icon} />
-            <RailTooltip label={item.label} />
-          </Link>
-        ))}
-      </div>
-
-      <div className="flex flex-col items-center gap-2 rounded-full border border-stone-200/80 bg-surface px-2 py-2.5 shadow-[0_2px_12px_rgba(28,25,23,0.04)]">
-        <Link
-          href={settingsHref}
-          onClick={() => onStartNavigation(settingsHref)}
-          aria-label="Pengaturan Perusahaan atau Divisi"
-          className="group/rail relative inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-secondary transition-colors hover:bg-stone-100 hover:text-ink-primary"
-        >
-          <Settings className="h-[18px] w-[18px]" strokeWidth={1.5} aria-hidden="true" />
-          <RailTooltip label="Pengaturan" />
-        </Link>
-
         {mode === "authenticated" ? (
           <button
             type="button"

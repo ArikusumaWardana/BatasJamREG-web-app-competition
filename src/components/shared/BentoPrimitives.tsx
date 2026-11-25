@@ -44,8 +44,8 @@ export function BentoCardHeader({
     >
       <div
         className={cn(
-          "flex flex-1 items-start gap-3",
-          hasRightSlot ? "min-w-[200px]" : "min-w-0"
+          "flex min-w-0 flex-1 items-start gap-3",
+          hasRightSlot && "basis-[210px]"
         )}
       >
         {icon ? (
